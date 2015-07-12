@@ -1,0 +1,264 @@
+vot.ar: una mala elección
+Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, Alfredo Ortega, Juliano Rizzo, Fernando Russ, Javier Smaldone, Nicolas Waisman
+2a versión, julio 2015
+CABA, Argentina
+@famato
+@hackancuba (GPG: ECF0573B1C9B59E8)
+-
+@SDLerner
+@ortegaalfredo
+@julianor
+-
+@mis2centavos
+@nicowaisman
+
+Abstracto— Con el anuncio del Tribunal Superior de Justicia de la Ciudad de Buenos Aires de la implementación de un sistema de votación electrónico para la Ciudad, basado en boletas con chip RFID, decidimos investigar el asunto a sabiendas de casos de fracaso internacional por ser los sistemas como éste inseguros y para ciertos países, inconstitucional.  El objetivo del presente es demostrar que este sistema también es inseguro y vulnerable a múltiples ataques que requieren escaso conocimiento para realizarse, y los motivos por los que resulta conveniente mantener la modalidad de votación de boleta única de papel.
+
+I. INTRODUCCIÓN
+El 8 de junio de 2015 el Tribunal Superior de Justicia de la Ciudad Autónoma de Buenos Aires aprueba el sistema de Boleta Electrónica mediante la resolución 127/15 [1], donde reza:
+“Por Resolución n° 126, el Tribunal aprobó “...para la elección del 5 de julio y eventual segunda vuelta del 19 de julio, la aplicación de tecnologías electrónicas en la etapa de emisión del voto, escrutinio de sufragios y transmisión y totalización de resultados electorales provisorios, con el sistema de la empresa contratista del GCBA, auditado por la Universidad de Buenos Aires, en los términos del art. 25, del anexo II, ley nº 4894” y por artículo 2 se aprobaron las pantallas con las listas de todas las agrupaciones políticas, de acuerdo con la secuencia aprobada por la Acordada Electoral nº 17/15”.
+Este sistema, llamado BUE y desarrollado por la empresa Grupo MSA bajo la denominación “vot.ar” consta de dos partes principales: máquina de emisión de voto y boleta única electrónica (BUE).  La primera se trata de una computadora portátil embebida en una caja que posee una pantalla táctil y un lector/escritor RFID e impresor de boletas.  La segunda consta de una lámina de papel grueso con la propiedad de poder ser impreso térmicamente y conteniendo un chip con tecnología RFID.
+El usuario inserta una boleta en blanco en la ranura correspondiente de la máquina y selecciona en la pantalla la lista o candidatos deseados.  Al finalizar, la máquina imprimirá lo seleccionado sobre la boleta (impresión térmica) y asimismo escribirá electrónicamente en el chip RFID estos mismos datos.
+El presente informe demostrará que el sistema es / puede ser vulnerable en los siguientes puntos:
+el chip de la BUE puede ser leído por un tercero,
+el chip de la BUE puede ser reescrito por un tercero [],
+la impresión térmica posee una vida media corta, anulando auditorías o revisiones futuras sobre un proceso electoral [],
+el hardware de la máquina puede ser accedido por terceros de manera local, pudiendo causar:
+impedir su normal funcionamiento,
+anular, modificar o leer votos, violando el Art. 37 de la Constitución Nacional “El sufragio es universal, igual, secreto y obligatorio.” [2],
+conectar un aparato de transmisión remoto de datos.
+Respecto del hardware, hemos tenido acceso a las máquinas situadas en distintos puntos de la ciudad, y a máquinas proveídas por MSA durante una auditoría privada que no cabe en el marco de la presente.  El hardware es fundamental, dado que los equipos utilizados en las elecciones no han sido certificados en ningún punto del proceso, situación que pone en jaque la seguridad del sistema.
+
+II. SOBRE VOT.AR
+Vot.Ar es una creación del Grupo MSA con el objeto de implementar un sistema de Boleta Única Electrónica (BUE).
+En su página web [3] se autodefine como:
+1. Secreto
+2. Seguro
+3. Transparente
+4. Igualitario
+Respecto de estas pautas y con los elementos que serán expuestos en el presente, demostraremos que:
+1. El voto puede ser leído por terceros, por tanto no es secreto;
+2. El sistema es vulnerable, por tanto no es seguro;
+3. El sistema posee hardware cerrado y código cerrado, no libre [4] y [5], por lo tanto no es transparente;
+4. Sí puede ser igualitario si las personas son capacitadas para el uso del sistema, proceso que en principio se estaría llevando a cabo por el TSJ CABA [6], y el Gobierno de la Ciudad junto al Grupo MSA en Centros de Consulta [7].  Sin embargo, deberá tenerse en cuenta a las personas con discapacidades visuales o auditivas.
+
+III. CÓMO SE VOTA
+Al momento de la elección, se dispondrán máquinas y BUE para cada lugar destinado a tal fin.  El Presidente de Mesa abrirá la mesa habilitando la máquina mediante una tarjeta especial (tarjeta azul), quedando así lista para operar.  Luego los electores podrán realizar el sufragio.
+Nos hemos presentado en un punto de consulta y hemos filmado un video demostrativo del proceso de inicialización del sistema y sufragio [8].
+Finalizado el proceso, el Presidente introduce la boleta de inicialización donde se imprimirá la fecha y hora (timestamp), su nombre y los nombres de hasta 3 Fiscales de Mesa, a los efectos de registrar la apertura de mesa y que conservará para sí como comprobante.
+
+A. Inicialización del sistema
+El Presidente de Mesa recibe una tarjeta con chip RFID especial, un PIN, un DVD entregado en sobre lacrado y dos “boleta de inicialización” (boleta azul).  Dicho DVD contiene el software de votación.
+Se introduce el DVD en la lectora de la máquina y se enciende la misma.  Cuando el software haya iniciado, solicitará al usuario calibrar la pantalla presionando en las 4 esquinas   de   la   misma y   luego   en   el   centro.   Estos   pasos   serán indicados por unos puntos y cruces que aparecerán en la pantalla.
+
+B. Apertura de mesa
+Una vez calibrada la pantalla, el Presidente de Mesa abrirá la mesa identificándose con la tarjeta, introduciendo el número de mesa y su PIN, como se muestra en las Fig. 1 y 2.
+Luego, la máquina se encontrará lista para ser operada por los votantes y realizar el sufragio.
+
+C. Proceso de sufragio
+El votante se presenta a la mesa correspondiente y se identifica mediante DNI.  Elige aleatoriamente una BUE y el Presidente corta un troquel de la misma y lo retiene junto al DNI.  Luego el votante toma la BUE y se dirige hacia la máquina.  Introduce la boleta en la ranura, como se aprecia en la Fig. 3 y elige de la pantalla el/los candidato/s o lista/s de candidato/s (ver Fig. 4).
+Al finalizar la selección, se procede a imprimir la BUE:
+Se imprime en la boleta, mediante impresión térmica, los candidatos elegidos (detalle en Fig. 5).
+Se almacena digitalmente esta misma información en el chip RFID (ver punto IV. B para mayor abundamiento).
+El votante toma la boleta impresa, se dobla por la mitad y se dirige a la Mesa; recorta un segundo troquel de la misma, que se entrega al Presidente para constatar que la boleta no ha sido reemplazada por otra y se introduce la misma dentro de la urna.
+Finalmente, el Presidente le devuelve el DNI al votante junto con un comprobante de voto. y concluye el proceso de sufragio.
+
+D. Cierre de mesa
+Al término del horario electoral, el Presidente debe realizar el cierre de la mesa, proceso idéntico al de Apertura de mesa descrito en el punto III. B.  Conservará esta segunda boleta azul como comprobante de cierre de mesa.
+
+E. Escrutinio de votos
+Cerrada la mesa se inicia el proceso de escrutinio de los votos.  Los técnicos conectan la máquina a la red, el Presidente inicializa el proceso y se leen los votos uno a uno, enviandolos a un servidor central.  Luego se cuentan las boletas y se verifica que el número de votos registrados por el sistema sea igual a la cantidad de boletas; esto es necesario en caso de que alguna boleta no haya sido leída correctamente.
+Si el resultado es correcto, se sellan las boletas en una bolsa y se imprime un certificado de escrutinio que contiene las cantidades registradas y, que es simplemente una boleta similar a la boleta azul y de igual efecto comprobatorio.
+Finalmente se emite el recuento al servidor central.
+
+IV. ANÁLISIS DETALLADO DE SISTEMA
+El 10 de junio nos hicimos presentes en las oficinas de MSA con el objeto de auditar el sistema.  De este evento hemos realizado capturas de pantalla [9] con información pertinente al software y el sistema operativo empleado.
+
+A. Software vot.ar
+El software empleado se trata de un programa escrito mayormente en lenguaje Python y que funciona sobre un sistema operativo Ubuntu.  El comando uname -a, que brinda información del kernel, retorna: Linux vot-ar 3.13.0-53-generic #89-Ubuntu SMP Wed May 20 10:34:39 UTC 2015 i686 i686 i686 GNU/Linux.  Otros detalles del software pueden observarse en las capturas de pantalla realizadas [9].
+La empresa proveerá al TSJ de la imagen de DVD con el software necesario a los efectos de que éste realice grabaciones de discos DVD y los entregue en sobre lacrado el día electoral.  No contamos con mayor detalle de este proceso.
+La imagen en cuestión es arrancable (booteable), esto es, la PC puede iniciar el sistema operativo desde el mismo.  Con el objeto de poder verificarlos, la empresa entrega asimismo los hashes de los archivos contenidos, que se trataban en principio de hashes MD5 y luego fueron reemplazados por SHA512, según indica el Sr. Fisanotti, empleado de MSA [10].  El proceso de verificación por hash no será abarcado en este informe.
+El software desarrollado por MSA para realizar el proceso de sufragio ha sido auditado por el Departamento de Computación de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires (FCEyN-UBA) [11], encontrando algunos errores y problemas catalogados como menores, cumpliendo los requisitos mínimos para ser empleado en un acto eleccionario, diagramados en el Anexo II de la Ley 4894/13 [12] y [13].
+Del informe pueden destacarse lo siguiente:
+“Los defectos en la documentación representan un punto débil a observar en el software que dificulta no sólo la auditabilidad del mismo, sino también el mantenimiento y la evolución” [14].
+“[...] es crucial para el correcto funcionamiento [del sistema] en forma global que las autoridades de mesa, delegados judiciales y demás responsables de los comicios sigan los procedimientos aprobados por el Tribunal (Acordada 17/2015, Anexo II) [...]” [15].
+El Anexo I detalla puntos débiles del software como funciones no recomendadas y demás.
+Se indica que el software es válido para ser empleado en un acto eleccionario debido a que “la voluntad de los electores se puede verificar en forma completamente manual” [16], esto es, aún alterando el contenido del chip RFID de la BUE, se puede verificar manualmente observando los valores impresos.
+Si bien esto es cierto, destacamos el hecho que este sistema, al ser vulnerable como se demuestra en los puntos IV. B, C y D, requiere de un conteo manual y además “la única forma de asegurar la confiabilidad de los comicios con este sistema es, al igual que en el sistema tradicional de boletas preimpresas con sobres, que las autoridades de los comicios sepan los procedimientos que deben seguir y lo hagan.” [17], que nos conduce a preguntarnos cuál es el objetivo de emplearlo.
+
+B. Tarjeta BUE
+La tarjeta o boleta única electrónica (BUE) consiste en una lámina gruesa de papel, de forma rectangular y de tamaño aproximado de 30 cm por 11 cm, conteniendo un chip RFID del fabricante NXP modelo ICODE SLI SL2 ICS20 [18] e impresa al dorso con una flecha que indica el sentido de inserción en la máquina, el título de la boleta y los troqueles, como se aprecia en la Fig. 6.  La BUE para votar es de color amarillo.
+El reverso se encuentra inicialmente en blanco, indicándose con un símbolo de antena la ubicación del chip RFID (ver Fig. 7).
+Se ha realizado la lectura del chip en cuestión empleando un pudiendo repetirse ésto con cualquier lector RFID - teléfono móvil Samsung Galaxy S3 Neo (GT-I9301I) - obteniendo la siguiente información mediante el software NFC TagInfo scan by NXP (versión 3.0) para Android:
+
+-- INFO ------------------------------
+# IC manufacturer: NXP Semiconductors
+
+# IC type: ICODE SLI (SL2ICS20)
+
+-- NDEF ------------------------------
+# NFC data set storage not present: Maximum NDEF storage size after format: 106 bytes
+
+-- EXTRA ------------------------------
+# Memory size: 112 bytes
+* 28 blocks, with 4 bytes per block
+
+# IC detailed information:
+Supported read commands:
+* Single Block Read
+* Multiple Block Read
+* Inventory Read
+* Fast Inventory Read
+* Get Multiple Block Security Status
+* Get System Information
+AFI supported
+DSFID supported
+IC reference value: 0x01
+Capacitance: 23.5 pF
+
+-- TECH ------------------------------
+# Technologies supported:
+ISO/IEC 15693-3 compatible
+ISO/IEC 15693-2 compatible
+
+# Android technology information:
+Tag description:
+* TAG: Tech
+[android.nfc.tech.NfcV, android.nfc.tech.NdefFormatable]
+android.nfc.tech.NdefFormatable
+android.nfc.tech.NfcV
+* Maximum transceive length: 253 bytes
+MIFARE Classic support present in Android
+
+# Detailed protocol information:
+ID: E0:04:01:00:25:88:35:F1
+AFI: 0x00
+DSFID: 0x00
+
+# Memory content:
+[00] . 1C 01 00 1B |....|
+[01] . 78 AF 3A 12 |x.:.|
+[02] . 30 34 43 41 |04CA|
+[03] . 42 41 20 20 |BA  |
+[04] . 20 43 4F 4D | COM|
+[05] . 20 34 39 4A | 49J|
+[06] . 45 46 20 37 |EF 7|
+[07] . 33 4C 45 47 |3LEG|
+[08] . 20 38 33 00 | 83.|
+[09] . 00 00 00 00 |....|
+[0A] . 00 00 00 00 |....|
+[0B] . 00 00 00 00 |....|
+[0C] . 00 00 00 00 |....|
+[0D] . 00 00 00 00 |....|
+[0E] . 00 00 00 00 |....|
+[0F] . 00 00 00 00 |....|
+[10] . 00 00 00 00 |....|
+[11] . 00 00 00 00 |....|
+[12] . 00 00 00 00 |....|
+[13] . 00 00 00 00 |....|
+[14] . 00 00 00 00 |....|
+[15] . 00 00 00 00 |....|
+[16] . 00 00 00 00 |....|
+[17] . 00 00 00 00 |....|
+[18] . 00 00 00 00 |....|
+[19] . 00 00 00 00 |....|
+[1A] . 00 00 00 00 |....|
+[1B] . 57 5F 4F 4B |W_OK|
+
+  x:locked, .:unlocked
+
+--------------------------------------
+
+El parámetro indicado como ID representa un identificador único e irrepetible del chip, que asimismo no puede modificarse.  Este parámetro reside incrustado en el chip y es generado aleatoriamente por el fabricante.
+El detalle de Memory content muestra a izquierda el número de bloque de memoria, luego el contenido de dicho bloque y a derecha la representación ASCII (legible por humanos) de los datos.  Se destacan los valores de Miembros de Juntas COMunales, JEFe y Vicejefe de Gobierno y LEGisladores.
+Todos los valores presentados, a excepción del ID, pueden ser alterados fácilmente empleando cualquier software afín, como ser por ejemplo NfcV-Reader by STMicroelectronics para Android.  En la Fig. 8 se encuentra una captura del chip sin modificar, igual a los datos obtenidos anteriormente, mientras que en la Fig. 9 se observan alterados los mismos (bloque 9).  Es fácil modificar cualquier valor deseado, y el procedimiento puede ser realizado por cualquier persona independientemente de sus conocimientos técnicos o específicos de este sistema.
+Esta tarjeta ha sido obtenida de un Centro de Consulta, y se ha empleado in situ la máquina para escribir los datos en ella.  Se ha subido el contenido binario de la misma a internet y puede obtenerse del enlace indicado [19].
+Este tipo de chip RFID puede bloquearse contra escritura según indica el fabricante [20], desconocemos si ésto será implementado por el sistema vot.ar.  Sin embargo, la lectura del mismo no puede bloquearse en lo que al chip respecta.  A este fin, han incorporado en la tarjeta una fina lámina metálica que,al doblar la tarjeta al medio, impide la lectura de la misma sí y solo sí la distancia entre las caras, en particular entre el chip y la lámina, es inferior a aproximadamente 8mm, medición obtenida en pruebas con el hardware antes mencionado, por lo que ésta puede variar para otro hardware lector.
+
+C. Hardware vot.ar
+La máquina consta de 2 partes principales: pantalla (PC all-in-one) a la izquierda y lector/grabador RFID + impresora (térmica) a la derecha.  En la Fig. 10 se aprecia la misma.
+En la parte superior de la pantalla existe una tapa que da acceso a los puertos de la PC - ver Fig. 11 -, de los que se destacan los puertos USB.  Esto implica una enorme vulnerabilidad en caso de no restringirse el acceso a dicha sección, dado que un atacante puede conectar el dispositivo que desee y tomar control del sistema.  Se ha probado conectar un teclado inalámbrico Genius SlimStar 8000 GK-100012/K y obtenido mediante el mismo el control del sistema: si bien las terminales virtuales (TTY) se encuentran deshabilitadas a excepción de la primera, que ejecuta el sistema vot.ar (programa en Python), resulta trivial anularlo p.e. reiniciando el sistema y cambiando la orden de arranque del mismo, obteniendo acceso total como administrador (root).
+Si esta vulnerabilidad no es cubierta en las máquinas dispuestas en fecha electoral, cabe destacar que sistema pierde por completo su fiabilidad.
+Son vectores de ataque posibles teniendo acceso físico:
+cargar un virus o script desde una unidad USB,
+registrar votos con fecha y hora,
+modificar los votos emitidos (no solo el contenido del chip sino también la impresión, que podría pasar desapercibido si el votante no verifica),
+transmitir remotamente toda la información procesada,
+anular por completo el funcionamiento de la máquina (denegación de servicio), p.e. con una bomba lógica (bash fork-bomb u otras).
+No hemos sido proveídos por MSA de acceso al hardware por tiempo suficiente para realizar más pruebas en profundidad, o analizar los mecanismos internos de éste.
+Respecto del lector RFID, existe la posibilidad de ser anulado (ataque de denegación de servicio) colocando sobre el mismo una lámina metálica o un chip RFID inválido, que puede estar camuflado con un sticker idéntico al que ya posee.  Este tipo de ataque a un lector RFID es por demás conocido, como señala Fabienne Serrière para la CanSecWest Applied Security Conference 2008 [21].  Este tipo de ataque es fácil de revertir en el momento, pero ocasionaría un gran trastorno, en particular si se realiza a gran escala.  Y no es posible proteger a la máquina contra él, dado que es inherente al sistema RFID.
+Existen múltiples ataques contra el sistema RFID que ya ha sido probado vulnerable incontables veces [22], incluso es posible leer los chips a distancia con el hardware apropiado - simple y de bajo costo [23], [24] - o directamente impedir su funcionamiento [25], y que no debería utilizarse en un proceso electoral [26].  Respecto de la lectura remota, cabe mencionar que la norma ISO 15693 que rige los chips de BUE (ver punto IV. B), establece una distancia de lectura nominal de 70 cm, y una distancia máxima de 1,5 m [27].
+
+D. Otras vulnerabilidades del sistema
+En el punto III. D se mencionó que el conteo de votos se realiza al término del horario electoral empleando las máquinas a tal fin.  Esto presenta un vector de ataque: acorde a lo demostrado en el punto anterior, podría instalarse un programa o script  malware en el sistema, y al conectarlo con el servidor central, todo el sistema se vería comprometido.  Este ataque se anularía empleando distintas máquinas para votar y realizar el escrutinio, o bien realizando un exhaustivo análisis de las máquinas de votar previo a utilizarlas para el escrutinio.
+Fisanotti menciona que el proceso de transmisión es realizado por otra máquina, no las mismas que las empleadas para emitir sufragio [10].  La patente presentada [36] no abunda al respecto, por lo que no podemos aseverar respecto de esta instancia del proceso.
+El servidor central, nomenclado como S-DCS [36], consta como un posible vector de ataque.  No tenemos más información al respecto y continuaremos indagando sobre este punto en particular.
+
+V. CASOS DE FRACASO INTERNACIONAL
+Distintas aproximaciones a sistemas de voto electrónico han sido abarcadas en el mundo, muchas de ellas sentando antecedentes de fracaso para sistemas del estilo.  Es parte de nuestro objetivo demostrar lo mismo para nuestro país.
+
+A. Israel
+Oren y Wool del Laboratorio de Computación y Seguridad de Redes de la Escuela de Ingeniería de la Universidad de Tel-Aviv, Israel, demostraron distintos ataques al dispositivo RFID empleado por el sistema de votación Israelí que permitían leer los votos a distancia, suprimirlos o modificarlos, entre otras cosas [26].  En el caso israelí, los chips RFID eran del tipo ISO 14443 mientras que los chips empleados por MSA son ISO 15693.  Si bien existen diferencias entre estos, los principios de funcionamiento son similares [28].
+
+B. Países Bajos
+Países Bajos anuló el sistema de votación electrónica a finales del año 2007, por encontrarse graves fallos en el sistema y los procedimientos [29] que permitían a un usuario malintencionado tomar control del sistema [30], del mismo orden que lo mencionado en el presente informe.
+
+C. Alemania
+En Alemania, el sistema de votación electrónica fue anulado en el año 2005 al declararse inconstitucional, toda vez que su constitución establece que cualquier votante debe ser capaz de examinar fidedignamente por completo el proceso de sufragio sin necesidad de conocimiento especializado o técnico, que resulta imposible al incorporarse elementos electrónicos al proceso [31] y [32].
+
+D. EE. UU.
+Se emplearon distintos sistemas de voto electrónico en las elecciones del año 2008 en EEUU con el objeto de abaratar los costos del proceso electoral.  Sin embargo, un grupo del estado de Maryland (SaveOurVotes) realizó un análisis económico y determinó que el costo del proceso electoral se vió incrementado en aproximadamente 179% por votante [33].
+Asimismo, debido a vulnerabilidades en los sistemas de voto electrónico, estos se encuentran en pleno declive desde el año 2012 respecto del uso e implementación, mientras que permanecieron en alza durante el período 1980 - 2012 [34].  “Está ampliamente reconocido que las clásicas boletas de papel son una forma más asequible, fiable y segura para llevar a cabo las elecciones. El voto informatizado es visto cada vez más como una moda que ha desgastado su acogida.”, concluye Timothy B. Lee luego de exponer algunos casos de fracasos para sistemas de voto electrónico en EE. UU. [35].
+
+VI. CONCLUSIONES
+Se ha indagado respecto del funcionamiento del sistema BUE de voto electrónico, analizando las distintas partes que lo componen, tanto de manera individual como en conjunto, y en vista de lo presentado se concluye que:
+el sistema presenta vulnerabilidades inherentes a su diseño, que si bien pueden ser salvadas mediante un conteo y revisión manual de votos, este hecho simplemente anula el propósito de tener un sistema de voto electrónico;
+de no realizarse conteo/escrutinio/verificación manual, el resultado del sufragio queda vulnerable al fraude electoral;
+el sistema es oscuro: el código fuente del software es cerrado, así como el hardware y firmware empleado, suprimiendo la libertad de auditar públicamente el sistema y comprenderlo en detalle;
+Por lo tanto, consideramos que el sistema no cumple con los objetivos  prometidos de brindar seguridad y transparencia y ocasiona un costo adicional al Estado, Ciudad o Municipio que lo emplea.
+
+RECONOCIMIENTOS
+Especialmente a Sergio Orbe que hizo que ésto fuera posible, a los miembros de CaFeLUG y otras entidades que abogan por la libertad del software y a nuestros amigos que nos brindan su ayuda aportando opiniones y correcciones.
+
+REFERENCIAS
+[1]  Lozano,Tribunal Superior de Justicia de CABA, Resolución Nº 127/15.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/resoluciones/resoluci%C3%B3n%20127.pdf
+[2]  Honorable Senado de la Nación Argentina, Constitución Nacional, Capítulo II: Nuevos Derechos y Garantías.  Disponible en: http://www.senado.gov.ar/Constitucion/capitulo2
+[3]  Página web de Vot.Ar: http://www.vot-ar.com.ar/#sobre
+[4]  ¿Qué es el Software Libre?.  Disponible en: https://www.gnu.org/philosophy/free-sw.es.html
+[5]  Hardware de Fuentes Abiertas.  Disponible en: http://www.oshwa.org/definition/spanish
+[6]  Tribunal Superior de Justicia de la Ciudad Autónoma de Buenos Aires, Simulador BUE.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/#
+[7]  Gobierno de la Ciudad de Buenos Aires, Centros de Consulta de BUE.  Disponible en: http://www.buenosaires.gob.ar/boletaelectronica
+[8]  Vídeo demostración de inicialización del sistema y sufragio.  Disponible en: https://drive.google.com/open?id=0B_u7a3yOdFP4UVJ6ZFNZWFBzRkU&authuser=0
+[9]  Capturas de pantalla de la auditoría con fecha 10 de junio del 2015.  Disponible en: https://drive.google.com/open?id=0BypIpdK9mE4hfjZadkJkeVdPMlI3cjhYZWZudjFqaEtZRmVYVzBPOFkxT0o5YjNzRzlRN28&authuser=0
+[10] Juan Pedro Fisanotti, FisaDev, Voto electrónico con Python y Ubuntu.  Disponible en:  http://fisadev.blogspot.com.ar/2011/04/voto-electronico-con-python-y-ubuntu.html
+[11] Claudio Enrique Righetti,  FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/OAT%20n%203-15-06012015204749.pdf
+[12]  Centro de Documentación Municipal, Dirección General de Información y Archivo Legislativo, ANEXO de la LEY Nº 4.894.  Disponible en: http://www.cedom.gov.ar/es/legislacion/normas/leyes/anexos/al4894.html
+[13]  Tribunal Superior de Justicia, Ciudad Autónoma de Buenos Aires, Ley 4894: Régimen normativo de Elecciones Primarias, Abiertas, Simultáneas y Obligatorias y de Boleta Única y Tecnologías Electrónicas de la Ciudad.  Disponible en: http://tsjbaires.gob.ar/index.php?id=3899&cid=5202&fid=16&task=download&option=com_flexicontent&Itemid=49
+[14] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
+Página 9, Párrafo 1.
+[15] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
+Página 9, Párrafo 9.
+[16] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
+Página 10, Párrafo 3.
+[17] Claudio Enrique Righetti, FCEyN UBA, Anexo II, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
+Página 16, Párrafo 4.
+[18] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.  Disponible en: http://www.nxp.com/documents/data_sheet/SL058030.pdf
+[19] Dump de memoria BUE - Informe vot.ar: una mala eleccion.  Disponible en: https://infotomb.com/9r6ec
+[20] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.
+ Sección 3.2.5, Página 10.
+[21] Fabienne Serrière, 2008,  RFID reader denial of service.  Disponible en: http://hackaday.com/2008/06/09/rfid-reader-denial-of-service
+[22] Veo Zhang, TrendLabs, 2014, Hacking RFID Payment Cards Made Possible with Android App.  Disponible en: http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-rfid-payment-cards-made-possible-with-android-app
+[23] Joseph Gates,Vishwajeet Potnis, Matthew Howell, William Tran, Louisiana State University, Baton Rouge, Louisiana, Using ISO 15693 Compliant RFID Tags in an Inventory Control System.  Disponible en: http://www.ieee.org/education_careers/education/standards/using_iso_15693_compliant_rfid_tags.pdf
+[24] Sean Michael Kerner, 2013, Hacking RFID Tags Is Easier Than You Think: Black Hat.  Disponible en: http://www.eweek.com/security/hacking-rfid-tags-is-easier-than-you-think-black-hat
+[25] Tom Espiner, ZDNet, 2006, RFID DoS attacks 'proven'.  Disponible en: http://www.zdnet.com/article/rfid-dos-attacks-proven
+[26] Yossef Oren y Avishai Wool, Computer and Network Security Lab School of Electrical Engineering, Tel-Aviv University, Ramat Aviv 69978, Israel, 2010, RFID-Based Electronic Voting: What Could Possibly Go Wrong?.  Disponible en: http://www.eng.tau.ac.il/~yash/evoting-relay-rfid2010.pdf
+[27] ISO/IEC 15693-1:2010.  Disponible en http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39694
+[28] John Wehr, SecureIDNews, 2003, Contactless card standards: Making sense of 10536, 14443, and 15693.  Disponible en: http://www.secureidnews.com/news-item/contactless-card-standards-making-sense-of-10536-14443-and-15693/
+[29] Jan Libbenga, The Register, 2007, Dutch pull the plug on e-voting.  Disponible en: http://www.theregister.co.uk/2007/10/01/dutch_pull_plug_on_evoting
+[30] Rop Gonggrijp, Willem-Jan Hengeveld et al., Stichting "Wij vertrouwen stemcomputers niet", 2006, Nedap/Groenendaal ES3B voting computer: a security analysis.  Disponible en: http://wijvertrouwenstemcomputersniet.nl/images/9/91/Es3b-en.pdf
+[31] National Democratic Institute, The Constitutionality of Electronic Voting in Germany. Disponible en: https://www.ndi.org/e-voting-guide/examples/constitutionality-of-electronic-voting-germany
+[32] Judges Voßkuhle, Broß, Osterloh, Di Fabio, Mellinghoff, Lübbe-Wolff, Gerhardt, Landau, Bundesverfassungsgericht, 2009, Judgment of the Second Senate of 3 March 2009 on the basis of the oral hearing of 28 October 2008 – 2 BvC 3/07, 2 BvC 4/07 –.  Disponible en: http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2009/03/cs20090303_2bvc000307.html
+[33] Kiim Zetter, Wired, 2008, The cost of e-voting.  Disponible en: http://www.wired.com/2008/04/the-cost-of-e-v
+[34] ProCon, 2013, Voting Systems & Use: 1980-2012.  Disponible en: http://votingmachines.procon.org/view.resource.php?resourceID=000274
+[35] Timothy B. Lee, ars technica, 2012, Paper prophets: Why e-voting is on the decline in the United States.  Disponible en: http://arstechnica.com/features/2012/10/paper-prophets-why-e-voting-is-on-the-decline-in-the-united-states
+[36] MSA Magic Software Argentina, Memoria Descriptiva de la patente de invención sobre Disposición y Método de Voto Electrónico.  Disponible en: http://www.vialibre.org.ar/wp-content/uploads/2015/05/memoria.descriptiva.patente.votoelectronico.pdf
