@@ -73,7 +73,7 @@ Si el resultado es correcto, se sellan las boletas en una bolsa y se imprime un 
 Finalmente se emite el recuento al servidor central.
 
 IV. ANÁLISIS DETALLADO DE SISTEMA
-El 10 de junio nos hicimos presentes en las oficinas de MSA con el objeto de auditar el sistema.  De este evento hemos realizado capturas de pantalla [9] con información pertinente al software y el sistema operativo empleado.
+Hemos realizado esta investigación haciendo uso de las máquinas de capacitación que se encuentran distribuidas por la ciudad [7].  A pesar de las condiciones poco propicias, hemos encontrado vulnerabilidades no listadas por las auditorias oficiales [] y [].
 
 A. Software vot.ar
 El software empleado se trata de un programa escrito mayormente en lenguaje Python y que funciona sobre un sistema operativo Ubuntu.  El comando uname -a, que brinda información del kernel, retorna: Linux vot-ar 3.13.0-53-generic #89-Ubuntu SMP Wed May 20 10:34:39 UTC 2015 i686 i686 i686 GNU/Linux.  Otros detalles del software pueden observarse en las capturas de pantalla realizadas [9].

@@ -9,7 +9,6 @@
 [7]  Gobierno de la Ciudad de Buenos Aires, Centros de Consulta de BUE.  Disponible en: http://www.buenosaires.gob.ar/boletaelectronica
 [8]  Vídeo demostración de inicialización del sistema y sufragio.  Disponible en: https://drive.google.com/open?id=0B_u7a3yOdFP4UVJ6ZFNZWFBzRkU&authuser=0
 [] Las boletas que no hayan podido ser leídas por el lector RFID son consideradas "voto no leído por razones técnicas", se almacenan en un sobre y se envían al Tribunal a los efectos de ser procesados manualmente durante el escrutinio definitivo.
-[9]  Capturas de pantalla de la auditoría con fecha 10 de junio del 2015.  Disponible en: https://drive.google.com/open?id=0BypIpdK9mE4hfjZadkJkeVdPMlI3cjhYZWZudjFqaEtZRmVYVzBPOFkxT0o5YjNzRzlRN28&authuser=0
 [10] Juan Pedro Fisanotti, FisaDev, Voto electrónico con Python y Ubuntu.  Disponible en:  http://fisadev.blogspot.com.ar/2011/04/voto-electronico-con-python-y-ubuntu.html
 [11] Claudio Enrique Righetti,  FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/OAT%20n%203-15-06012015204749.pdf
 [12]  Centro de Documentación Municipal, Dirección General de Información y Archivo Legislativo, ANEXO de la LEY Nº 4.894.  Disponible en: http://www.cedom.gov.ar/es/legislacion/normas/leyes/anexos/al4894.html
