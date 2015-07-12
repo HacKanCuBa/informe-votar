@@ -1,4 +1,3 @@
-# informe-votar
 #Vot.Ar: una mala elección
 
 El presente es la segunda parte de nuestro informe sobre el sistema Vot.Ar de la empresa Grupo MSA empleado en las elecciones del pasado 5 julio en Bs. As., así como también en otras provincias desde hace años como ser el caso de Salta.  
@@ -47,3 +46,7 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
   * [@mis2centavos](https://twitter.com/mis2centavos)  
 * Nicolas Waisman  
   * [@nicowaisman](https://twitter.com/nicowaisman)
+
+### Licencia
+![CC by-nc-sa 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)  
+**Vot.Ar: una mala elección** by [named  authors](https://github.com/HacKanCuBa/informe-votar#autores) is licensed under a *[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0)*.  
