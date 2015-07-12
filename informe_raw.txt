@@ -28,6 +28,7 @@ impedir su normal funcionamiento,
 anular, modificar o leer votos, violando el Art. 37 de la Constitución Nacional “El sufragio es universal, igual, secreto y obligatorio.” [2],
 conectar un aparato de transmisión remoto de datos.
 Respecto del hardware, hemos tenido acceso a las máquinas situadas en distintos puntos de la ciudad, y a máquinas proveídas por MSA durante una auditoría privada que no cabe en el marco de la presente.  El hardware es fundamental, dado que los equipos utilizados en las elecciones no han sido certificados en ningún punto del proceso, situación que pone en jaque la seguridad del sistema.
+Consideramos que esta falla es del tipo crítica.
 
 II. SOBRE VOT.AR
 Vot.Ar es una creación del Grupo MSA con el objeto de implementar un sistema de Boleta Única Electrónica (BUE).
@@ -40,7 +41,7 @@ Respecto de estas pautas y con los elementos que serán expuestos en el presente
 1. El voto puede ser leído por terceros, por tanto no es secreto;
 2. El sistema es vulnerable, por tanto no es seguro;
 3. El sistema posee hardware cerrado y código cerrado, no libre [4] y [5], por lo tanto no es transparente;
-4. Sí puede ser igualitario si las personas son capacitadas para el uso del sistema, proceso que en principio se estaría llevando a cabo por el TSJ CABA [6], y el Gobierno de la Ciudad junto al Grupo MSA en Centros de Consulta [7].  Sin embargo, deberá tenerse en cuenta a las personas con discapacidades visuales o auditivas.
+4. Aún si los electores, fiscales y demas intervinientes en el acto electoral son capacitados para el uso del sistema, proceso que en principio se estaría llevando a cabo por el TSJ CABA [6], y el Gobierno de la Ciudad junto al Grupo MSA en Centros de Consulta [7] y aún teniendo en cuenta a las personas con discapacidades visuales o auditivas, es nuestra consideración, puesto que no es posible comprender la totalidad del fucionamiento del sistema sin poseer conocimientos técnicos avanzados, que muy dificil resulta afirmar que el mismo sea igualitario.
 
 III. CÓMO SE VOTA
 Al momento de la elección, se dispondrán máquinas y BUE para cada lugar destinado a tal fin.  El Presidente de Mesa abrirá la mesa habilitando la máquina mediante una tarjeta especial (tarjeta azul), quedando así lista para operar.  Luego los electores podrán realizar el sufragio.
@@ -67,7 +68,7 @@ D. Cierre de mesa
 Al término del horario electoral, el Presidente debe realizar el cierre de la mesa, proceso idéntico al de Apertura de mesa descrito en el punto III. B.  Conservará esta segunda boleta azul como comprobante de cierre de mesa.
 
 E. Escrutinio de votos
-Cerrada la mesa se inicia el proceso de escrutinio de los votos.  Los técnicos conectan la máquina a la red, el Presidente inicializa el proceso y se leen los votos uno a uno, enviandolos a un servidor central.  Luego se cuentan las boletas y se verifica que el número de votos registrados por el sistema sea igual a la cantidad de boletas; esto es necesario en caso de que alguna boleta no haya sido leída correctamente.
+Cerrada la mesa se inicia el proceso de escrutinio de los votos.  Los técnicos conectan la máquina a la red, el Presidente inicializa el proceso y se leen los votos uno a uno aproximando la BUE al lector RFID.  Luego se cuentan las boletas y se verifica que el número de votos registrados por el sistema sea igual a la cantidad de boletas; esto es necesario en caso de que alguna boleta no haya sido leída correctamente [].
 Si el resultado es correcto, se sellan las boletas en una bolsa y se imprime un certificado de escrutinio que contiene las cantidades registradas y, que es simplemente una boleta similar a la boleta azul y de igual efecto comprobatorio.
 Finalmente se emite el recuento al servidor central.
 
@@ -221,44 +222,4 @@ RECONOCIMIENTOS
 Especialmente a Sergio Orbe que hizo que ésto fuera posible, a los miembros de CaFeLUG y otras entidades que abogan por la libertad del software y a nuestros amigos que nos brindan su ayuda aportando opiniones y correcciones.
 
 REFERENCIAS
-[1]  Lozano,Tribunal Superior de Justicia de CABA, Resolución Nº 127/15.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/resoluciones/resoluci%C3%B3n%20127.pdf
-[2]  Honorable Senado de la Nación Argentina, Constitución Nacional, Capítulo II: Nuevos Derechos y Garantías.  Disponible en: http://www.senado.gov.ar/Constitucion/capitulo2
-[3]  Página web de Vot.Ar: http://www.vot-ar.com.ar/#sobre
-[4]  ¿Qué es el Software Libre?.  Disponible en: https://www.gnu.org/philosophy/free-sw.es.html
-[5]  Hardware de Fuentes Abiertas.  Disponible en: http://www.oshwa.org/definition/spanish
-[6]  Tribunal Superior de Justicia de la Ciudad Autónoma de Buenos Aires, Simulador BUE.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/#
-[7]  Gobierno de la Ciudad de Buenos Aires, Centros de Consulta de BUE.  Disponible en: http://www.buenosaires.gob.ar/boletaelectronica
-[8]  Vídeo demostración de inicialización del sistema y sufragio.  Disponible en: https://drive.google.com/open?id=0B_u7a3yOdFP4UVJ6ZFNZWFBzRkU&authuser=0
-[9]  Capturas de pantalla de la auditoría con fecha 10 de junio del 2015.  Disponible en: https://drive.google.com/open?id=0BypIpdK9mE4hfjZadkJkeVdPMlI3cjhYZWZudjFqaEtZRmVYVzBPOFkxT0o5YjNzRzlRN28&authuser=0
-[10] Juan Pedro Fisanotti, FisaDev, Voto electrónico con Python y Ubuntu.  Disponible en:  http://fisadev.blogspot.com.ar/2011/04/voto-electronico-con-python-y-ubuntu.html
-[11] Claudio Enrique Righetti,  FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/OAT%20n%203-15-06012015204749.pdf
-[12]  Centro de Documentación Municipal, Dirección General de Información y Archivo Legislativo, ANEXO de la LEY Nº 4.894.  Disponible en: http://www.cedom.gov.ar/es/legislacion/normas/leyes/anexos/al4894.html
-[13]  Tribunal Superior de Justicia, Ciudad Autónoma de Buenos Aires, Ley 4894: Régimen normativo de Elecciones Primarias, Abiertas, Simultáneas y Obligatorias y de Boleta Única y Tecnologías Electrónicas de la Ciudad.  Disponible en: http://tsjbaires.gob.ar/index.php?id=3899&cid=5202&fid=16&task=download&option=com_flexicontent&Itemid=49
-[14] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
-Página 9, Párrafo 1.
-[15] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
-Página 9, Párrafo 9.
-[16] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
-Página 10, Párrafo 3.
-[17] Claudio Enrique Righetti, FCEyN UBA, Anexo II, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
-Página 16, Párrafo 4.
-[18] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.  Disponible en: http://www.nxp.com/documents/data_sheet/SL058030.pdf
-[19] Dump de memoria BUE - Informe vot.ar: una mala eleccion.  Disponible en: https://infotomb.com/9r6ec
-[20] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.
- Sección 3.2.5, Página 10.
-[21] Fabienne Serrière, 2008,  RFID reader denial of service.  Disponible en: http://hackaday.com/2008/06/09/rfid-reader-denial-of-service
-[22] Veo Zhang, TrendLabs, 2014, Hacking RFID Payment Cards Made Possible with Android App.  Disponible en: http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-rfid-payment-cards-made-possible-with-android-app
-[23] Joseph Gates,Vishwajeet Potnis, Matthew Howell, William Tran, Louisiana State University, Baton Rouge, Louisiana, Using ISO 15693 Compliant RFID Tags in an Inventory Control System.  Disponible en: http://www.ieee.org/education_careers/education/standards/using_iso_15693_compliant_rfid_tags.pdf
-[24] Sean Michael Kerner, 2013, Hacking RFID Tags Is Easier Than You Think: Black Hat.  Disponible en: http://www.eweek.com/security/hacking-rfid-tags-is-easier-than-you-think-black-hat
-[25] Tom Espiner, ZDNet, 2006, RFID DoS attacks 'proven'.  Disponible en: http://www.zdnet.com/article/rfid-dos-attacks-proven
-[26] Yossef Oren y Avishai Wool, Computer and Network Security Lab School of Electrical Engineering, Tel-Aviv University, Ramat Aviv 69978, Israel, 2010, RFID-Based Electronic Voting: What Could Possibly Go Wrong?.  Disponible en: http://www.eng.tau.ac.il/~yash/evoting-relay-rfid2010.pdf
-[27] ISO/IEC 15693-1:2010.  Disponible en http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=39694
-[28] John Wehr, SecureIDNews, 2003, Contactless card standards: Making sense of 10536, 14443, and 15693.  Disponible en: http://www.secureidnews.com/news-item/contactless-card-standards-making-sense-of-10536-14443-and-15693/
-[29] Jan Libbenga, The Register, 2007, Dutch pull the plug on e-voting.  Disponible en: http://www.theregister.co.uk/2007/10/01/dutch_pull_plug_on_evoting
-[30] Rop Gonggrijp, Willem-Jan Hengeveld et al., Stichting "Wij vertrouwen stemcomputers niet", 2006, Nedap/Groenendaal ES3B voting computer: a security analysis.  Disponible en: http://wijvertrouwenstemcomputersniet.nl/images/9/91/Es3b-en.pdf
-[31] National Democratic Institute, The Constitutionality of Electronic Voting in Germany. Disponible en: https://www.ndi.org/e-voting-guide/examples/constitutionality-of-electronic-voting-germany
-[32] Judges Voßkuhle, Broß, Osterloh, Di Fabio, Mellinghoff, Lübbe-Wolff, Gerhardt, Landau, Bundesverfassungsgericht, 2009, Judgment of the Second Senate of 3 March 2009 on the basis of the oral hearing of 28 October 2008 – 2 BvC 3/07, 2 BvC 4/07 –.  Disponible en: http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2009/03/cs20090303_2bvc000307.html
-[33] Kiim Zetter, Wired, 2008, The cost of e-voting.  Disponible en: http://www.wired.com/2008/04/the-cost-of-e-v
-[34] ProCon, 2013, Voting Systems & Use: 1980-2012.  Disponible en: http://votingmachines.procon.org/view.resource.php?resourceID=000274
-[35] Timothy B. Lee, ars technica, 2012, Paper prophets: Why e-voting is on the decline in the United States.  Disponible en: http://arstechnica.com/features/2012/10/paper-prophets-why-e-voting-is-on-the-decline-in-the-united-states
-[36] MSA Magic Software Argentina, Memoria Descriptiva de la patente de invención sobre Disposición y Método de Voto Electrónico.  Disponible en: http://www.vialibre.org.ar/wp-content/uploads/2015/05/memoria.descriptiva.patente.votoelectronico.pdf
+<referencias.txt>
