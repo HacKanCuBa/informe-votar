@@ -9,8 +9,8 @@
 [7]  Gobierno de la Ciudad de Buenos Aires, Centros de Consulta de BUE.  Disponible en: http://www.buenosaires.gob.ar/boletaelectronica
 [8]  Vídeo demostración de inicialización del sistema y sufragio.  Disponible en: https://drive.google.com/open?id=0B_u7a3yOdFP4UVJ6ZFNZWFBzRkU&authuser=0
 [] Las boletas que no hayan podido ser leídas por el lector RFID son consideradas "voto no leído por razones técnicas", se almacenan en un sobre y se envían al Tribunal a los efectos de ser procesados manualmente durante el escrutinio definitivo.
-[9]  Capturas de pantalla de la auditoría con fecha 10 de junio del 2015.  Disponible en: https://drive.google.com/open?id=0BypIpdK9mE4hfjZadkJkeVdPMlI3cjhYZWZudjFqaEtZRmVYVzBPOFkxT0o5YjNzRzlRN28&authuser=0
 [10] Juan Pedro Fisanotti, FisaDev, Voto electrónico con Python y Ubuntu.  Disponible en:  http://fisadev.blogspot.com.ar/2011/04/voto-electronico-con-python-y-ubuntu.html
+[] Se ejecuta la funcion md5_checkfiles() definida en la línea 113 del archivo app/msa/voto/modulos/administrador.py
 [11] Claudio Enrique Righetti,  FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/OAT%20n%203-15-06012015204749.pdf
 [12]  Centro de Documentación Municipal, Dirección General de Información y Archivo Legislativo, ANEXO de la LEY Nº 4.894.  Disponible en: http://www.cedom.gov.ar/es/legislacion/normas/leyes/anexos/al4894.html
 [13]  Tribunal Superior de Justicia, Ciudad Autónoma de Buenos Aires, Ley 4894: Régimen normativo de Elecciones Primarias, Abiertas, Simultáneas y Obligatorias y de Boleta Única y Tecnologías Electrónicas de la Ciudad.  Disponible en: http://tsjbaires.gob.ar/index.php?id=3899&cid=5202&fid=16&task=download&option=com_flexicontent&Itemid=49
@@ -21,11 +21,17 @@ Página 9, Párrafo 9.
 [16] Claudio Enrique Righetti, FCEyN UBA, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
 Página 10, Párrafo 3.
 [17] Claudio Enrique Righetti, FCEyN UBA, Anexo II, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires.
-Página 16, Párrafo 4.
+Página 16, Párrafo 4
+[] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A.  Disponible en: http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf
+[] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A.
+Página 1, Párrafo 3.
+[] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A.
+Página 2, Sección 2.
 [18] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.  Disponible en: http://www.nxp.com/documents/data_sheet/SL058030.pdf
 [19] Dump de memoria BUE - Informe vot.ar: una mala eleccion.  Disponible en: https://infotomb.com/9r6ec
 [20] NXP, I-CODE SLI Smart Label IC SL2 ICS20, Datasheet.
  Sección 3.2.5, Página 10.
+ [] Security Reseach Labs, Turning USB peripherals into BadUSB.  Disponible en: https://srlabs.de/badusb
 [21] Fabienne Serrière, 2008,  RFID reader denial of service.  Disponible en: http://hackaday.com/2008/06/09/rfid-reader-denial-of-service
 [22] Veo Zhang, TrendLabs, 2014, Hacking RFID Payment Cards Made Possible with Android App.  Disponible en: http://blog.trendmicro.com/trendlabs-security-intelligence/hacking-rfid-payment-cards-made-possible-with-android-app
 [23] Joseph Gates,Vishwajeet Potnis, Matthew Howell, William Tran, Louisiana State University, Baton Rouge, Louisiana, Using ISO 15693 Compliant RFID Tags in an Inventory Control System.  Disponible en: http://www.ieee.org/education_careers/education/standards/using_iso_15693_compliant_rfid_tags.pdf

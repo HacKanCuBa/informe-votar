@@ -1,0 +1,89 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.1   4340  2296 ?        Ss   21:27   0:01 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    21:27   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    21:27   0:00 [ksoftirqd/0]
+root         4  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/0:0]
+root         5  0.0  0.0      0     0 ?        S<   21:27   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    21:27   0:00 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    21:27   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    21:27   0:00 [migration/0]
+root        10  0.0  0.0      0     0 ?        S    21:27   0:00 [watchdog/0]
+root        11  0.0  0.0      0     0 ?        S    21:27   0:00 [watchdog/1]
+root        12  0.0  0.0      0     0 ?        S    21:27   0:00 [migration/1]
+root        13  0.0  0.0      0     0 ?        S    21:27   0:00 [ksoftirqd/1]
+root        15  0.0  0.0      0     0 ?        S<   21:27   0:00 [kworker/1:0H]
+root        16  0.0  0.0      0     0 ?        S    21:27   0:00 [watchdog/2]
+root        17  0.0  0.0      0     0 ?        S    21:27   0:00 [migration/2]
+root        18  0.0  0.0      0     0 ?        S    21:27   0:00 [ksoftirqd/2]
+root        19  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/2:0]
+root        20  0.0  0.0      0     0 ?        S<   21:27   0:00 [kworker/2:0H]
+root        21  0.0  0.0      0     0 ?        S    21:27   0:00 [watchdog/3]
+root        22  0.0  0.0      0     0 ?        S    21:27   0:00 [migration/3]
+root        23  0.0  0.0      0     0 ?        S    21:27   0:00 [ksoftirqd/3]
+root        24  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/3:0]
+root        25  0.0  0.0      0     0 ?        S<   21:27   0:00 [kworker/3:0H]
+root        26  0.0  0.0      0     0 ?        S<   21:27   0:00 [khelper]
+root        27  0.0  0.0      0     0 ?        S    21:27   0:00 [kdevtmpfs]
+root        28  0.0  0.0      0     0 ?        S<   21:27   0:00 [netns]
+root        29  0.0  0.0      0     0 ?        S<   21:27   0:00 [writeback]
+root        30  0.0  0.0      0     0 ?        S<   21:27   0:00 [kintegrityd]
+root        31  0.0  0.0      0     0 ?        S<   21:27   0:00 [bioset]
+root        32  0.0  0.0      0     0 ?        S<   21:27   0:00 [kworker/u9:0]
+root        33  0.0  0.0      0     0 ?        S<   21:27   0:00 [kblockd]
+root        34  0.0  0.0      0     0 ?        S<   21:27   0:00 [ata_sff]
+root        35  0.0  0.0      0     0 ?        S    21:27   0:00 [khubd]
+root        36  0.0  0.0      0     0 ?        S<   21:27   0:00 [md]
+root        37  0.0  0.0      0     0 ?        S<   21:27   0:00 [devfreq_wq]
+root        38  0.0  0.0      0     0 ?        S    21:27   0:01 [kworker/0:1]
+root        40  0.0  0.0      0     0 ?        S    21:27   0:00 [khungtaskd]
+root        41  0.0  0.0      0     0 ?        S    21:27   0:00 [kswapd0]
+root        42  0.0  0.0      0     0 ?        SN   21:27   0:00 [ksmd]
+root        43  0.0  0.0      0     0 ?        SN   21:27   0:00 [khugepaged]
+root        44  0.0  0.0      0     0 ?        S    21:27   0:00 [fsnotify_mark]
+root        45  0.0  0.0      0     0 ?        S    21:27   0:00 [ecryptfs-kthrea]
+root        46  0.0  0.0      0     0 ?        S<   21:27   0:00 [crypto]
+root        58  0.0  0.0      0     0 ?        S<   21:27   0:00 [kthrotld]
+root        59  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/1:1]
+root        60  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/2:1]
+root        61  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/3:1]
+root        82  0.0  0.0      0     0 ?        S<   21:27   0:00 [deferwq]
+root        83  0.0  0.0      0     0 ?        S<   21:27   0:00 [charger_manager]
+root       130  0.0  0.0      0     0 ?        S    21:27   0:00 [scsi_eh_0]
+root       131  0.0  0.0      0     0 ?        S    21:27   0:00 [scsi_eh_1]
+root       132  0.0  0.0      0     0 ?        S    21:27   0:00 [kworker/u8:3]
+root       160  0.0  0.0   3440  1180 ?        S    21:27   0:00 @sbin/plymouthd --mode=boot --attach-to-session --pid-file=/run/initramfs/plymouth.pid
+root       248  0.0  0.0      0     0 ?        S<   21:28   0:00 [loop0]
+root       447  0.0  0.0      0     0 ?        S    21:28   0:00 [kauditd]
+root       614  0.0  0.0   3044  1080 ?        Ss   21:28   0:01 plymouth-upstart-bridge
+root       735  0.0  0.0   3008   880 ?        S    21:28   0:00 upstart-udev-bridge --daemon
+root       746  0.0  0.0  12004  1448 ?        Ss   21:28   0:00 /lib/systemd/systemd-udevd --daemon
+message+   750  0.0  0.0   4232  1152 ?        Ss   21:28   0:00 dbus-daemon --system --fork
+root       808  0.0  0.0   3976  1392 ?        Ss   21:28   0:00 /lib/systemd/systemd-logind
+syslog     820  0.0  0.0  31368  1256 ?        Ssl  21:28   0:00 rsyslogd
+root       853  0.0  0.0      0     0 ?        S<   21:28   0:00 [kvm-irqfd-clean]
+root       996  0.0  0.0   3276   996 ?        S    21:28   0:00 upstart-file-bridge --daemon
+root      1006  0.0  0.0   3000   676 ?        S    21:28   0:00 upstart-socket-bridge --daemon
+root      1015  0.0  0.0   2264   552 ?        Ss   21:28   0:00 /bin/sh -e /proc/self/fd/9
+root      1032  0.0  0.0   2264   684 ?        S    21:28   0:00 /bin/sh /etc/init.d/rc 2
+root      1047  0.0  0.0   3052   784 ?        Ss   21:28   0:00 cron
+root      1098  0.0  0.0   2264   548 ?        S    21:28   0:00 /bin/sh /etc/rc2.d/S99rc.local start
+root      1107  0.0  0.0   2264   556 ?        S    21:28   0:00 /bin/sh -e /etc/rc.local
+root      1111  0.0  0.0   3452  1448 ?        S    21:28   0:00 /bin/bash ./run
+root      1121  0.0  0.0   3976   704 ?        Ss   21:28   0:00 /usr/sbin/irqbalance
+root      1125  0.3  0.8  84592 16188 tty1     Ssl+ 21:28   0:07 /usr/bin/Xorg :0
+root      1126  0.0  0.4  22440  9528 ?        S    21:28   0:00 /usr/bin/xfwm4 --display=:0
+root      1130  0.0  0.0      0     0 ?        S<   21:28   0:00 [hd-audio0]
+root      1157  0.0  0.0      0     0 ?        S    21:28   0:00 [kworker/1:2]
+root      1161  0.0  0.0   3848   676 ?        S    21:28   0:00 dbus-launch --autolaunch 472c1636e6d027c26e6b9aa8558c7278 --binary-syntax --close-stderr
+root      1162  0.0  0.0   4232  1116 ?        Ss   21:28   0:00 //bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session
+root      1164  0.0  0.1   6752  2432 ?        S    21:28   0:00 /usr/lib/i386-linux-gnu/xfce4/xfconf/xfconfd
+root      1184  0.0  0.0   2264   552 ?        S    21:28   0:00 sh /cdrom/app/msa/services/dbus/levantar_armve.sh
+root      1185  0.3  1.8  49404 35408 ?        S    21:28   0:08 python /cdrom/app/msa/core/ipc/server/armve_service.py
+root      1283  0.5  4.2 278600 81812 ?        SLl  21:56   0:04 python run.py
+root      1319  0.2  0.2  34004  4376 ?        S    21:57   0:01 xterm
+root      1321  0.0  0.0   3596  1860 pts/1    Ss   21:57   0:00 bash
+root      1359  0.0  0.0      0     0 ?        S    22:02   0:00 [scsi_eh_2]
+root      1360  0.0  0.0      0     0 ?        S    22:02   0:00 [usb-storage]
+root      1362  0.0  0.0      0     0 ?        S    22:02   0:00 [kworker/u8:0]
+root      1412  0.0  0.0      0     0 ?        S    22:07   0:00 [kworker/u8:1]
+root      1418  0.0  0.0   3140  1040 pts/1    R+   22:08   0:00 ps aux

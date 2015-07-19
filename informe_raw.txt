@@ -3,7 +3,7 @@ Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, A
 2a versión, julio 2015
 CABA, Argentina
 @famato
-@hackancuba (GPG: ECF0573B1C9B59E8)
+@hackancuba
 -
 @SDLerner
 @ortegaalfredo
@@ -73,19 +73,22 @@ Si el resultado es correcto, se sellan las boletas en una bolsa y se imprime un 
 Finalmente se emite el recuento al servidor central.
 
 IV. ANÁLISIS DETALLADO DE SISTEMA
-El 10 de junio nos hicimos presentes en las oficinas de MSA con el objeto de auditar el sistema.  De este evento hemos realizado capturas de pantalla [9] con información pertinente al software y el sistema operativo empleado.
+Hemos realizado esta investigación haciendo uso de las máquinas de capacitación que se encuentran distribuidas por la ciudad [7].  A pesar de las condiciones poco propicias, hemos encontrado vulnerabilidades no listadas por las auditorias oficiales [] y [].
 
 A. Software vot.ar
-El software empleado se trata de un programa escrito mayormente en lenguaje Python y que funciona sobre un sistema operativo Ubuntu.  El comando uname -a, que brinda información del kernel, retorna: Linux vot-ar 3.13.0-53-generic #89-Ubuntu SMP Wed May 20 10:34:39 UTC 2015 i686 i686 i686 GNU/Linux.  Otros detalles del software pueden observarse en las capturas de pantalla realizadas [9].
+El software empleado se trata de un programa escrito mayormente en lenguaje Python y que funciona sobre un sistema operativo Ubuntu.  Los detalles sobre el sistema operativo se encuentran en el Anexo A.
 La empresa proveerá al TSJ de la imagen de DVD con el software necesario a los efectos de que éste realice grabaciones de discos DVD y los entregue en sobre lacrado el día electoral.  No contamos con mayor detalle de este proceso.
-La imagen en cuestión es arrancable (booteable), esto es, la PC puede iniciar el sistema operativo desde el mismo.  Con el objeto de poder verificarlos, la empresa entrega asimismo los hashes de los archivos contenidos, que se trataban en principio de hashes MD5 y luego fueron reemplazados por SHA512, según indica el Sr. Fisanotti, empleado de MSA [10].  El proceso de verificación por hash no será abarcado en este informe.
+La imagen en cuestión es arrancable (booteable), esto es, la PC puede iniciar el sistema operativo desde el mismo.  Con el objeto de validar los DVD, la empresa entrega asimismo los hashes de los archivos contenidos, que se trataban en principio de hashes MD5 y luego fueron reemplazados por SHA512, según indica el Sr. Fisanotti, empleado de MSA [10].  En nuestras pruebas, si bien se encontró el archivo sha512sum.txt, el mismo no es usado en ningún momento por el software, sino que se usa el archivo conteniendo hashes MD5 md5sum.txt [].  No existe diferencia real respecto de la validación de archivos, dado que sin importar el algoritmo empleado, este archivo puede ser generado por cualquier persona.  No está firmado digitalmente, dando cuenta de un grave error de apreciación de seguridad.
 El software desarrollado por MSA para realizar el proceso de sufragio ha sido auditado por el Departamento de Computación de la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires (FCEyN-UBA) [11], encontrando algunos errores y problemas catalogados como menores, cumpliendo los requisitos mínimos para ser empleado en un acto eleccionario, diagramados en el Anexo II de la Ley 4894/13 [12] y [13].
 Del informe pueden destacarse lo siguiente:
 “Los defectos en la documentación representan un punto débil a observar en el software que dificulta no sólo la auditabilidad del mismo, sino también el mantenimiento y la evolución” [14].
 “[...] es crucial para el correcto funcionamiento [del sistema] en forma global que las autoridades de mesa, delegados judiciales y demás responsables de los comicios sigan los procedimientos aprobados por el Tribunal (Acordada 17/2015, Anexo II) [...]” [15].
 El Anexo I detalla puntos débiles del software como funciones no recomendadas y demás.
 Se indica que el software es válido para ser empleado en un acto eleccionario debido a que “la voluntad de los electores se puede verificar en forma completamente manual” [16], esto es, aún alterando el contenido del chip RFID de la BUE, se puede verificar manualmente observando los valores impresos.
-Si bien esto es cierto, destacamos el hecho que este sistema, al ser vulnerable como se demuestra en los puntos IV. B, C y D, requiere de un conteo manual y además “la única forma de asegurar la confiabilidad de los comicios con este sistema es, al igual que en el sistema tradicional de boletas preimpresas con sobres, que las autoridades de los comicios sepan los procedimientos que deben seguir y lo hagan.” [17], que nos conduce a preguntarnos cuál es el objetivo de emplearlo.
+Si bien esto es cierto, destacamos el hecho que este sistema, al ser vulnerable como se demuestra en los puntos IV. B, C y D **, requiere de un conteo manual y además “la única forma de asegurar la confiabilidad de los comicios con este sistema es, al igual que en el sistema tradicional de boletas preimpresas con sobres, que las autoridades de los comicios sepan los procedimientos que deben seguir y lo hagan.” [17], que nos conduce a preguntarnos cuál es el objetivo de emplear este sistema si no implican ventajas respecto de la boleta única de papel.
+Asimismo, siendo que la misma máquina que se emplea para emitir el voto se usa para verificarlo, un usuario malintencionado podría adulterar lo indicado por dicha máquina tal de mostrar lo que el votante desea ver, no siendo esta acción una medida de seguridad suficiente.
+Destacamos que aún existiendo el voto impreso, la máquina solo puede contar los votos mediante el chip - situación que se ampliará en el punto ** - por lo que si el contenido del chip ha sido adulterado, ese valor será contado válido y no lo impreso.  Incluso durante el escrutinio manual posterior, salvo orden en contrario, no contabilizan nuevamente todos los votos, sino aquellos que presentaron algún inconveniente como los "no leído por razones técnicas".  Esto sucedió así en las elecciones del 5 de julio.  Al no considerarse el valor impreso - verificación última -, el sistema queda expuesto a la acción de un usuario malintencionado atacando a través del chip RFID.
+La Defensoría del Pueblo de la Ciudad encargó una auditoría al Departamento de Informática del ITBA [], fechado 9 de junio, del que se destaca: "se nos informó que el hardware presentado y la versión software  del sistema  auditado no son necesariamente los  que se utilizarán en la elección de la Ciudad de Buenos Aires el próximo mes de Julio" [].  Luego menciona las limitaciones de la auditoría [] y finalmente concluye entregando 10 recomendaciones como "se  debe  auditar  el  sistema  completo  (hardware, software,  comunicación)  definitivo a  instalar  en  las  máquinas  de votación, con anterioridad a los comicios. Una vez que el TSJ (o quien el  tribunal  disponga)  haya  auditado  el  hardware  y  el  DVD  con la versión  definitiva,  la  empresa  ya  no  debería  introducir  ningún cambio  en  el  sistema,  sin  volver  a  ser  auditado  en  su  totalidad" y "al momento del escrutinio es recomendable cotejar el dato impreso con el digital, con lo cual se puede aportar verificación al  sistema  electrónico.  Aunque  en  la  Acordada  17/2015  se  indica  que cuando una BUE no puede ser leída por la máquina se considera como “voto no leído por motivos técnicos”, falta discriminar el procedimiento a seguir si el voto impreso no coincidiera con el leído electrónicamente. ", de las cuales ningúna del total ha sido implementada en las pasadas elecciones.
 
 B. Tarjeta BUE
 La tarjeta o boleta única electrónica (BUE) consiste en una lámina gruesa de papel, de forma rectangular y de tamaño aproximado de 30 cm por 11 cm, conteniendo un chip RFID del fabricante NXP modelo ICODE SLI SL2 ICS20 [18] e impresa al dorso con una flecha que indica el sentido de inserción en la máquina, el título de la boleta y los troqueles, como se aprecia en la Fig. 6.  La BUE para votar es de color amarillo.
@@ -170,25 +173,25 @@ DSFID: 0x00
 
 --------------------------------------
 
+Esta tarjeta ha sido obtenida de un Centro de Consulta.
 El parámetro indicado como ID representa un identificador único e irrepetible del chip, que asimismo no puede modificarse.  Este parámetro reside incrustado en el chip y es generado aleatoriamente por el fabricante.
 El detalle de Memory content muestra a izquierda el número de bloque de memoria, luego el contenido de dicho bloque y a derecha la representación ASCII (legible por humanos) de los datos.  Se destacan los valores de Miembros de Juntas COMunales, JEFe y Vicejefe de Gobierno y LEGisladores.
-Todos los valores presentados, a excepción del ID, pueden ser alterados fácilmente empleando cualquier software afín, como ser por ejemplo NfcV-Reader by STMicroelectronics para Android.  En la Fig. 8 se encuentra una captura del chip sin modificar, igual a los datos obtenidos anteriormente, mientras que en la Fig. 9 se observan alterados los mismos (bloque 9).  Es fácil modificar cualquier valor deseado, y el procedimiento puede ser realizado por cualquier persona independientemente de sus conocimientos técnicos o específicos de este sistema.
-Esta tarjeta ha sido obtenida de un Centro de Consulta, y se ha empleado in situ la máquina para escribir los datos en ella.  Se ha subido el contenido binario de la misma a internet y puede obtenerse del enlace indicado [19].
-Este tipo de chip RFID puede bloquearse contra escritura según indica el fabricante [20], desconocemos si ésto será implementado por el sistema vot.ar.  Sin embargo, la lectura del mismo no puede bloquearse en lo que al chip respecta.  A este fin, han incorporado en la tarjeta una fina lámina metálica que,al doblar la tarjeta al medio, impide la lectura de la misma sí y solo sí la distancia entre las caras, en particular entre el chip y la lámina, es inferior a aproximadamente 8mm, medición obtenida en pruebas con el hardware antes mencionado, por lo que ésta puede variar para otro hardware lector.
+Todos los valores presentados, a excepción del ID, pueden ser alterados fácilmente empleando cualquier software afín, como ser por ejemplo NfcV-Reader by STMicroelectronics para Android.
+Este tipo de chip RFID puede bloquearse contra escritura según indica el fabricante [20], y se ha determinado que sí es implementado por el sistema Vot.Ar.  Sin embargo, la lectura del mismo no puede bloquearse en lo que al chip respecta.  A este fin, han incorporado en la tarjeta una fina lámina metálica que, al doblar la tarjeta hasta la línea indicada, impide la lectura de la misma sí y solo sí la distancia entre las caras, en particular entre el chip y la lámina, es inferior a aproximadamente 8mm, medición obtenida en pruebas con el hardware antes mencionado, por lo que ésta puede variar para otro hardware lector.  No consideramos que este mecanismo sea suficiente, en especial siendo que luego de introducir la boleta en la urna, la misma tenderá a abrirse, permitiendo así su lectura remota.
 
 C. Hardware vot.ar
 La máquina consta de 2 partes principales: pantalla (PC all-in-one) a la izquierda y lector/grabador RFID + impresora (térmica) a la derecha.  En la Fig. 10 se aprecia la misma.
 En la parte superior de la pantalla existe una tapa que da acceso a los puertos de la PC - ver Fig. 11 -, de los que se destacan los puertos USB.  Esto implica una enorme vulnerabilidad en caso de no restringirse el acceso a dicha sección, dado que un atacante puede conectar el dispositivo que desee y tomar control del sistema.  Se ha probado conectar un teclado inalámbrico Genius SlimStar 8000 GK-100012/K y obtenido mediante el mismo el control del sistema: si bien las terminales virtuales (TTY) se encuentran deshabilitadas a excepción de la primera, que ejecuta el sistema vot.ar (programa en Python), resulta trivial anularlo p.e. reiniciando el sistema y cambiando la orden de arranque del mismo, obteniendo acceso total como administrador (root).
 Si esta vulnerabilidad no es cubierta en las máquinas dispuestas en fecha electoral, cabe destacar que sistema pierde por completo su fiabilidad.
 Son vectores de ataque posibles teniendo acceso físico:
-cargar un virus o script desde una unidad USB,
+cargar un virus o script desde una unidad USB, como ser BadUSB [].
 registrar votos con fecha y hora,
-modificar los votos emitidos (no solo el contenido del chip sino también la impresión, que podría pasar desapercibido si el votante no verifica),
+modificar los votos emitidos (no solo el contenido del chip sino también la impresión, que podría pasar desapercibido si el votante no verifica en otra máquina no afectada),
 transmitir remotamente toda la información procesada,
 anular por completo el funcionamiento de la máquina (denegación de servicio), p.e. con una bomba lógica (bash fork-bomb u otras).
-No hemos sido proveídos por MSA de acceso al hardware por tiempo suficiente para realizar más pruebas en profundidad, o analizar los mecanismos internos de éste.
-Respecto del lector RFID, existe la posibilidad de ser anulado (ataque de denegación de servicio) colocando sobre el mismo una lámina metálica o un chip RFID inválido, que puede estar camuflado con un sticker idéntico al que ya posee.  Este tipo de ataque a un lector RFID es por demás conocido, como señala Fabienne Serrière para la CanSecWest Applied Security Conference 2008 [21].  Este tipo de ataque es fácil de revertir en el momento, pero ocasionaría un gran trastorno, en particular si se realiza a gran escala.  Y no es posible proteger a la máquina contra él, dado que es inherente al sistema RFID.
+Respecto del lector RFID, existe la posibilidad de ser anulado (ataque de denegación de servicio) colocando sobre el mismo una lámina metálica o un chip RFID inválido, que puede estar camuflado con un sticker idéntico al que ya posee o introducirse dentro de la unidad de impresión.  Este tipo de ataque a un lector RFID es por demás conocido, como señala Fabienne Serrière para la CanSecWest Applied Security Conference 2008 [21]. y si bien es sencillo de revertir en el momento, ocasionaría un gran trastorno, en particular si se realiza a gran escala y demuestra con cuánta facilidad puede anularse el sistema.  Y no es posible proteger a la máquina contra él, dado que es inherente al sistema RFID.
 Existen múltiples ataques contra el sistema RFID que ya ha sido probado vulnerable incontables veces [22], incluso es posible leer los chips a distancia con el hardware apropiado - simple y de bajo costo [23], [24] - o directamente impedir su funcionamiento [25], y que no debería utilizarse en un proceso electoral [26].  Respecto de la lectura remota, cabe mencionar que la norma ISO 15693 que rige los chips de BUE (ver punto IV. B), establece una distancia de lectura nominal de 70 cm, y una distancia máxima de 1,5 m [27].
+No hemos sido proveídos por MSA de acceso al hardware por tiempo suficiente para realizar más pruebas en profundidad, o analizar los mecanismos internos de éste en su totalidad.  Sin embargo, hemos encontrado
 
 D. Otras vulnerabilidades del sistema
 En el punto III. D se mencionó que el conteo de votos se realiza al término del horario electoral empleando las máquinas a tal fin.  Esto presenta un vector de ataque: acorde a lo demostrado en el punto anterior, podría instalarse un programa o script  malware en el sistema, y al conectarlo con el servidor central, todo el sistema se vería comprometido.  Este ataque se anularía empleando distintas máquinas para votar y realizar el escrutinio, o bien realizando un exhaustivo análisis de las máquinas de votar previo a utilizarlas para el escrutinio.
@@ -223,3 +226,19 @@ Especialmente a Sergio Orbe que hizo que ésto fuera posible, a los miembros de 
 
 REFERENCIAS
 <referencias.txt>
+
+ANEXO A
+Detalles del Sistema Operativo
+Dada la longitud de la respuesta de los siguientes comandos informativos, las publicamos por separado en formato texto legible a excepción de A.3 que es un archivo binario.
+A.1 :~# cat /var/log/dmesg []
+A.2 :~# dmidecode []
+A.3 :~# dmidecode --dump-bin []
+A.4 :~# lsb_release -a []
+A.5 :~# lsmod []
+A.6 :~# lspci []
+A.7 ~# lsusb []
+A.8 :~# mount []
+A.9 :~# ps aux []
+A.10 :~# cat ubnfilel.txt []
+A.11 :~# cat ubnpathl.txt []
+A.12 :~# uname -a []

@@ -1,0 +1,47 @@
+Module                  Size  Used by
+nls_iso8859_1          12617  1 
+usb_storage            48417  1 
+snd_hda_codec_hdmi     45440  1 
+snd_hda_codec_realtek    59259  1 
+snd_hda_intel          42794  9 
+snd_hda_codec         164067  3 snd_hda_codec_realtek,snd_hda_codec_hdmi,snd_hda_intel
+snd_hwdep              13272  1 snd_hda_codec
+snd_pcm                85501  4 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel
+snd_page_alloc         14230  2 snd_pcm,snd_hda_intel
+snd_seq_midi           13132  0 
+snd_seq_midi_event     14475  1 snd_seq_midi
+i915_bdw              755613  2 
+intel_rapl             18301  0 
+coretemp               13195  0 
+snd_rawmidi            25135  1 snd_seq_midi
+kvm_intel             132651  0 
+cdc_acm                27963  2 
+kvm                   388310  1 kvm_intel
+hid_multitouch         17191  0 
+usbtouchscreen         23101  0 
+crc32_pclmul           12967  0 
+snd_seq                55383  2 snd_seq_midi_event,snd_seq_midi
+joydev                 17101  0 
+intel_ips              18217  1 i915_bdw
+drm_kms_helper         48868  1 i915_bdw
+snd_seq_device         14137  3 snd_seq,snd_rawmidi,snd_seq_midi
+snd_timer              28584  3 snd_pcm,snd_seq
+snd                    60939  27 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_pcm,snd_seq,snd_rawmidi,snd_hda_codec,snd_hda_intel,snd_seq_device,snd_seq_midi
+serio_raw              13230  0 
+drm                   244037  3 i915_bdw,drm_kms_helper
+mac_hid                13037  0 
+i2c_algo_bit           13197  1 i915_bdw
+shpchp                 32128  0 
+soundcore              12600  1 snd
+squashfs               42874  1 
+overlayfs              27158  1 
+hid_generic            12492  0 
+nls_utf8               12493  0 
+isofs                  39205  0 
+usbhid                 47070  0 
+hid                    87604  3 hid_multitouch,hid_generic,usbhid
+r8169                  61562  0 
+ahci                   25579  0 
+libahci                27214  1 ahci
+mii                    13654  1 r8169
+video                  18903  1 i915_bdw

@@ -1,0 +1,7 @@
+Bus 001 Device 008: ID 0930:6545 Toshiba Corp. Kingston DataTraveler 102 Flash Drive / HEMA Flash Drive 2 GB / PNY Attache 4GB Stick
+Bus 001 Device 005: ID eb03:0920 MakingThings Make Controller Kit
+Bus 001 Device 004: ID 0eef:0001 D-WAV Scientific Co., Ltd eGalax TouchScreen
+Bus 001 Device 003: ID 058f:6254 Alcor Micro Corp. USB Hub
+Bus 001 Device 006: ID 1a2c:0c21 China Resource Semico Co., Ltd 
+Bus 001 Device 002: ID 8087:07e6 Intel Corp. 
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
