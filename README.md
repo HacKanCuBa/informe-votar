@@ -9,6 +9,8 @@ Para mayor abundamiento, recomendamos la lectura de los siguientes textos:
 * [Auditoría de sistemas Elecciones 2015 - CABA - FCEN UBA](https://www.eleccionesciudad.gob.ar/uploads/resoluciones/OAT-06252015201406.pdf)  
 * [Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la CABA - ITBA](http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf)  
 * [Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta](https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview#heading=h.4mjowkrd6bo2)  
+* [El sistema oculto en las máquinas de Vot.Ar](https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar)  
+
 
 ## Repercusión nacional
 Durante todas las instancias que hemos recorrido, algunos semanas antes de las elecciones, otros desde hace años, los medios nacionales eligieron no hablar mucho del tema. Los motivos, desconocidos, aún teniendo información de primicia servida en bandeja.  Sin embargo y de a poco, algunos medios comienzan a tratar este tema como corresponde, faltando un largo camino por recorrer siendo que todo el proceso fue tratado a oscuras de los electores.  
