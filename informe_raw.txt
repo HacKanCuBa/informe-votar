@@ -266,7 +266,7 @@ Desde el campo de la  seguridad de los sistemas de información evaluamos que lo
 Por todo lo expuesto, consideramos que el sistema no cumple con los objetivos  prometidos de brindar seguridad y transparencia y ocasiona un costo adicional al Estado, Ciudad o Municipio que lo emplea.
 
 RECONOCIMIENTOS
-A los miembros de CaFeLUG (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Mugerza, Sergio Orbe, Andrés Paul), a Vía Libre  y a nuestros amigos que nos brindan su ayuda aportando opiniones y correcciones.
+A los miembros de CaFeLUG (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul), a Vía Libre  y a nuestros amigos que nos brindan su ayuda aportando opiniones y correcciones.
 
 APÉNDICE A. DETALLES DEL SISTEMA OPERATIVO
 Dada la longitud de la respuesta de los siguientes comandos informativos, las publicamos por separado en formato texto legible a excepción de A.3 que es un archivo binario.
