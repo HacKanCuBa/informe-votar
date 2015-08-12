@@ -50,5 +50,5 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
   * [@nicowaisman](https://twitter.com/nicowaisman)
 
 ### Licencia
-![CC by-nc-sa 4.0](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)  
-**Vot.Ar: una mala elección** by [named  authors](https://github.com/HacKanCuBa/informe-votar#autores) is licensed under a *[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0)*.  
+![CC by-sa 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  
+**Vot.Ar: una mala elección** by [Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, Alfredo Ortega, Juliano Rizzo, Fernando Russ, Javier Smaldone, Nicolas Waisman](https://github.com/HacKanCuBa/informe-votar#autores) is licensed under a *[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)*.  

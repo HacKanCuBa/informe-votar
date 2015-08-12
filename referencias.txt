@@ -1,5 +1,5 @@
 [1]  Lozano,Tribunal Superior de Justicia de CABA, Resolución Nº 127/15.  Disponible en: https://www.eleccionesciudad.gob.ar/uploads/resoluciones/resoluci%C3%B3n%20127.pdf
-[2] En la última versión vista (>=3.0) se ha activado el bloqueo de escritura del chip, impidiendo la reescritura del mismo.
+[2] En la última versión vista (>=3.0) se ha activado el bloqueo de escritura del chip, impidiendo la reescritura del mismo.  Esto es, si el chip fue grabado mediante la máquina de votar (en modo votación), el mismo no puede volver a grabarse.
 [3] Es necesario realizar un análisis químico sobre el papel a los efectos de determinar la vida útil de la BUE.
 [4]  Honorable Senado de la Nación Argentina, Constitución Nacional, Capítulo II: Nuevos Derechos y Garantías.  Disponible en: http://www.senado.gov.ar/Constitucion/capitulo2
 [5]  Página web de Vot.Ar: http://www.vot-ar.com.ar/#sobre
@@ -55,21 +55,28 @@ Página 9, Recomendación 9.
 [45] Kiim Zetter, Wired, 2008, The cost of e-voting.  Disponible en: http://www.wired.com/2008/04/the-cost-of-e-v
 [46] ProCon, 2013, Voting Systems & Use: 1980-2012.  Disponible en: http://votingmachines.procon.org/view.resource.php?resourceID=000274
 [47] Timothy B. Lee, ars technica, 2012, Paper prophets: Why e-voting is on the decline in the United States.  Disponible en: http://arstechnica.com/features/2012/10/paper-prophets-why-e-voting-is-on-the-decline-in-the-united-states
-[48] A.1. dmesg.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmesg.txt
-[49] A. 2. dmidecode.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmidecode.txt
-[50] A. 3. dmidecode binary dump.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmidecode.bin
-[51] A. 4. lsb_release.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsbrelease.txt
-[52] A. 5. lsmod.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsmod.txt
-[53] A. 6. lspci.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lspci.txt
-[54] A. 7. lsusb.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsusb.txt
-[55] A. 8. mount.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/mount.txt
-[56] A. 9. report of proceses, ps.txt.  Disponible en:
+[48] Ley 13.156: Sistema de Boleta Única y Unificación del Padrón Electoral, Santa Fe, 7 de febrero de 2011.
+[49] Juzgado Electoral De La Provincia De Cordoba, Ley Nº 9571: Código Electoral Provincial.  Disponible en: http://www.justiciacordoba.gob.ar/jel/pdf/capacitacion/CompendioLegislacionElectoral.pdf
+[50] Matías Bianchi[et al.]; con colaboración de Mario Navarro [et al.], Boleta única: Estudio comparado de los casos de Córdoba y Santa Fe, UNR Editora, Rosario, 1ra edición, 2013.
+Página 17.  Disponible en: http://www.asuntosdelsur.org/sitio2013/wp-content/uploads/downloads/2013/11/Libro-Boleta-Unica.pdf
+[51] Telam, 18 de Septiembre de 2011, Jueces destacan el valor de la boleta unica de sufragio, Córdoba.  Disponible en: https://es-us.noticias.yahoo.com/jueces-destacan-valor-boleta-unica-sufragio-171601564.html
+[52] Matías Bianchi[et al.]; con colaboración de Mario Navarro [et al.], Boleta única: Estudio comparado de los casos de Córdoba y Santa Fe, UNR Editora, Rosario, 1ra edición, 2013.
+Página 5.
+[53] A.1. dmesg.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmesg.txt
+[54] A. 2. dmidecode.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmidecode.txt
+[55] A. 3. dmidecode binary dump.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/dmidecode.bin
+[56] A. 4. lsb_release.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsbrelease.txt
+[57] A. 5. lsmod.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsmod.txt
+[58] A. 6. lspci.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lspci.txt
+[59] A. 7. lsusb.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/lsusb.txt
+[60] A. 8. mount.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/mount.txt
+[61] A. 9. report of proceses, ps.txt.  Disponible en:
 https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ps.txt
-[57] A. 10. ubnfilel.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ubnfilel.txt
-[58] A. 11. ubnpathl.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ubnpathl.txt
-[59] A. 12. uname.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/uname.txt
-[60] Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, Alfredo Ortega, Juliano Rizzo, Fernando Russ, Javier Smaldone, Nicolas Waisman, 3 de julio de 2015, Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta.  Disponible en: https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview
-[61] Sumando múltiples votos con una boleta en el sistema vot.ar, video demostrativo.  Disponible en: https://www.youtube.com/watch?v=CTOCspLn6Zk
-[62] Datos sobre los códigos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/
-[63] Códigos de los candidatos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json
-[64] STMicroelectronics, NfcV-reader, Google Play.  Disponible en: https://play.google.com/store/apps/details?id=com.nfc.apps&hl=es
+[62] A. 10. ubnfilel.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ubnfilel.txt
+[63] A. 11. ubnpathl.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ubnpathl.txt
+[64] A. 12. uname.txt.  Disponible en: https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/uname.txt
+[65] Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, Alfredo Ortega, Juliano Rizzo, Fernando Russ, Javier Smaldone, Nicolas Waisman, 3 de julio de 2015, Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta.  Disponible en: https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview
+[66] Sumando múltiples votos con una boleta en el sistema vot.ar, video demostrativo.  Disponible en: https://www.youtube.com/watch?v=CTOCspLn6Zk
+[67] Datos sobre los códigos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/
+[68] Códigos de los candidatos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json
+[69] STMicroelectronics, NfcV-reader, Google Play.  Disponible en: https://play.google.com/store/apps/details?id=com.nfc.apps&hl=es

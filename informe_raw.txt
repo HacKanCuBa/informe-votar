@@ -12,7 +12,7 @@ CABA, Argentina
 @mis2centavos
 @nicowaisman
 
-Abstracto— Con el anuncio del Tribunal Superior de Justicia de la Ciudad de Buenos Aires de la implementación de un sistema de votación electrónico para la Ciudad, basado en boletas con chip RFID, decidimos investigar el asunto a sabiendas de casos de fracaso internacional por ser los sistemas como éste inseguros y para ciertos países, inconstitucional.  El objetivo del presente es demostrar que este sistema también es inseguro y vulnerable a múltiples ataques que requieren escaso conocimiento para realizarse, y los motivos por los que resulta conveniente mantener la modalidad de votación de boleta única de papel.
+Abstracto— Con el anuncio del Tribunal Superior de Justicia de la Ciudad de Buenos Aires de la implementación de un sistema de votación electrónico para la Ciudad, basado en boletas con chip RFID, decidimos investigar el asunto a sabiendas de casos de fracaso internacional por ser los sistemas como éste inseguros y para ciertos países, inconstitucional.  El objetivo del presente informe es verificar si este sistema es también inseguro y/o vulnerable, poner en evidencia los riesgos que implicase su empleo y contrastarlo con el de la boleta única de papel.
 
 I. INTRODUCCIÓN
 El 8 de junio de 2015 el Tribunal Superior de Justicia de la Ciudad Autónoma de Buenos Aires aprueba el sistema de Boleta Electrónica mediante la resolución 127/15 [1], donde reza:
@@ -21,7 +21,7 @@ Este sistema, llamado BUE y desarrollado por la empresa Grupo MSA bajo la denomi
 El usuario inserta una boleta en blanco en la ranura correspondiente de la máquina y selecciona en la pantalla la lista o candidatos deseados.  Al finalizar, la máquina imprimirá lo seleccionado sobre la boleta (impresión térmica) y asimismo escribirá electrónicamente en el chip RFID estos mismos datos.
 El presente informe demostrará que el sistema es / puede ser vulnerable en los siguientes puntos:
 el chip de la BUE puede ser leído por un tercero,
-el chip de la BUE puede ser reescrito por un tercero [2],
+el chip de la BUE puede ser escrito nuevamente por un tercero [2],
 la impresión térmica posee una vida media corta, anulando auditorías o revisiones futuras sobre un proceso electoral [3],
 el hardware de la máquina puede ser accedido por terceros de manera local, pudiendo causar:
 impedir su normal funcionamiento,
@@ -179,7 +179,7 @@ Esta tarjeta ha sido obtenida de un Centro de Consulta.
 El parámetro indicado como ID representa un identificador único e irrepetible del chip, que asimismo no puede modificarse.  Este parámetro reside incrustado en el chip y es generado aleatoriamente por el fabricante.
 El detalle de Memory content muestra a izquierda el número de bloque de memoria, luego el contenido de dicho bloque y a derecha la representación ASCII (legible por humanos) de los datos.  Se destacan los valores de Miembros de Juntas COMunales, JEFe y Vicejefe de Gobierno y LEGisladores.
 Todos los valores presentados, a excepción del ID, pueden ser alterados fácilmente empleando cualquier software afín, como ser por ejemplo NfcV-Reader by STMicroelectronics para Android.
-Este tipo de chip RFID puede bloquearse contra escritura según indica el fabricante [26], y se ha determinado que sí es implementado por el sistema Vot.Ar.  Sin embargo, la lectura del mismo no puede bloquearse en lo que al chip respecta.  A este fin, han incorporado en la tarjeta una fina lámina metálica que, al doblar la tarjeta hasta la línea indicada, impide la lectura de la misma sí y solo sí la distancia entre las caras, en particular entre el chip y la lámina, es inferior a aproximadamente 8mm, medición obtenida en pruebas con el hardware antes mencionado, por lo que ésta puede variar para otro hardware lector.  No consideramos que este mecanismo sea suficiente, en especial siendo que luego de introducir la boleta en la urna, la misma tenderá a abrirse, permitiendo así su lectura remota.
+Este tipo de chip RFID puede bloquearse contra escritura según indica el fabricante [26], y se ha determinado que sí es implementado por el sistema Vot.Ar.  En el caso de realizarse escritura manual sobre el chip (esto es, sin emplear la máquina de votar), la activación o no del bloqueo de escritura corre por cuenta del usuario.  Una vez bloqueada la escritura, no es posible desbloquearla sin implicar la destrucción del mismo, según indica el fabricante.  Sin embargo, la lectura no puede bloquearse en lo que al chip respecta.  A este fin, han incorporado en la tarjeta una fina lámina metálica que, al doblar la tarjeta hasta la línea indicada, impide la lectura de la misma sí y solo sí la distancia entre las caras, en particular entre el chip y la lámina, es inferior a aproximadamente 8mm, medición obtenida en pruebas con el hardware antes mencionado, por lo que ésta puede variar para otro hardware lector.  No consideramos que este mecanismo sea suficiente, en especial siendo que luego de introducir la boleta en la urna, la misma tenderá a abrirse, permitiendo así su lectura remota.
 
 B. 1. Estructura de datos
 El chip en cuestión permite almacenar hasta 112 bytes.  Dentro de la memoria, se designan los bytes de la siguiente manera:
@@ -200,7 +200,7 @@ El segundo y tercer byte, T2 T1, corresponden al tipo de boleta, almacenado como
 En la boleta de ejemplo se observa 0x0100.
 El cuarto byte, L1, indica la longitud en bytes que ocuparán los datos (D1...Dn).  En la boleta de ejemplo: 0x1B, que indica 27 bytes de datos.
 Los bytes quinto a octavo, C4 C3 C2 C1, corresponden al CRC32 de los datos, también almacenado como little-endian.  En la boleta de ejemplo: 0x123AAF78.
-Desde el noveno byte hasta la cantidad indicada por L se encuentran los datos, D, codificados en ASCII y big-endian.  En la boleta de ejemplo: "04CABA   COM 49JEF 73LEG 83".  El primer texto 04CABA corresponde a la ubicación de la máquina, es decir, el número de mesa en la que se está votando.  Normalmente se encuentra un texto como "06CABA.2" donde 06 es la longitud, escrita como números ASCII, de la ubicación en sí (CABA.2), luego CABA corresponde a la ciudad y separado por un "." se encuentra en número de mesa.  Otro ejemplo: "09CABA.2188"
+Desde el noveno byte hasta la cantidad indicada por L se encuentran los datos, D, codificados en ASCII.  En la boleta de ejemplo: "04CABA   COM 49JEF 73LEG 83".  El primer texto 04CABA corresponde a la ubicación de la máquina, es decir, el número de mesa en la que se está votando.  Normalmente se encuentra un texto como "06CABA.2" donde 06 es la longitud, escrita como números ASCII, de la ubicación en sí (CABA.2), luego CABA corresponde a la ciudad y separado por un "." se encuentra en número de mesa.  Otro ejemplo: "09CABA.2188"
 Finalmente, el último bloque de 4 bytes de memoria, W1 W2 W3 W4, corresponden a una prueba de escritura aparentemente realizada por la empresa y no es empleada por el sistema en ningún momento.  Suele contener en ASCII y big-endian el texto "W_OK".
 Las boletas especiales, como de Presidente de Mesa o Técnico solo poseen 3 bytes: el token y el tipo de tarjeta.  Pueden fabricarse con facilidad mediante un teléfono con NFC y cualquier aplicación que escriba en el chip los datos indicados, dado que no cuentan con ningún tipo de verificación.
 
@@ -250,18 +250,39 @@ B. Países Bajos
 Países Bajos anuló el sistema de votación electrónica a finales del año 2007, por encontrarse graves fallos en el sistema y los procedimientos [41] que permitían a un usuario malintencionado tomar control del sistema [42], del mismo orden que lo mencionado en el presente informe.
 
 C. Alemania
-En Alemania, el sistema de votación electrónica fue anulado en el año 2005 al declararse inconstitucional, toda vez que su constitución establece que cualquier votante debe ser capaz de examinar fidedignamente por completo el proceso de sufragio sin necesidad de conocimiento especializado o técnico, que resulta imposible al incorporarse elementos electrónicos al proceso [43] y [44].
+En Alemania, el sistema de votación electrónica fue anulado en el año 2005 al declararse inconstitucional, toda vez que la Constitución alemana establece que cualquier votante debe ser capaz de examinar fidedignamente por completo el proceso de sufragio sin necesidad de conocimiento especializado o técnico, que resulta imposible al incorporarse elementos electrónicos al proceso [43] y [44].
 
 D. EE. UU.
 Se emplearon distintos sistemas de voto electrónico en las elecciones del año 2008 en EEUU con el objeto de abaratar los costos del proceso electoral.  Sin embargo, un grupo del estado de Maryland (SaveOurVotes) realizó un análisis económico y determinó que el costo del proceso electoral se vió incrementado en aproximadamente 179% por votante [45].
 Asimismo, debido a vulnerabilidades en los sistemas de voto electrónico, estos se encuentran en pleno declive desde el año 2012 respecto del uso e implementación, mientras que permanecieron en alza durante el período 1980 - 2012 [46].  “Está ampliamente reconocido que las clásicas boletas de papel son una forma más asequible, fiable y segura para llevar a cabo las elecciones. El voto informatizado es visto cada vez más como una moda que ha desgastado su acogida.”, concluye Timothy B. Lee luego de exponer algunos casos de fracasos para sistemas de voto electrónico en EE. UU. [47].
 
-VI. CONCLUSIONES
-Se ha indagado respecto del funcionamiento del sistema BUE de voto electrónico, analizando las distintas partes que lo componen, tanto de manera individual como en conjunto, y en vista de lo presentado se concluye que:
+VI. SOBRE LA BOLETA ÚNICA DE PAPEL
+
+El sistema de boleta única de papel, también llamado boleta única a secas - implementada en Santa Fe en el año 2010 [48] - o boleta única de sufragio (BUS) [49] - implementada en Córdoba desde el año 2011 -, es una solución simple y efectiva a la problemática que presenta el sistema de boleta partidaria:
+
+    robo de boletas;
+    impresión costosa;
+    sufragio y escrutinio dificultoso cuando se trata de muchas categorías o muchos candidatos.
+
+La boleta única se trata de un sistema electoral ya probado y efectivo.  Tanto en Europa como en América Latina se encuentra en uso este sistema; únicamente en España, Francia y Suecia, detnro Europa, y Argentina, Uruguay y Brasil, en América Latina, no lo usan de manera extendida o no lo usan en absoluto [50].
+
+Como indicó el vocal de la Junta Electoral Municipal de Córdoba, Leonardo González Zamar, respecto de la implementación de la BUS [51]:
+
+    "es indudable que la BUS desalienta o impide viejas prácticas que antes se advertían, como el faltante de boletas de un determinado partido o alianza en el cuarto de votación, cosa que ahora es imposible que suceda".
+
+Por otra parte, como destaca el Dr. Alejandro Groppo, Decano Facultad de Ciencia Política y RR.II. de la Universidad Católica de Córdoba en la presentación del libro Boleta única: Estudio comparado de los casos de Córdoba y Santa Fe [52]:
+
+    "La boleta única ha demostrado ser un instrumento eficiente, claro y sencillo a los ojos de los ciudadanos, pero por sobre todas las cosas, transparente. La prueba ha sido superada y los resultados son evidentes. Sin embargo, la boleta única no soluciona todos los problemas del sistema político y electoral y por ello no creemos oportuno reclamarle a la misma por los problemas que no está habilitada a solucionar".
+
+Son amplias las ventajas que presenta el sistema de boleta única respecto del sistema de boleta partidaria.  Sin embargo, las ventajas del sistema de boleta única electrónica respecto del sistema de boleta única de papel, de existir, no justifican el impacto económico de su alto costo y por sobre todo, la introducción de voto electrónico en el sistema electoral cuya problemática se ha tratado en el presente.
+
+VII. CONCLUSIONES
+Se ha indagado respecto del funcionamiento del sistema Vot.Ar / BUE de voto electrónico, analizando las distintas partes que lo componen, tanto de manera individual como en conjunto, y en vista de lo presentado se concluye que:
 el sistema presenta vulnerabilidades inherentes a su diseño, que si bien pueden ser salvadas mediante un conteo y revisión manual de votos, este hecho simplemente anula el propósito de tener un sistema de voto electrónico;
 de no realizarse conteo/escrutinio/verificación manual, el resultado del sufragio queda vulnerable al fraude electoral;
 el sistema es oscuro: el código fuente del software es cerrado, así como el hardware y firmware empleado, suprimiendo la libertad de auditar públicamente el sistema y comprenderlo en detalle;
-la forma y el estilo de la programación del sistema no parece realizada bajo los estrictos estándares que requieren aplicaciones de infraestructura crítica.
+la forma y el estilo de la programación del sistema no parece realizada bajo los estrictos estándares que requieren aplicaciones de infraestructura crítica;
+no presenta ventajas significativas respecto del sistema de boleta única de papel.
 Desde el campo de la  seguridad de los sistemas de información evaluamos que los riesgos que introduce el voto electrónico en términos de errores accidentales o ataques maliciosos a gran escala y fáciles de encubrir superan con holgura los beneficios reales o percibidos de la automatización de un paso crítico del sistema electoral.  Se ha generalizado la creencia que todo sistema social puede ser migrado a un sistema de computadoras, y que esto implica automáticamente una mejora en términos de agilidad y economía, sin ninguna contrapartida.  Existen ciertas aplicaciones, con requerimientos críticos de seguridad informática, privacidad y usabilidad, para los cuales la tecnología actual aún no puede dar respuesta.  Estos sistemas son complejos y a mayor complejidad, mayor es el riesgo de falla.  La comunidad académica y la industria aún no saben cómo hacer máquinas y sistemas seguros de este tipo.  Por esta razón, la buena intención de explorar la migración tecnológica del sistema de votación debe estar englobada en un proyecto que incluya múltiples iteraciones de análisis y retroalimentación con los diversos actores de la comunidad.  Ningún avance técnico debe debilitar la democracia.
 Por todo lo expuesto, consideramos que el sistema no cumple con los objetivos  prometidos de brindar seguridad y transparencia y ocasiona un costo adicional al Estado, Ciudad o Municipio que lo emplea.
 
@@ -322,7 +343,7 @@ class Count(object):
    def add_selection(self, selection, RFIDserial=None):
         if not RFIDserial or not self.serial_exists(RFIDserial):
             for candidate in selection.candidates:
-                self.results[candidate.party_code, candidate.category_code] += 1
+                self.results[endiancandidate.party_code, candidate.category_code] += 1
             if RFIDserial:
                 self._RFIDserials.append(RFIDserial)
   ...
