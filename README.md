@@ -34,8 +34,8 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * Francisco Amato  
   * [@famato](https://twitter.com/famato)  
 * Iván A. Barrera Oro  
-  * GPG [0xECF0573B1C9B59E8](https://keybase.io/hackan)  
   * [@hackancuba](https://twitter.com/hackancuba)  
+  * GPG [0xECF0573B1C9B59E8](https://keybase.io/hackan)  
 * Enrique Chaparro  
 * Sergio Demian Lerner  
   * [@SDLerner](https://twitter.com/SDLerner)  
