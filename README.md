@@ -1,6 +1,5 @@
 #Vot.Ar: una mala elección
-
-El presente es la segunda parte de nuestro informe sobre el sistema Vot.Ar de la empresa Grupo MSA empleado en las elecciones del pasado 5 julio en Bs. As., así como también en otras provincias desde hace años como ser el caso de Salta.  
+El presente es la segunda versión de nuestro informe sobre el sistema Vot.Ar de la empresa Grupo MSA empleado en las elecciones del pasado 5 julio en Bs. As., así como también en otras provincias desde hace años como ser el caso de Salta.  
 
 A pesar de los múltiples inconvenientes y las nulas ventajas que presenta este sistema, la justicia hace oídos sordos permitiendo su implementación.  
 
@@ -11,6 +10,14 @@ Para mayor abundamiento, recomendamos la lectura de los siguientes textos:
 * [Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta](https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview#heading=h.4mjowkrd6bo2)  
 * [El sistema oculto en las máquinas de Vot.Ar](https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar)  
 
+## Versión online
+[Versión online del presente informe](http://ivan.barreraoro.com.ar/vot-ar-una-mala-eleccion/)  
+
+## Presentaciones
+Hemos presentado el informe en distintas conferencias de la rama.  Las fuentes se encuentran en el directorio correspondiente de este repositorio.  
+
+* [EKOparty #11](http://ekoparty.org) Octubre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11/vot_ar_a_bad_election.html)  
+* [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/sbseg15/vot_ar_a_bad_election.html)  
 
 ## Repercusión nacional
 Durante todas las instancias que hemos recorrido, algunos semanas antes de las elecciones, otros desde hace años, los medios nacionales eligieron no hablar mucho del tema. Los motivos, desconocidos, aún teniendo información de primicia servida en bandeja.  Sin embargo y de a poco, algunos medios comienzan a tratar este tema como corresponde, faltando un largo camino por recorrer siendo que todo el proceso fue tratado a oscuras de los electores.  
@@ -18,7 +25,6 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * [Todo lo que no te cuentan los medios del #VotoElectronico en Argentina](http://www.infosertec.com.ar/blog/?p=56547)  
 * [Algunas reflexiones sobre el voto electrónico](http://www.lanacion.com.ar/1809389-algunas-reflexiones-sobre-el-voto-electronico)  
 * [06-07-2015 - Radio LED con Enrique Chaparro](https://www.youtube.com/watch?v=l7kttGNkN_E)  
-
 
 ## Repercusión internacional
 * [Argentinien: Razzia nach Hinweis auf Sicherheitslücke in Wahlcomputern](http://www.spiegel.de/netzwelt/netzpolitik/razzia-nach-hinweis-auf-sicherheitsluecke-in-wahlcomputern-a-1042657.html)  
