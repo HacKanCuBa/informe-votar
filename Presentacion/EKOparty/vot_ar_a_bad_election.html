@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+        Vot.Ar: a bad election. Presentation for the EKOparty #11, oct 2015
+        by HacKan | Ivan A. Barrera Oro
+        Licence CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
+        Feel free to share!!
+-->
+<head>
+        <meta charset="utf-8">
+
+	<title>Vot.Ar: a bad election</title>
+	<meta name="author" content="Iv&aacute;n A. Barrera Oro" />
+        <meta name="description" content="Vot.Ar: a bad election. Presentation for the EKOparty #11, oct 2015" />
+
+        <link href="css/reset.css" rel="stylesheet" />
+	<link href="css/presentation.css" rel="stylesheet" />
+	<link href="font/opensans.css" rel="stylesheet" />
+	<link href="font/oswald.css" rel="stylesheet" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@hackancuba" />
+        <meta name="twitter:title" content="Vot.Ar: a bad election" />
+        <meta name="twitter:description" content="Presentation for #eko11, oct 2015" />
+
+        <meta property="og:title" content="Vot.Ar: a bad election" />
+        <meta property="og:description" content="Presentation for #eko11, oct 2015" />
+        <meta property="og:locale" content="en_GB" />
+</head>
+
+<body class="impress-not-supported">
+
+	<div class="fallback-message">
+		<p>Your browser <em>doesn't support the characteristics required</em> for this presentation, so a simplified version will be shown.</p>
+		<p>For a better experience, please use <strong>Firefox</strong>, <strong>Chrome</strong> or <strong>Safari</strong>.</p>
+	</div>
+
+	<div id="impress">
+                <!-- welcome -->
+                <div id="title" class="step anim" data-x="0" data-y="0" data-scale="3">
+                        <h1 style="text-align: center;">Vot.Ar: a bad election</h1>
+                        <h3>A presentation about the <i class="scaling" style="color: #75AADB;">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
+                        <br /><br />
+                        <p>Also, a bit about <i>eVoting</i>.</p>
+                        <p class="footnote"><a class="link-shadow" href="https://twitter.com/hashtag/VotArABadElection" target="_blank">#VotArABadElection</a> <a class="link-shadow" href="https://twitter.com/hashtag/eko11" target="_blank">#eko11</a></p>
+		</div>
+                <!-- -->
+
+                <!-- intro -->
+                <!-- -short intro about the people involved, what moved us to do this. -->
+                <div id="authors" class="step anim" data-x="7000" data-y="600" data-scale="10">
+                        <p>Authors: 
+                                <a class="link" href="https://twitter.com/famato" target="_blank">Francisco Amato</a>, 
+                                <a class="link" href="https://twitter.com/hackancuba" target="_blank">Iv&aacute;n A. Barrera Oro</a>, 
+                                <a class="link" href="https://twitter.com/FViaLibre" target="_blank">Enrique Chaparro</a>, 
+                                <a class="link" href="https://twitter.com/SDLerner" target="_blank">Sergio Demian Lerner</a>, 
+                                <a class="link" href="https://twitter.com/ortegaalfredo" target="_blank">Alfredo Ortega</a>, 
+                                <a class="link" href="https://twitter.com/julianor" target="_blank">Juliano Rizzo</a>, 
+                                <a class="link" href="#authors" target="_self">Fernando Russ</a>, 
+                                <a class="link" href="https://twitter.com/mis2centavos" target="_blank">Javier Smaldone</a>,
+                                <a class="link" href="https://twitter.com/nicowaisman" target="_blank">Nicolas Waisman</a>
+                        </p>
+                        <p class="footnote">Presenters: <b class="scaling"><i>Iv&aacute;n</i> & <i>Javier</i></b></p>
+                </div>
+                <!-- - -->
+
+                <!-- -timeline -->
+                <div class="step" data-x="24500" data-y="0" data-scale="1">
+                        <h2>How did this investigation begin?</h2>
+                        <ol>
+                                <li>Through CaFeLUG group I was contacted for a private audit on the system.</li>
+                                <li>I got mad because of <em style="color: rgba(176, 39, 39, 0.69);">prohibition</em> to touch/modify/carefully analyse things.</li>
+                                <li>I contacted Javier, who always gives talks in FLISOL about e-voting, told him my experience.</li>
+                                <li>He tells me about his idea, and things got in motion...</li>
+                        </ol>
+                </div>
+                <!-- - -->
+
+                <!-- -what did we find? -->
+                <div class="step" data-x="24500" data-y="800" data-scale="1">
+                        <h2>What did we find?</h2>
+                        <ul>
+                                <li>Bad design, worst implementation</li>
+                                <li>Vulnerabilities due to bad software practice</li>
+                                <li>An very expensive system that doesn't present considerable advantages compared to the unique paper ballot system</li>
+                        </ul>
+                </div>
+                <!-- - -->
+
+                <!-- -how did we do it? -->
+                <div class="step" data-x="24500" data-y="1400" data-z="0" data-rotate-x="-90" data-scale="1">
+                        <h2>How did we do this?</h2>
+                        <ul>
+                                <li>About a week or so of hard work</li>
+                                <li>Unofficial: no assistance provided by company nor gov</li>
+                                <li>By going to public consultation points to have access to machines and ballots
+                                <ul>
+                                        <li>Plugging in a keyboard to let the magic happen :D</li>
+                                </ul>
+                                </li>
+                        </ul>
+                </div>
+        
+                <div class="step" data-x="24500" data-y="1400" data-z="-650" data-rotate-x="-90" data-scale="1">
+                        <ul>
+                                <li>Building a few devices for hardware tests:
+                                <ul>
+                                        <li>ballot reader</li>
+                                        <li>ballot burner</li>
+                                        <li>RFID jammer</li>
+                                </ul>
+                                (some worked, some didn't)
+                                </li>
+                                <li>Lots of internet research</li>
+                                <li>Lots of thinking</li>
+                                <li>Great effort</li>
+                        </ul>
+                </div>
+                <!-- - -->
+                <!-- -->
+
+                <!-- about vot.ar, brief desc -->
+		<div class="step anim" data-x="23000" data-y="0" data-scale="1">
+                        <p><strong>Vot.Ar</strong> by MSA Group is a paper-based eVoting system, with two main elements:</p>
+                        <ul>
+                                <li>The vote-casting and counting machine</li>
+                                <li>The ballot</li>
+                        </ul>
+                        <p><b class="scaling" style="color: rgba(176, 39, 39, 0.69);">Main issue?</b></p>
+                        <p class="footnote" style="color: rgba(176, 39, 39, 0.69);">among others...</p>
+                </div>
+		<div class="step step-hidden" data-x="23000" data-y="0" data-scale="1">
+                        <div style="position:absolute; top: 45px; left: 580px;">
+                                <div class="overlay-img-txt">
+                                        <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
+                                        <span>It's RFID based!</span>
+                                </div>
+                        </div>
+                </div>
+                <!-- -->
+
+                <!-- israel case -->
+                <div class="step anim" data-x="23000" data-y="0" data-rotate-y="-90" data-scale="1">
+                        <p>Why is RFID such a bad idea?</p>
+                        <img src="img/evoting-rfid.jpg" alt="e-voting rfid" width="1050" height="625" />
+                </div>
+                <!-- -->
+
+                <!-- how is it supposed to be -->
+                <div class="step anim" data-x="23000" data-y="800" data-scale="1">
+                        <h2>Requirements for the system</h2>
+                        <p>This system:</p>
+                        <ol>
+                                <li>must NOT have permanent memory</li>
+                                <li>must NOT allow votes to be changed</li>
+                        </ol>
+                </div>
+
+                <div class="step anim" data-x="23000" data-y="1550" data-scale="1">
+                        <h2>Some things to note</h2>
+                        <ul>
+                                <li>Completely closed HW & SW</li>
+                                <li>Absolutely no public documentation<br />
+(yet the maker say it's open source!)</li>
+                                <li>Over 7 years of development</li>
+                                <li>Previously used in Salta</li>
+                                <li>Recently used in Resistencia, Chaco</li>
+                        </ul>
+                </div>
+                <div class="step anim" data-x="23000" data-y="2335" data-scale="1">
+                        <ul>
+                                <li>2 official audits by the time of this report:
+                                <ul>
+                                        <li>Prof. Righetti, FCEN, UBA: OAT 03/15
+                                        <br /><strong>Conclusion</strong>: <em>small issues, but ok</em></li>
+                                        <li>Departamento de Inform&aacute;tica, ITBA: DVT 56-504
+                                        <br /><strong>Conclusion</strong>: <em>inconclusive, recommendations given</em></li>
+                                </ul>
+                                </li>
+                        </ul>
+                </div>
+                <div class="step anim" data-x="23000" data-y="2900" data-scale="1">
+                        <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
+                </div>
+                <!-- -->
+
+                <!-- macro description of the system -->
+                <!-- -machine -->
+                <div class="step" data-x="28000" data-y="0" data-scale="1">
+                        <h2>Overview of Vot.Ar</h2>
+                        <img src="img/overview.png" alt="overview" width="700" height="700" />
+                </div>
+
+                <div class="step" data-x="26800" data-y="0" data-rotate-z="-10" data-scale="1">
+                        <p>It has on the left:</p>
+                        <ul>
+                                <li>Touchscreen for operation (to pick candidates and stuff)</li>
+                        </ul>
+                </div>
+
+                <div class="step" data-x="28750" data-y="0" data-rotate-z="10" data-scale="1">
+                        <p>It has on the right:</p>
+                        <ul>
+                                <li>An RFID reader/writer + thermal printer unit</li>
+                        </ul>
+                </div>
+
+                <div class="step" data-x="28000" data-y="-750" data-rotate-x="30" data-scale="1">
+                        <p>It has on the top:</p>
+                        <ul>
+                                <li>
+                                DVD R/W, status LEDs & ports: 
+                                <table>
+                                        <tr>
+                                                <td>
+                                                        <ul>
+                                                                <li>USB</li>
+                                                                <li>SVGA</li>
+                                                        </ul>
+                                                </td>
+                                                <td>
+                                                        <ul>
+                                                                <li>Ethernet</li>
+                                                                <li>Speaker</li>
+                                                        </ul>
+                                                </td>
+                                        </tr>
+                                </table>
+                                accessible for everyone, under a small lid
+                                </li>
+                        </ul>
+                </div>
+
+                <div class="step" data-x="28000" data-y="650" data-rotate-x="-30" data-scale="1">
+                        <p>It has on the bottom:</p>
+                        <ul>
+                                <li>a power source + 2 battery pack</li>
+                                <li>and sometimes, a JTAG cable!</li>
+                        </ul>
+                </div>
+                <!-- - -->
+
+                <div class="step" data-x="28000" data-y="950" data-scale="1">
+                        <p>And then there's the ballot, which has an RFID chip + thermal paper on the back</p>
+                        <p class="footnote">Hang on, details are coming...</p>
+                </div>
+                
+                <div class="step" data-x="28000" data-y="1200" data-scale="1">
+                        <p>But propaganda said:</p>
+                        <q>It's a printer, not a computer!</q>
+                        <p><small>and everybody believed it!</small></p>
+                </div>
+
+                <div class="step" data-x="28000" data-y="1650" data-scale="1">
+                        <div class="overlay-img-txt">
+                                <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
+                                <span style="color: #666">So here we were, tweeting from a "printer"...</span>
+                        </div>
+                </div>
+                <!-- -->
+
+                <!-- HW deep -->
+                <!-- -inside, all -->
+                <div class="step" data-x="23000" data-y="4000" data-scale="1">
+                        <h2>Now let's get deep into the HW</h2>
+                        <p>What's inside the machine?</p>
+                        <img src="img/inside.jpg" alt="Inside the machine" width="1000" height="645" />
+                </div>
+
+                <div class="step" data-x="23000" data-y="5000" data-scale="1">
+                        <p>Deeper inside (behind the screen):</p>
+                        <img src="img/inside-behind.jpg" alt="Behind the inside of the machine" width="1000" height="735" />
+                </div>
+
+                <div class="step" data-x="21800" data-y="5000" data-scale="1">
+                        <ul>
+                                <li>JTAG port: used to program/debug the microcontroller
+                                <ul>
+                                        <li>it has a cable outside
+                                        (some machines had it even during elections!)</li>
+                                </ul>
+                                </li>
+                        </ul>
+                        <img src="img/jtag-elections.jpg" alt="JTAG exposed during elections" width="580" height="435" />
+                </div>
+
+                <div class="step anim" data-x="24000" data-y="5000" data-scale="1">
+                        <ul>
+                                <li>Microprocessor (uP): Intel(R) Celeron(R) CPU N2930 @ 1.83GHz</li>
+                                <li>RAM memory: 2GB DDR3 1600</li>
+                                <li>Microcontroller (uC): Atmel AT91SAM7X256
+                                <ul>
+                                        <li>Internal E2PROM memory: 256KB <b class="positioning">(!)</b></li>
+                                </ul>
+                                </li>
+                        </ul>
+                </div>
+                <!-- - -->
+
+                <!-- -uC -->
+                <div class="step" data-x="23000" data-y="5800" data-scale="1">
+                        <p>So, we found an unknown subsystem:</p>
+                        <img src="img/secret-uc.png" alt="Secret microcontroller" width="568" height="582" />
+                </div>
+
+                <div class="step anim" data-x="23500" data-y="5850" data-scale="1">
+                        <p>The ARM controls the thermal printer and the RFID reader/writer.</p>
+                        <p>Its internal E2PROM memory is sufficient to store every vote cast and more.</p>
+                        <p>We know nothing about this, Jon Snow!</p>
+                </div>
+                <!-- - -->
+
+                <!-- -ballots -->
+                <div class="step" data-x="23000" data-y="6700" data-scale="1">
+                        <h3>About the ballots (aka BUE cards)</h3>
+                        <img src="img/ballot.jpg" alt="Ballot" width="1000" height="732" />
+                </div>
+
+                <div class="step" data-x="24100" data-y="6700" data-scale="1">
+                        <ul>
+                                <li>Paperboard with a print on one side, and thermal paper on the other + RFID chip</li>
+                                <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> bent over</li>
+                                <li>Chip: ICODE SLI SL2 ICS20 (ISO 15693)
+                                <ul>
+                                        <li>has a unique ID code</li>
+                                <ul>
+                                </li>
+                        </ul>
+                        <br />
+                        <p class="footnote">More info about the chip and how data is stored, in the report</p>
+                </div>
+                <!-- - -->
+                <!-- -->
+
+                <!-- SW deep-->
+                <div class="step" data-x="26000" data-y="4000" data-scale="1">
+                        <h2>Time to analyse the SW</h2>
+                        <p>We were able to do it thanks to the help of someone named <a class="link" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
+                        <ul>
+                                <li>Lacks completely of (public) documentation and also in-code documentation</li>
+                                <li>Very few comments</li>
+                                <li>Untidy code</li>
+                                <li>No unit testing</li>
+                        </ul>
+                </div>
+                <div class="step" data-x="26000" data-y="4500" data-scale="1">
+                        <p>This makes it hard to read, audit, maintain, improve...</p>
+                </div>
+                <div class="step" data-x="26000" data-y="4625" data-rotate-x="180" data-scale="1">
+                        <p>...but ideal to breed nasty bugs...</p>
+                </div>
+                <div class="step anim" data-x="26000" data-y="4750" data-scale="1">
+                        <p>...such as <b class="scaling">#multivote</b> and others</p>
+                        <!--<p class="footnote">I recall you all that the system was vulnerable during elections</p>-->
+                </div>
+
+                <!-- -command injection -->
+                <div class="step" data-x="27200" data-y="4000" data-rotate-y="90" data-scale="1">
+                        <h2>Command injection</h2>
+                        <p>Alfredo Ortega found a command injection vulnerability in the QR Code generator routine</p>
+                        <ol>
+                                <li>msa/core/clases.py, line 190: a_qr_str() returns a comma-separated list of values</li>
+                                <li>msa/core/clases.py, line 206: a_qr() sends those values to the vulnerable function</li>
+                                <li>msa/core/qr.py, line 13: crear_qr() vulnerable function, executes the command without sanitising first</li>
+                        </ol>
+                </div>
+
+                <div class="step" data-x="27200" data-y="4900" data-rotate-y="90" data-scale="1">
+                        <p>This routine is executed to print the names of the Board President and assistants.</p>
+                        <p>PoC:</p>
+                        <ul>
+                                <li>First name: <pre>John</pre></li>
+                                <li>Last name: <pre>Doe;echo 'this is bad!'</pre></li>
+                        </ul>
+                        <p>Nevertheless, the name input screen does sanitise and has a length limit, so exploiting this is very difficult.</p>
+                </div>
+                <!-- - -->
+
+                <!-- -multivote -->
+                <div class="step" data-x="25000" data-y="4000" data-rotate-y="-90" data-scale="1">
+                        <h2>Multivote</h2>
+                        <p>This vulnerability allows an attacker to add several votes in the RFID chip, as many as the chip's memory amount supports (about 10~12 votes).</p>
+                        <p>Also, it's not mandatory to distribute the votes in any way: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
+                </div>
+
+                <div class="step" data-x="25000" data-y="4000" data-z="1200" data-rotate-y="-90" data-scale="1">
+                        <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
+                </div>
+
+                <div class="step" data-x="24000" data-y="4800" data-z="-700" data-rotate-y="-90" data-scale="1">
+                        <p>You cannot differentiate between a multivote ballot and a normal one with a naked eye.</p>
+                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) could cast fake votes from beforehand that are very hard to detect.</p>
+                </div>
+                <!-- - -->
+                <!-- -->
+
+                <!-- questions -->
+		<div class="step anim slide" data-x="1000" data-y="6800" data-scale="2">
+			<h1 style="text-align: center;">Questions?</h1>
+                        <br />
+                        <p>We hope you enjoyed this presentation!</p>
+                        <p>Ask <em>whatever</em> you want, there are no restrictions.</p>
+		</div>
+                <!-- -->
+
+                <!-- thanks -->
+		<div class="step anim slide" data-x="2500" data-y="6800" data-scale="1">
+			<h1 style="text-align: center;">Thanks for listening!</h1>
+			<br />
+			<p>Also, we want to thank everybody who supported us:</p>
+                        <ul>
+                                <li>CaFeLUG (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul)</li>
+                                <li>Fundación Via Libre</li>
+                                <li>Our friends that are always there...</li>
+                                <li>EKOparty organisers for providing a place to share
+                                <ul>
+                                        <li>Juan Pablo Daniel Borgna, Leonardo Pigñer, Federico Kirschbaum, Jerónimo Basaldúa, Francisco Amato</li>
+                                </ul>
+                                </li>
+                        </ul>
+		</div>
+                <!-- -->
+
+                <!-- goodbye -->
+		<div class="step slide" data-x="3500" data-y="6800" data-scale="1">
+			<h1 style="text-align: center;">Hungry for information?</h1>
+			<br />
+			<p>You can get the full report, this presentation and more at the git repo:</p>
+                        <p style="text-align: right;"><a class="link" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+                        <p>Feel free to share! (CC BY-SA v4.0).</p>
+			<br /><br /><br /><br />
+			<p class="footnote">Powered by <a href="https://github.com/bartaz/impress.js" class="link-shadow" target="_blank">impress.js</a></p>
+		</div>
+                <!-- -->
+	</div>
+
+        <!-- impress code -->
+        <!-- -hint -->
+	<div class="hint">
+		<p>Use the arrow keys to move forward/backward</p>
+	</div>
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+		document.querySelector(".hint").innerHTML = "<p>Touch the right side of the screen to move forward</p>";
+		}
+	</script>
+        <!-- - -->
+
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+        <!-- -->
+</body>
+</html>
