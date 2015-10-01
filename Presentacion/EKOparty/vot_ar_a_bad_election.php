@@ -424,7 +424,7 @@ $pos = new Position;
                 </div><!-- +(0,0,0) -->
 		<div class="step hidden" <?php $pos->printc(); ?> data-scale="1">
                         <div style="position:absolute; top: 45px; left: 580px;">
-                                <div class="overlay-img-txt txt-size-tiny pale-yellow">
+                                <div class="overlay-img-txt txt-tiny pale-yellow">
                                         <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
                                         <span>It's RFID based!</span>
                                 </div>
@@ -517,7 +517,7 @@ $pos = new Position;
                                         <tr>
                                                 <td>
                                                         <ul>
-                                                                <li>USB</li>
+                                                                <li><em>USB *</em></li>
                                                                 <li>SVGA</li>
                                                         </ul>
                                                 </td>
@@ -532,6 +532,7 @@ $pos = new Position;
                                 accessible for everyone, under a small lid
                                 </li>
                         </ul>
+                        <p class="footnote">* BadUSB?...</p>
                 </div>
                 <!-- +(100,1350,0) -->
                 <div class="step" <?php $pos->shiftprint([100, 1350], -60); ?> data-scale="1">
@@ -555,7 +556,7 @@ $pos = new Position;
                 </div>
                 <!-- +(0,900,0) -->
                 <div class="step" <?php $pos->shiftprint(["y" => 815], 10); ?> data-scale="2">
-                        <div class="overlay-img-txt txt-size-reduced centered bottom flag-blue">
+                        <div class="overlay-img-txt txt-reduced centered bottom flag-blue">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
                                 <span>So here we were, tweeting from a "printer"...</span>
                         </div>
@@ -569,25 +570,25 @@ $pos = new Position;
                         <p>What's inside the machine?</p>
                         <img src="img/inside.jpg" alt="Inside the machine" width="1000" height="645" />
                 </div>
-                <!-- +(0,1000,0) -->
-                <div class="step" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
+
+                <div class="step" <?php $pos->shiftprint([1200, 300], ["phi" => 25]); ?> data-scale="1">
                         <p>Deeper inside (behind the screen):</p>
                         <img src="img/inside-behind.jpg" alt="Behind the inside of the machine" width="1000" height="735" />
                 </div>
-                <!-- +(-1200,0,0) -->
-                <div class="step" <?php $pos->shiftprint(-1200); ?> data-scale="1">
+
+                <div class="step" <?php $pos->shiftprint([800, 750], ["phi" => 25]); ?> data-scale="1">
                         <ul>
                                 <li>JTAG port: used to program/debug the microcontroller.
 External access via a cable near the batteries.</li>
                         </ul>
-                        <div class="overlay-img-txt txt-size-tiny" style="text-align: center;">
+                        <div class="overlay-img-txt txt-tiny soft-green" style="text-align: center;">
                                 <img src="img/jtag-elections.jpg" alt="JTAG exposed during elections" width="580" height="435" />
                                 <span>Some machines had it even during elections!</span>
                         </div>
                         <p class="footnote">More on this at <a class="link" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">Javier's blog</a></p>
                 </div>
-                <!-- +(2100,0,0) -->
-                <div class="step anim" <?php $pos->shiftprint(2200); ?> data-scale="1">
+
+                <div class="step anim" <?php $pos->shiftprint([-1200, -100], [25, 0, -25]); ?> data-scale="1">
                         <ul>
                                 <li>Microprocessor (uP): Intel(R) Celeron(R) CPU N2930 @ 1.83GHz</li>
                                 <li>RAM memory: 2GB DDR3 1600</li>
@@ -601,32 +602,32 @@ External access via a cable near the batteries.</li>
                 <!-- - -->
                 <!-- +(-900,800,0) -->
                 <!-- -uC -->
-                <div class="step" <?php $pos->shiftprint([-900, 1000], ["theta" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 800]); ?> data-scale="1">
                         <p>So, we found an unknown subsystem:</p>
                         <img src="img/secret-uc.png" alt="Secret microcontroller" width="568" height="582" />
                 </div>
-                <!-- +(500,50,0) -->
-                <div class="step anim" <?php $pos->shiftprint([700, 100, 20], ["theta" => 10]); ?> data-scale="1">
+                <!-- +(500,50,0) (0,10,0)-->
+                <div class="step anim" <?php $pos->shiftprint([500, 50, 0], ["theta" => 10]); ?> data-scale="1">
                         <p>The ARM controls the thermal printer and the RFID reader/writer.</p>
                         <p>Its internal E2PROM memory is <b class="scaling_right">sufficient to store</b><br />every vote cast and more.</p>
                         <p>We know <em>nothing</em> about this, Jon Snow!</p>
                 </div>
                 <!-- - -->
-                <!-- +(-500,1150,0) -->
+
                 <!-- -ballots -->
-                <div class="step" <?php $pos->shiftprint([-500, 1150], ["theta" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1300, 400, -150], ["theta" => 10]); ?> data-scale="1">
                         <h3>About the ballots (aka BUE cards)</h3>
                         <img src="img/ballot.jpg" alt="Ballot" width="1000" height="732" />
                 </div>
                 <!-- +(1750,100,0) +(0,10,0) -->
-                <div class="step" <?php $pos->shiftprint([1750, 100], ["theta" => 10]); ?> data-scale="2">
+                <div class="step" <?php $pos->shiftprint([2000, 100, -450], ["theta" => 10]); ?> data-scale="2">
                         <ul>
                                 <li>Paperboard with a print on one side, and thermal paper on the other + RFID chip</li>
                                 <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> bent over</li>
                         </ul>
                 </div>
                 <!-- +(-1750,850,0) +(-10,-10,0) -->
-                <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -20]); ?> data-scale="1">
                         <h4>The RFID Chip</h4>
                         <ul>
                                 <li>ICODE SLI SL2 ICS20 (ISO 15693)</li>
@@ -671,7 +672,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- SW deep-->
-                <div class="step" data-x="26000" data-y="-6000" data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1500, 800]); ?> data-scale="1">
                         <h2>Time to analyse the SW</h2>
                         <p>We were able to do it thanks to the help of someone named <a class="link" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
                         <ul>
@@ -681,18 +682,18 @@ External access via a cable near the batteries.</li>
                                 <li>No unit testing</li>
                         </ul>
                 </div>
-                <div class="step" data-x="26000" data-y="-5500" data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 500]); ?> data-scale="1">
                         <p>This makes it hard to read, audit, maintain, improve...</p>
                 </div>
-                <div class="step" data-x="26000" data-y="-5375" data-rotate-x="180" data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 125], 180); ?> data-scale="1">
                         <p>...but ideal to breed nasty bugs...</p>
                 </div>
-                <div class="step anim" data-x="26000" data-y="-5250" data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 125], -180); ?> data-scale="1">
                         <p>...such as <b class="scaling">#multivote</b> and others</p>
                 </div>
 
                 <!-- -command injection -->
-                <div class="step" data-x="27200" data-y="-6000" data-rotate-y="90" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1200, -100, 1500], ["theta" => 90]); ?> data-scale="1">
                         <h2>Command injection</h2>
                         <p>Alfredo Ortega found a command injection vulnerability in the QR Code generator routine</p>
                         <ol>
@@ -702,38 +703,38 @@ External access via a cable near the batteries.</li>
                         </ol>
                 </div>
 
-                <div class="step" data-x="27200" data-y="-5100" data-rotate-y="90" data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 900]); ?> data-scale="1">
                         <p>This routine is executed to print the names of the President of the Polling Station and assistants.</p>
                         <ul>
                                 <li>First name: <pre>John</pre></li>
                                 <li>Last name: <pre>Doe;echo 'this is bad!'</pre></li>
                         </ul>
-                        <p>Nevertheless, the name input screen does sanitise and has a length limit, so exploiting this is very difficult.</p>
+                        <p>Nevertheless, the name input screen does sanitise and has a length limit, so exploiting this is complicated.</p>
                 </div>
                 <!-- - -->
 
                 <!-- -multivote -->
-                <div class="step" data-x="27200" data-y="-2900" data-z="0" data-rotate-y="-90" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([400, 1200, 800], ["theta" => -180]); ?> data-scale="2">
                         <h2>Multivote</h2>
-                        <p>This vulnerability allows an attacker to add several votes to the RFID chip, as many as the chip's memory amount supports (about 10~12 votes).</p>
-                        <p>Also, it's not mandatory to distribute the votes in any way: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
+                        <p>This vulnerability allows an attacker to <strong class="pastel-red">add several votes</strong> to the RFID chip, as many as the chip's memory amount supports (about <strong>10~12 votes</strong>).</p>
+                        <p>Also, it's <em>not mandatory to distribute the votes in any way</em>: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
                 </div>
-
-                <div class="step" data-x="27200" data-y="-2900" data-z="1200" data-rotate-y="-90" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
                         <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
                 </div>
-
-                <div class="step" data-x="27200" data-y="-2900" data-z="2450" data-rotate-y="-90" data-scale="2">
-                        <p>You cannot differentiate between a multivote ballot and a normal one with a naked eye.</p>
-                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) could cast fake votes from beforehand that are very hard to detect.</p>
+                <div class="step" <?php $pos->shiftprint([-500, 0, -650],["theta" => 30]); ?> data-scale="1">
+                        <div style="width: 70%;">
+                        <p>You <em>cannot differentiate</em> between a <em>multivote ballot</em> and a <em>normal one</em> with a naked eye.</p>
+                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes from beforehand</em> that are very hard to detect.</p>
+                        </div>
                 </div>
                 <!-- - -->
 
                 <!-- -bypassing log-in -->
-                <div class="step" data-x="33000" data-y="0" data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1200, 800]); ?> data-scale="1">
                         <h2>Bypassing log-in screen</h2>
                         <h3>Impersonating admin or President of the Polling Station</h3>
-                        <p style="text-align: right;">This is trivial, since no authentication is used with the chip's data</p>
+                        <p class="right">This is trivial, since <em>no authentication</em> is used with the chip's data</p>
                         <p>Get some spare RFID chips and:</p>
                         <ol>
                                 <li>Craft a fake <i>Polling Station Open</i> ballot</li>
@@ -741,27 +742,27 @@ External access via a cable near the batteries.</li>
                                 <li>Craft a <i>Technician</i> ballot</li>
                         </ol>
                 </div>
-                <div class="step" data-x="32400" data-y="1000" data-rotate-y="20" data-scale="2">
-                        <div class="overlay-img-txt txt-size-reduced pale-yellow">
+                <div class="step" <?php $pos->shiftprint([-200, 1100, 50]); ?> data-scale="2">
+                        <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/start-screen.jpg" alt="Home Screen" width="711" height="400" />
                                 <span>Use the President ballot to pop up<br />the log-in screen</span>
                         </div>
                 </div>
-                <div class="step" data-x="34000" data-y="1300" data-rotate-y="-20" data-scale="2">
-                        <div class="overlay-img-txt txt-size-reduced pale-yellow">
+                <div class="step" <?php $pos->shiftprint([1800, 250], ["theta" => -25]); ?> data-scale="2">
+                        <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/login-screen.jpg" alt="Log-in Screen" width="711" height="400" />
                                 <span>Use the Polling Station Open ballot <br />to bypass password</span>
                         </div>
                 </div>
-                <div class="step" data-x="32400" data-y="2200" data-rotate-y="20" data-scale="2">
-                        <div class="overlay-img-txt txt-size-reduced centered flag-blue">
+                <div class="step" <?php $pos->shiftprint([1400, 450, 150], ["theta" => -25]); ?> data-scale="2">
+                        <div class="overlay-img-txt txt-reduced centered flag-blue">
                                 <img src="img/loggedin-screen.jpg" alt="Logged-in Screen" width="711" height="400" />
                                 <span>Logged-in :)</span>
                         </div>
                 </div>
-                <div class="step" data-x="33000" data-y="3200" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([700, 100, 1300], ["theta" => -25]); ?> data-scale="1">
                         <p>Now you use the Technician ballot and...</p>
-                        <div class="overlay-img-txt txt-size-reduced pale-yellow">
+                        <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/maintenance-screen.jpg" alt="Maintenance screen" width="900" height="566" />
                                 <span>...access maintenance mode</span>
                         </div>
@@ -770,25 +771,50 @@ External access via a cable near the batteries.</li>
                 <!-- - -->
                 <!-- -->
 
+                <!-- conclusions -->
+		<div class="step anim slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="3">
+			<h1 style="text-align: center;">Concluding...</h1>
+                        <p>After all we saw:</p>
+                        <ul>
+                                <li>Bad programing technics that lead to vulns</li>
+                                <li>Awfull choice of vote support/storage system</li>
+                                <li>Doesn't fullfil requirements
+                                <ul>
+                                        <li>Violates the secrecy of the vote</li>
+                                        <li>It's obscure for the voter (and everyone else)</li>
+                                </ul>
+                                </li>
+                                <li>Without manual scrutiny of votes, we get uncertainty of the election result (so what do we need this system for?)</li>
+                                <li>It does speedup the scrutiny by a margin of 20~30%</li>
+                        </ul>
+		</div>
+                <!-- -->
+
                 <!-- questions -->
-		<div class="step anim slide" data-x="1000" data-y="6800" data-scale="2">
+		<div class="step anim slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="2">
 			<h1 style="text-align: center;">Questions?</h1>
-                        <br />
-                        <p>We hope you enjoyed this presentation!</p>
-                        <p>Ask <em>whatever</em> you want, there are no restrictions.</p>
+                        <p>We hope you enjoyed this presentation!.  Ask <em>whatever</em> you want, there are no restrictions.</p>
+                        <p>Perhaps you can ask...</p>
+                        <ul>
+                                <li>Did they solve these issues?</li>
+                                <li>Which advantages has this system compared to the Unique Paper Ballot system?</li>
+                                <li>Attacks against RFID?</li>
+                                <li>Can the ballot box be remotely read?</li>
+                                <li>You mentioned BadUSB... what about it?</li>
+                                <li>What changes would you propose to this system?</li>
+                        </ul>
 		</div>
                 <!-- -->
 
                 <!-- thanks -->
-		<div class="step anim slide" data-x="2500" data-y="6800" data-scale="1">
+		<div class="step anim slide" <?php $pos->shiftprint(1500); ?> data-scale="1">
 			<h1 style="text-align: center;">Thanks for listening!</h1>
-			<br />
 			<p>Also, we want to thank everybody who supported us:</p>
                         <ul>
-                                <li>CaFeLUG (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul)</li>
-                                <li>Fundación Via Libre</li>
-                                <li>Our friends that are always there...</li>
-                                <li>EKOparty organisers for providing a place to share
+                                <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul)</li>
+                                <li><span class="soft-green">Fundación Via Libre</span></li>
+                                <li>Our <span class="soft-green">friends</span> that are always there...</li>
+                                <li><span class="soft-green">EKOparty organisers</span> for providing a place to share
                                 <ul>
                                         <li>Juan Pablo Daniel Borgna, Leonardo Pigñer, Federico Kirschbaum, Jerónimo Basaldúa, Francisco Amato</li>
                                 </ul>
@@ -798,19 +824,21 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- goodbye -->
-		<div class="step slide" data-x="3500" data-y="6800" data-scale="1">
+		<div class="step slide" <?php $pos->shiftprint(1050); ?> data-scale="1">
 			<h1 style="text-align: center;">Hungry for information?</h1>
 			<br />
 			<p>You can get the full report, this presentation and more at the git repo:</p>
-                        <p style="text-align: right;"><a class="link" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+                        <p class="right txt-big"><a class="link" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
                         <p>Feel free to share! (CC BY-SA v4.0).</p>
 			<br /><br /><br /><br />
 			<p class="footnote">Powered by <a href="https://github.com/bartaz/impress.js" class="link-shadow" target="_blank">impress.js</a></p>
 		</div>
                 <!-- -->
 
-                <div id="overview" class="step" data-x="17000" data-y="1000" data-scale="22">
+                <!-- overview -->
+                <div id="overview" class="step" data-x="17000" data-y="10000" data-scale="27">
                 </div>
+                <!-- -->
 	</div>
 
         <!-- impress code -->

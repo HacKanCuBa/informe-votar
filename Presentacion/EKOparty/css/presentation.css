@@ -25,6 +25,10 @@ b, strong { font-weight: bold }
 
 i, em { font-style: italic }
 
+em {
+        color: #595151;
+}
+
 small {
 	font-size: 85%;
 	font-weight: lighter;
@@ -310,11 +314,15 @@ audio {
         margin-bottom: 20px;
 }
 
-.txt-size-reduced {
+.txt-big {
+        font-size: 120%;
+}
+
+.txt-reduced {
         font-size: 80%;
 }
 
-.txt-size-tiny {
+.txt-tiny {
         font-size: 50%;
 }
 
@@ -322,6 +330,9 @@ audio {
         text-align: center;
 }
 
+.right {
+        text-align: right;
+}
 
 /* colours */
 .flag-blue {
