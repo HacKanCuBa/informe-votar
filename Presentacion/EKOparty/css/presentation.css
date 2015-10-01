@@ -91,6 +91,7 @@ table {
 	border-collapse:collapse;
 	text-align:center;
 	margin-bottom:24px;
+        font-size: 75%;
 }
 table tr:nth-child(even) {
 	background:#F8F8F8;
@@ -99,7 +100,7 @@ table th,table td {
 	padding:6px 0;
 }
 table th {
-	font-weight:600;
+	font-weight: bold;
 }
 fieldset {
 	border:#EEE 1px solid;
@@ -349,10 +350,45 @@ audio {
         bottom: 0; 
         left: 0.5em;  
         font-weight: bold; 
-        font-size: 20px;
-        color: #fff;
+        width: 100%;
 }
 
+.overlay-img-txt.bottom span {
+        bottom: 0;
+        top: auto;
+        margin-bottom: 20px;
+}
+
+.txt-size-reduced {
+        font-size: 80%;
+}
+
+.txt-size-tiny {
+        font-size: 50%;
+}
+
+.centered {
+        text-align: center;
+}
+
+
+/* colours */
+.flag-blue {
+        color: #75AADB;
+}
+
+.pale-yellow {
+        color: rgb(251, 252, 194);
+}
+
+.pastel-red {
+        color: rgba(176, 39, 39, 0.69);
+}
+
+.soft-green {
+        color: rgba(127, 203, 130, 0.91);
+}
+/**/
 /**/
 
 /* selectors */

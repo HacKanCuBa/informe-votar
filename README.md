@@ -36,7 +36,13 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * [Es posible votar múltiples veces con el sistema Vot.AR este domingo en Buenos Aires (Argentina)](https://www.meneame.net/m/tecnolog%C3%ADa/como-votar-multiples-veces-sistema-vot-ar-este-domingo-buenos)
 * [Argentinian Programmer Rewarded With A Home Raid For Exposing E-Voting Vulnerabilities ](http://www.techworm.net/2015/07/argentinian-programmer-rewarded-with-a-home-raid-for-exposing-e-voting-vulnerabilities.html)  
 
+
+## Más información sobre Voto Electrónico
+* En el [blog de Javier](https://blog.smaldone.com.ar/category/politica/e-voto/)
+* En el [blog de Iván](http://ivan.barreraoro.com.ar/category/voto-electronico/)
+
 ## Autores
+Los autores aquí mencionados no son responsables ni responden por cualquier opinión o información presentada fuera del informe.  Únicamente por lo escrito en el mismo.  
 * Francisco Amato  
   * [@famato](https://twitter.com/famato)  
 * Iván A. Barrera Oro  
@@ -56,5 +62,6 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
   * [@nicowaisman](https://twitter.com/nicowaisman)
 
 ### Licencia
+Todo el contenido del presente repositorio cae bajo la protección de la siguiente licencia, salvo que se indique lo contrario.  
 ![CC by-sa 4.0](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)  
 **Vot.Ar: una mala elección** by [Francisco Amato, Iván A. Barrera Oro, Enrique Chaparro, Sergio Demian Lerner, Alfredo Ortega, Juliano Rizzo, Fernando Russ, Javier Smaldone, Nicolas Waisman](https://github.com/HacKanCuBa/informe-votar#autores) is licensed under a *[Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)*.  
