@@ -1,3 +1,292 @@
+<?php 
+/*
+        Vot.Ar: a bad election. Presentation for the EKOparty #11, oct 2015
+        by HacKan | Ivan A. Barrera Oro
+        Licence CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
+        Feel free to share!!
+*/
+
+error_reporting(E_ALL);
+
+class Position 
+{
+        /**
+         * Coordinates (data-...)
+         */
+        private $x, $y, $z;
+        /**
+         * Angles (data-rotate-...)
+         */
+        private $alpha, $theta, $phi;
+
+        function __construct() 
+        {
+                $this->reset();
+        }
+
+        /**
+         * Sets the coordinates to a given value. Values can be negative.
+         *
+         * @param array|numeric $coord [optional]
+         * an array of coordinates such as
+         * [ "x" => 1, "y" => 2, "z" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * Elements not set will be omitted, keeping it's current value!.
+         * It can also be a numeric, and if so, it will be considered for 
+         * only X.
+         */
+        public function set_coord($coord)
+        {
+                if (is_array($coord)) {
+                        $this->x = array_key_exists("x", $coord) 
+                                        ? $coord["x"] 
+                                        : (array_key_exists(0, $coord) 
+                                                ? $coord[0] 
+                                                : $this->x
+                                        );
+                        $this->y = array_key_exists("y", $coord) 
+                                        ? $coord["y"] 
+                                        : (array_key_exists(1, $coord) 
+                                                ? $coord[1] 
+                                                : $this->y
+                                        );
+                        $this->z = array_key_exists("z", $coord) 
+                                        ? $coord["z"] 
+                                        : (array_key_exists(2, $coord) 
+                                                ? $coord[2] 
+                                                : $this->z
+                                        );
+                } elseif (is_numeric($coord)) {
+                        $this->x = $coord;
+                }
+        }
+
+        /**
+         * Sets the angles to a given value. Values can be negative.
+         *
+         * @param array|numeric $angle [optional]
+         * an array of angles such as
+         * [ "alpha" => 1, "theta" => 2, "phi" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * Elements not set will be omitted, keeping it's current value!.
+         * It can also be a numeric, and if so, it will be considered for 
+         * only alpha.
+         */
+        public function set_angle($angle)
+        {
+                if (is_array($angle)) {
+                        $this->alpha = array_key_exists("alpha", $angle) 
+                                        ? $angle["alpha"] 
+                                        : (array_key_exists(0, $angle) 
+                                                ? $angle[0] 
+                                                : $this->alpha
+                                        );
+                        $this->theta = array_key_exists("theta", $angle) 
+                                        ? $angle["theta"] 
+                                        : (array_key_exists(1, $angle) 
+                                                ? $angle[1] 
+                                                : $this->theta
+                                        );
+                        $this->phi = array_key_exists("phi", $angle) 
+                                        ? $angle["phi"] 
+                                        : (array_key_exists(2, $angle) 
+                                                ? $angle[2] 
+                                                : $this->phi
+                                        );
+                } elseif (is_numeric($angle)) {
+                        $this->alpha = $angle;
+                }
+        }
+
+        /**
+         * Sets the coordinates and angles to a given value. Values can 
+         * be negative.
+         *
+         * @param array|numeric $coord [optional]
+         * an array of coordinates such as
+         * [ "x" => 1, "y" => 2, "z" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * Elements not set will be omitted, keeping it's current value!.
+         * It can also be a numeric, and if so, it will be considered for only X.
+         *
+         * @param array|numeric $angle [optional]
+         * an array of angles such as
+         * [ "alpha" => 1, "theta" => 2, "phi" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * Elements not set will be omitted, keeping it's current value!.
+         * It can also be a numeric, and if so, it will be considered for 
+         * only alpha.
+         */
+        public function set($coord = NULL, $angle = NULL)
+        {
+                $this->set_coord($coord);
+                $this->set_angle($angle);
+        }
+
+        /**
+         * Sets coords to 0.
+         */
+        public function reset_coord()
+        {
+                $this->set_coord([0, 0, 0]);
+        }
+
+        /**
+         * Sets angles to 0.
+         */
+        public function reset_angle()
+        {
+                $this->set_angle([0, 0, 0]);
+        }
+
+        /**
+         * Sets coords and angles to 0.
+         */
+        public function reset()
+        {
+                $this->reset_coord();
+                $this->reset_angle();
+        }
+
+
+        /**
+         * Get the coordinates
+         *
+         * @return array An array of coordinates
+         */
+        public function get_coord()
+        {
+                return [$this->x, $this->y, $this->z];
+        }
+
+        /**
+         * Get the angles
+         *
+         * @return array An array of angles
+         */
+        public function get_angle()
+        {
+                return [$this->alpha, $this->theta, $this->phi];
+        }
+
+        /**
+         * Shifts the coordinates with a given value.  This means that it adds
+         * the value to current coords.  Values can be negative.
+         *
+         * @param array|numeric $delta an array of coordinates such as
+         * [ "x" => 1, "y" => 2, "z" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * It can also be a numeric, and if so, it will be considered for 
+         * only X.
+         */
+        public function shift_coord($delta)
+        {
+                if (is_array($delta)) {
+                        $this->x += array_key_exists("x", $delta) 
+                                        ? $delta["x"] 
+                                        : (array_key_exists(0, $delta) 
+                                                ? $delta[0] 
+                                                : 0
+                                        );
+                        $this->y += array_key_exists("y", $delta) 
+                                        ? $delta["y"] 
+                                        : (array_key_exists(1, $delta) 
+                                                ? $delta[1] 
+                                                : 0
+                                        );
+                        $this->z += array_key_exists("z", $delta) 
+                                        ? $delta["z"] 
+                                        : (array_key_exists(2, $delta) 
+                                                ? $delta[2] 
+                                                : 0
+                                        );
+                } elseif (is_numeric($delta)) {
+                        $this->x += $delta;
+                }
+        }
+
+        /**
+         * Shifts the angles with a given value.  This means that it adds
+         * the value to current angles.  Values can be negative.
+         *
+         * @param array|numeric $delta an array of angles such as
+         * [ "alpha" => 1, "theta" => 2, "" => 3] or [1, 2, 3]
+         * It's not necessary to set all three elements.
+         * It can also be a numeric, and if so, it will be considered for 
+         * only alpha.
+         */
+        public function shift_angle($delta)
+        {
+                if (is_array($delta)) {
+                        $this->alpha += array_key_exists("alpha", $delta) 
+                                        ? $delta["alpha"] 
+                                        : (array_key_exists(0, $delta) 
+                                                ? $delta[0] 
+                                                : 0
+                                        );
+                        $this->theta += array_key_exists("theta", $delta) 
+                                        ? $delta["theta"] 
+                                        : (array_key_exists(1, $delta) 
+                                                ? $delta[1] 
+                                                : 0
+                                        );
+                        $this->phi += array_key_exists("phi", $delta) 
+                                        ? $delta["phi"] 
+                                        : (array_key_exists(2, $delta) 
+                                                ? $delta[2] 
+                                                : 0
+                                        );
+                } elseif (is_numeric($delta)) {
+                        $this->alpha += $delta;
+                }
+        }
+
+        /**
+         * Shifts the coords and/or angles.
+         * Equal as calling shift_coord() and shift_angle().
+         *
+         * @param array|numeric $delta_coord [optional]
+         * @param array|numeric $delta_angle [optional]
+         */
+        public function shift($delta_coord = NULL, $delta_angle = NULL)
+        {
+                $this->shift_coord($delta_coord);
+                $this->shift_angle($delta_angle);
+        }
+
+        /**
+         * Prints the required text to set the coordinates and angles  
+         * for impress.js
+         */
+        public function printc()
+        {
+                echo 'data-x="' . $this->x 
+                        . '" data-y="' . $this->y 
+                        . '" data-z="' . $this->z . '"';
+
+                echo ' ';
+
+                echo 'data-rotate-x="' . $this->alpha 
+                        . '" data-rotate-y="' . $this->theta 
+                        . '" data-rotate-z="' . $this->phi . '"';
+                
+        }
+
+        /**
+         * Combination of calling: shift() and printc().
+         *
+         * @param array|numeric $delta_coord [optional]
+         * @param array|numeric $delta_angle [optional]
+         */
+        public function shiftprint($delta_coord = NULL, $delta_angle = NULL)
+        {
+                $this->shift($delta_coord, $delta_angle);
+                $this->printc();
+        }
+}
+
+$pos = new Position;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!--
@@ -9,18 +298,18 @@
 <head>
         <meta charset="utf-8">
 
-	<title>Vot.Ar: a bad election</title>
-	<meta name="author" content="Iv&aacute;n A. Barrera Oro" />
+        <title>Vot.Ar: a bad election</title>
+        <meta name="author" content="Iv&aacute;n A. Barrera Oro" />
         <meta name="description" content="Vot.Ar: a bad election. Presentation for the EKOparty #11, oct 2015" />
         <link rel="icon" href="img/logo.png" sizes="196x196" type="image/png" />
 
         <link href="css/reset.css" rel="stylesheet" />
-	<link href="css/presentation.css" rel="stylesheet" />
-	<link href="font/opensans.css" rel="stylesheet" />
-	<link href="font/oswald.css" rel="stylesheet" />
+        <link href="css/presentation.css" rel="stylesheet" />
+        <link href="font/opensans.css" rel="stylesheet" />
+        <link href="font/oswald.css" rel="stylesheet" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@hackancuba" />
@@ -41,7 +330,7 @@
 
 	<div id="impress">
                 <!-- welcome -->
-                <div id="title" class="step anim" data-x="0" data-y="0" data-scale="3">
+                <div id="title" class="step anim" <?php $pos->printc(); ?> data-scale="3">
                         <h1 class="centered">Vot.Ar: a bad election</h1>
                         <h3>A presentation about the <i class="scaling flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
                         <br /><br />
@@ -52,7 +341,7 @@
 
                 <!-- intro -->
                 <!-- -short intro about the people involved, what moved us to do this. -->
-                <div id="authors" class="step anim" data-x="7000" data-y="600" data-scale="10">
+                <div id="authors" class="step anim" <?php $pos->shift([7000, 600]); $pos->printc(); ?> data-scale="10">
                         <p>Authors: 
                                 <a class="link" href="https://twitter.com/famato" target="_blank">Francisco Amato</a>, 
                                 <a class="link" href="https://twitter.com/hackancuba" target="_blank">Iv&aacute;n A. Barrera Oro</a>, 
@@ -67,11 +356,10 @@
                         <p class="footnote">Presenters: <b class="scaling"><i>Iv&aacute;n</i> & <i>Javier</i></b></p>
                 </div>
                 <!-- - -->
-                <!-- +(17600,x,x) -->
-
+                <!-- +(16000,x,x) --><?php $pos->set([23000, -1000, 0]); ?>
                 <!-- -timeline -->
-                <div class="step" data-x="24600" data-y="0" data-scale="1">
-                        <h2>How did this investigation begin?</h2>
+                <div class="step" <?php $pos->printc(); ?> data-scale="1">
+                        <h2>How did this investigation began?</h2>
                         <ol>
                                 <li>Through CaFeLUG group I was contacted for a private audit on the system.</li>
                                 <li>I got mad because of <em class="pastel-red">prohibition</em> to touch/modify/carefully analyse things.</li>
@@ -82,7 +370,7 @@
                 <!-- - -->
                 <!-- +(0,800,0) -->
                 <!-- -what did we find? -->
-                <div class="step" data-x="24600" data-y="800" data-rotate-x="-20" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([0, 800], -20); ?> data-scale="1">
                         <h2>What did we find?</h2>
                         <ul>
                                 <li>Bad design, worst implementation</li>
@@ -93,7 +381,7 @@
                 <!-- - -->
                 <!-- +(0,1100,0) -->
                 <!-- -how did we do it? -->
-                <div class="step" data-x="24600" data-y="1900" data-z="0" data-rotate-x="-40" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([0, 1100], -40); ?> data-scale="1">
                         <h2>How did we do this?</h2>
                         <ul>
                                 <li>About a week or so of hard work</li>
@@ -106,7 +394,7 @@
                         </ul>
                 </div>
                 <!-- +(0,550,-400) -->
-                <div class="step" data-x="24600" data-y="2450" data-z="-400" data-rotate-x="-40" data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 550, -400]); ?> data-scale="1">
                         <ul>
                                 <li>Building a few devices for hardware tests:
                                 <ul>
@@ -125,7 +413,7 @@
                 <!-- -->
                 <!-- +(0,1050,400) -->
                 <!-- about vot.ar, brief desc -->
-		<div class="step anim" data-x="24600" data-y="3500" data-scale="1">
+		<div class="step anim" <?php $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
                         <p><strong>Vot.Ar</strong> by MSA Group is a paper-based eVoting system, with two main elements:</p>
                         <ul>
                                 <li>The vote-casting and counting machine</li>
@@ -134,7 +422,7 @@
                         <p><b class="scaling pastel-red">Main issue?</b></p>
                         <p class="footnote pastel-red">among others...</p>
                 </div><!-- +(0,0,0) -->
-		<div class="step hidden" data-x="24600" data-y="3500" data-scale="1">
+		<div class="step hidden" <?php $pos->printc(); ?> data-scale="1">
                         <div style="position:absolute; top: 45px; left: 580px;">
                                 <div class="overlay-img-txt txt-size-tiny pale-yellow">
                                         <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
@@ -145,14 +433,14 @@
                 <!-- -->
                 <!-- +(0,500,300) -->
                 <!-- israel case -->
-                <div class="step hidden" data-x="24600" data-y="4000" data-z="0" data-rotate-x="90" data-scale="1">
+                <div class="step hidden" <?php $pos->shiftprint([1100], ["theta" => -25]); ?> data-scale="1">
                         <p>Why is RFID such a bad idea?</p>
                         <img src="img/evoting-rfid.jpg" alt="e-voting rfid" width="1050" height="625" />
                 </div>
                 <!-- -->
                 <!-- +(0,500,0) -->
                 <!-- how is it supposed to be -->
-                <div class="step anim" data-x="24600" data-y="4500" data-scale="1">
+                <div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
                         <h2>Requirements for the system (by it's patent & law)</h2>
                         <ol>
                                 <li><strong>Free (as in freedom)</strong>*</li>
@@ -165,7 +453,7 @@
                         <p class="footnote">* Constitutional rights</p>
                 </div>
                 <!-- +(0,750,0) -->
-                <div class="step anim" data-x="24600" data-y="5250" data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
                         <h2>Some things to note</h2>
                         <ul>
                                 <li>Completely closed HW & SW</li>
@@ -181,7 +469,7 @@
                         </ul>
                 </div>
                 <!-- +(0,830,0) -->
-                <div class="step anim" data-x="24600" data-y="6080" data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint([900, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
                                 <li>2 official audits by the time of this report:
                                 <ul>
@@ -194,33 +482,33 @@
                         </ul>
                 </div>
                 <!-- +(0,570,0) -->
-                <div class="step anim" data-x="24600" data-y="6650" data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint([-200, 750], ["theta" => 10]); ?> data-scale="2">
                         <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
                 </div>
                 <!-- -->
 
                 <!-- macro description of the system -->
                 <!-- -machine -->
-                <div class="step" data-x="28000" data-y="0" data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([4000, 200]); ?> data-scale="1">
                         <h2>Overview of Vot.Ar</h2>
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
                 </div>
-
-                <div class="step" data-x="26800" data-y="0" data-rotate-z="-10" data-scale="1">
+                <!-- +(-1200,0,0) -->
+                <div class="step" <?php $pos->shiftprint(-1200, ["phi" => -10]); ?> data-scale="1">
                         <p>It has on the left:</p>
                         <ul>
                                 <li>Touchscreen for operation (to pick candidates and stuff)</li>
                         </ul>
                 </div>
-
-                <div class="step" data-x="28750" data-y="0" data-rotate-z="10" data-scale="1">
+                <!-- +(1950,0,0) -->
+                <div class="step" <?php $pos->shiftprint(1950, ["phi" => 20]); ?> data-scale="1">
                         <p>It has on the right:</p>
                         <ul>
                                 <li>An RFID reader/writer + thermal printer unit</li>
                         </ul>
                 </div>
-
-                <div class="step" data-x="27900" data-y="-700" data-rotate-x="30" data-scale="1">
+                <!-- +(-850,-700,0) -->
+                <div class="step" <?php $pos->shiftprint([-850, -700], [30, 0, -10]); ?> data-scale="1">
                         <p>It has on the top:</p>
                         <ul>
                                 <li>
@@ -245,8 +533,8 @@
                                 </li>
                         </ul>
                 </div>
-
-                <div class="step" data-x="28000" data-y="650" data-rotate-x="-30" data-scale="1">
+                <!-- +(100,1350,0) -->
+                <div class="step" <?php $pos->shiftprint([100, 1350], -60); ?> data-scale="1">
                         <p>It has on the bottom:</p>
                         <ul>
                                 <li>a power source + 2 battery pack</li>
@@ -254,19 +542,19 @@
                         </ul>
                 </div>
                 <!-- - -->
-
-                <div class="step" data-x="28000" data-y="950" data-scale="1">
+                <!-- +(0,300,0) -->
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 300]); ?> data-scale="1">
                         <p>And then there's the ballot, which has an RFID chip + thermal paper on the back</p>
                         <p class="footnote">Hang on, details are coming...</p>
                 </div>
-                
-                <div class="step" data-x="28000" data-y="1200" data-scale="1">
+                <!-- +(0,250,0) -->
+                <div class="step" <?php $pos->shiftprint(["y" => 250]); ?> data-scale="1">
                         <p>But propaganda said:</p>
                         <q>It's a printer, not a computer!</q>
                         <p><small>and everybody believed it!</small></p>
                 </div>
-
-                <div class="step" data-x="28000" data-y="1650" data-scale="1">
+                <!-- +(0,900,0) -->
+                <div class="step" <?php $pos->shiftprint(["y" => 815], 10); ?> data-scale="2">
                         <div class="overlay-img-txt txt-size-reduced centered bottom flag-blue">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
                                 <span>So here we were, tweeting from a "printer"...</span>
@@ -276,18 +564,18 @@
 
                 <!-- HW deep -->
                 <!-- -inside, all -->
-                <div class="step" data-x="23000" data-y="4000" data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1600]); ?> data-scale="1">
                         <h2>Now let's get deep into the HW</h2>
                         <p>What's inside the machine?</p>
                         <img src="img/inside.jpg" alt="Inside the machine" width="1000" height="645" />
                 </div>
-
-                <div class="step" data-x="23000" data-y="5000" data-scale="1">
+                <!-- +(0,1000,0) -->
+                <div class="step" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
                         <p>Deeper inside (behind the screen):</p>
                         <img src="img/inside-behind.jpg" alt="Behind the inside of the machine" width="1000" height="735" />
                 </div>
-
-                <div class="step" data-x="21800" data-y="5000" data-scale="1">
+                <!-- +(-1200,0,0) -->
+                <div class="step" <?php $pos->shiftprint(-1200); ?> data-scale="1">
                         <ul>
                                 <li>JTAG port: used to program/debug the microcontroller.
 External access via a cable near the batteries.</li>
@@ -298,8 +586,8 @@ External access via a cable near the batteries.</li>
                         </div>
                         <p class="footnote">More on this at <a class="link" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">Javier's blog</a></p>
                 </div>
-
-                <div class="step anim" data-x="23900" data-y="5000" data-scale="1">
+                <!-- +(2100,0,0) -->
+                <div class="step anim" <?php $pos->shiftprint(2200); ?> data-scale="1">
                         <ul>
                                 <li>Microprocessor (uP): Intel(R) Celeron(R) CPU N2930 @ 1.83GHz</li>
                                 <li>RAM memory: 2GB DDR3 1600</li>
@@ -311,33 +599,34 @@ External access via a cable near the batteries.</li>
                         </ul>
                 </div>
                 <!-- - -->
-
+                <!-- +(-900,800,0) -->
                 <!-- -uC -->
-                <div class="step" data-x="23000" data-y="5800" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([-900, 1000], ["theta" => 10]); ?> data-scale="1">
                         <p>So, we found an unknown subsystem:</p>
                         <img src="img/secret-uc.png" alt="Secret microcontroller" width="568" height="582" />
                 </div>
-
-                <div class="step anim" data-x="23500" data-y="5850" data-scale="1">
+                <!-- +(500,50,0) -->
+                <div class="step anim" <?php $pos->shiftprint([700, 100, 20], ["theta" => 10]); ?> data-scale="1">
                         <p>The ARM controls the thermal printer and the RFID reader/writer.</p>
-                        <p>Its internal E2PROM memory is <b class="scaling">sufficient to store</b><br />every vote cast and more.</p>
+                        <p>Its internal E2PROM memory is <b class="scaling_right">sufficient to store</b><br />every vote cast and more.</p>
                         <p>We know <em>nothing</em> about this, Jon Snow!</p>
                 </div>
                 <!-- - -->
-
+                <!-- +(-500,1150,0) -->
                 <!-- -ballots -->
-                <div class="step" data-x="23000" data-y="6700" data-scale="1">
+                <div class="step" <?php $pos->shiftprint([-500, 1150], ["theta" => 10]); ?> data-scale="1">
                         <h3>About the ballots (aka BUE cards)</h3>
                         <img src="img/ballot.jpg" alt="Ballot" width="1000" height="732" />
                 </div>
-
-                <div class="step" data-x="24750" data-y="6800" data-rotate-y="10" data-scale="2">
+                <!-- +(1750,100,0) +(0,10,0) -->
+                <div class="step" <?php $pos->shiftprint([1750, 100], ["theta" => 10]); ?> data-scale="2">
                         <ul>
                                 <li>Paperboard with a print on one side, and thermal paper on the other + RFID chip</li>
                                 <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> bent over</li>
                         </ul>
                 </div>
-                <div class="step" data-x="23000" data-y="7650" data-rotate-x="-10" data-scale="1">
+                <!-- +(-1750,850,0) +(-10,-10,0) -->
+                <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -10]); ?> data-scale="1">
                         <h4>The RFID Chip</h4>
                         <ul>
                                 <li>ICODE SLI SL2 ICS20 (ISO 15693)</li>
