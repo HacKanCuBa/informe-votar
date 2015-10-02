@@ -356,7 +356,7 @@ $pos = new Position;
                         <p class="footnote">Presenters: <b class="scaling"><i>Iv&aacute;n</i> & <i>Javier</i></b></p>
                 </div>
                 <!-- - -->
-                <!-- +(16000,x,x) --><?php $pos->set([23000, -1000, 0]); ?>
+                <?php $pos->set([23000, -1000, 0]); ?>
                 <!-- -timeline -->
                 <div class="step" <?php $pos->printc(); ?> data-scale="1">
                         <h2>How did this investigation began?</h2>
@@ -368,7 +368,7 @@ $pos = new Position;
                         </ol>
                 </div>
                 <!-- - -->
-                <!-- +(0,800,0) -->
+
                 <!-- -what did we find? -->
                 <div class="step" <?php $pos->shiftprint([0, 800], -20); ?> data-scale="1">
                         <h2>What did we find?</h2>
@@ -379,13 +379,13 @@ $pos = new Position;
                         </ul>
                 </div>
                 <!-- - -->
-                <!-- +(0,1100,0) -->
+
                 <!-- -how did we do it? -->
                 <div class="step" <?php $pos->shiftprint([0, 1100], -40); ?> data-scale="1">
                         <h2>How did we do this?</h2>
                         <ul>
                                 <li>About a week or so of hard work</li>
-                                <li>Unofficial: no assistance provided by company nor gov</li>
+                                <li>Unofficial: no assistance was provided by company nor govt</li>
                                 <li>By going to public consultation points to have access to machines and ballots
                                 <ul>
                                         <li>Plugging in a keyboard to let the magic happen :D</li>
@@ -393,8 +393,8 @@ $pos = new Position;
                                 </li>
                         </ul>
                 </div>
-                <!-- +(0,550,-400) -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 550, -400]); ?> data-scale="1">
+
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 500, -400]); ?> data-scale="1">
                         <ul>
                                 <li>Building a few devices for hardware tests:
                                 <ul>
@@ -411,9 +411,9 @@ $pos = new Position;
                 </div>
                 <!-- - -->
                 <!-- -->
-                <!-- +(0,1050,400) -->
+
                 <!-- about vot.ar, brief desc -->
-		<div class="step anim" <?php $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
+		<div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
                         <p><strong>Vot.Ar</strong> by MSA Group is a paper-based eVoting system, with two main elements:</p>
                         <ul>
                                 <li>The vote-casting and counting machine</li>
@@ -431,14 +431,14 @@ $pos = new Position;
                         </div>
                 </div>
                 <!-- -->
-                <!-- +(0,500,300) -->
+
                 <!-- israel case -->
                 <div class="step hidden" <?php $pos->shiftprint([1100], ["theta" => -25]); ?> data-scale="1">
                         <p>Why is RFID such a bad idea?</p>
                         <img src="img/evoting-rfid.jpg" alt="e-voting rfid" width="1050" height="625" />
                 </div>
                 <!-- -->
-                <!-- +(0,500,0) -->
+
                 <!-- how is it supposed to be -->
                 <div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
                         <h2>Requirements for the system (by it's patent & law)</h2>
@@ -452,7 +452,7 @@ $pos = new Position;
                         </ol>
                         <p class="footnote">* Constitutional rights</p>
                 </div>
-                <!-- +(0,750,0) -->
+
                 <div class="step anim" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
                         <h2>Some things to note</h2>
                         <ul>
@@ -468,7 +468,7 @@ $pos = new Position;
                                 <li>Soon to be used in Neuquén</li>
                         </ul>
                 </div>
-                <!-- +(0,830,0) -->
+
                 <div class="step anim" <?php $pos->shiftprint([900, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
                                 <li>2 official audits by the time of this report:
@@ -481,7 +481,7 @@ $pos = new Position;
                                 </li>
                         </ul>
                 </div>
-                <!-- +(0,570,0) -->
+
                 <div class="step anim" <?php $pos->shiftprint([-200, 750], ["theta" => 10]); ?> data-scale="2">
                         <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
                 </div>
@@ -493,21 +493,21 @@ $pos = new Position;
                         <h2>Overview of Vot.Ar</h2>
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
                 </div>
-                <!-- +(-1200,0,0) -->
+
                 <div class="step" <?php $pos->shiftprint(-1200, ["phi" => -10]); ?> data-scale="1">
                         <p>It has on the left:</p>
                         <ul>
                                 <li>Touchscreen for operation (to pick candidates and stuff)</li>
                         </ul>
                 </div>
-                <!-- +(1950,0,0) -->
+
                 <div class="step" <?php $pos->shiftprint(1950, ["phi" => 20]); ?> data-scale="1">
                         <p>It has on the right:</p>
                         <ul>
                                 <li>An RFID reader/writer + thermal printer unit</li>
                         </ul>
                 </div>
-                <!-- +(-850,-700,0) -->
+
                 <div class="step" <?php $pos->shiftprint([-850, -700], [30, 0, -10]); ?> data-scale="1">
                         <p>It has on the top:</p>
                         <ul>
@@ -534,7 +534,7 @@ $pos = new Position;
                         </ul>
                         <p class="footnote">* BadUSB?...</p>
                 </div>
-                <!-- +(100,1350,0) -->
+
                 <div class="step" <?php $pos->shiftprint([100, 1350], -60); ?> data-scale="1">
                         <p>It has on the bottom:</p>
                         <ul>
@@ -543,18 +543,18 @@ $pos = new Position;
                         </ul>
                 </div>
                 <!-- - -->
-                <!-- +(0,300,0) -->
+
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 300]); ?> data-scale="1">
                         <p>And then there's the ballot, which has an RFID chip + thermal paper on the back</p>
                         <p class="footnote">Hang on, details are coming...</p>
                 </div>
-                <!-- +(0,250,0) -->
+
                 <div class="step" <?php $pos->shiftprint(["y" => 250]); ?> data-scale="1">
                         <p>But propaganda said:</p>
                         <q>It's a printer, not a computer!</q>
                         <p><small>and everybody believed it!</small></p>
                 </div>
-                <!-- +(0,900,0) -->
+
                 <div class="step" <?php $pos->shiftprint(["y" => 815], 10); ?> data-scale="2">
                         <div class="overlay-img-txt txt-reduced centered bottom flag-blue">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
@@ -600,16 +600,16 @@ External access via a cable near the batteries.</li>
                         </ul>
                 </div>
                 <!-- - -->
-                <!-- +(-900,800,0) -->
+
                 <!-- -uC -->
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 800]); ?> data-scale="1">
                         <p>So, we found an unknown subsystem:</p>
                         <img src="img/secret-uc.png" alt="Secret microcontroller" width="568" height="582" />
                 </div>
-                <!-- +(500,50,0) (0,10,0)-->
+
                 <div class="step anim" <?php $pos->shiftprint([500, 50, 0], ["theta" => 10]); ?> data-scale="1">
                         <p>The ARM controls the thermal printer and the RFID reader/writer.</p>
-                        <p>Its internal E2PROM memory is <b class="scaling_right">sufficient to store</b><br />every vote cast and more.</p>
+                        <p>Its internal E2PROM memory is <b class="scaling-right">sufficient to store</b><br />every vote cast and more.</p>
                         <p>We know <em>nothing</em> about this, Jon Snow!</p>
                 </div>
                 <!-- - -->
@@ -619,14 +619,14 @@ External access via a cable near the batteries.</li>
                         <h3>About the ballots (aka BUE cards)</h3>
                         <img src="img/ballot.jpg" alt="Ballot" width="1000" height="732" />
                 </div>
-                <!-- +(1750,100,0) +(0,10,0) -->
+
                 <div class="step" <?php $pos->shiftprint([2000, 100, -450], ["theta" => 10]); ?> data-scale="2">
                         <ul>
                                 <li>Paperboard with a print on one side, and thermal paper on the other + RFID chip</li>
                                 <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> bent over</li>
                         </ul>
                 </div>
-                <!-- +(-1750,850,0) +(-10,-10,0) -->
+
                 <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -20]); ?> data-scale="1">
                         <h4>The RFID Chip</h4>
                         <ul>
@@ -676,14 +676,24 @@ External access via a cable near the batteries.</li>
                         <h2>Time to analyse the SW</h2>
                         <p>We were able to do it thanks to the help of someone named <a class="link" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
                         <ul>
+                                <li>Written in Python</li>
+                                <li>Comes in a DVD 
+                                <ul>
+                                        <li>Linux Ubuntu-based (a little bit trimmed)</li>
+                                        <li>Hash file/contents <em>not cryptographically signed</em> (anyone can change the DVD at any moment)</li>
+                                </ul></li>
+                        </ul>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 610]); ?> data-scale="1">
+                        <ul>
                                 <li>Lacks completely of (public) documentation and also in-code documentation</li>
                                 <li>Very few comments</li>
                                 <li>Untidy code</li>
                                 <li>No unit testing</li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 500]); ?> data-scale="1">
-                        <p>This makes it hard to read, audit, maintain, improve...</p>
+                <div class="step" <?php $pos->shiftprint(["y" => 300]); ?> data-scale="1">
+                        <p>This makes the code hard to read, audit, maintain, improve...</p>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 125], 180); ?> data-scale="1">
                         <p>...but ideal to breed nasty bugs...</p>
@@ -766,39 +776,126 @@ External access via a cable near the batteries.</li>
                                 <img src="img/maintenance-screen.jpg" alt="Maintenance screen" width="900" height="566" />
                                 <span>...access maintenance mode</span>
                         </div>
-                        <p class="footnote">Threat level: low.  But it shows how these people work...</p>
+                        <p class="footnote">Threat level: low.  But it shows awfull design...</p>
                 </div>
                 <!-- - -->
                 <!-- -->
 
-                <!-- conclusions -->
-		<div class="step anim slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="3">
-			<h1 style="text-align: center;">Concluding...</h1>
-                        <p>After all we saw:</p>
+                <!-- bue vs bup -->
+                <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
+                        <h2 class="centered">A few words about Unique Paper Ballot</h2>
+                        <p class="txt-tiny centered">BUE stands for Unique Electronic Ballot and
+BUP for Unique Paper Ballot (in Spanish)<p>
+                        <table>
+                                <thead>
+                                <tr>
+                                        <th>BUE</th>
+                                        <th>BUP</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                        <td colspan="2">Both: better than traditional (french) system</td>
+                                </tr>
+                                <tr>
+                                        <td>~U$D 9 per vote</td>
+                                        <td>~U$D 2 per vote</td>
+                                </tr>
+                                <tr>
+                                        <td>1.84Kg of batteries per machine * 9k machines = 16.5Ton!</td>
+                                        <td>No batteries needed</td>
+                                </tr>
+                                <tr>
+                                        <td>ballots hard to recycle</td>
+                                        <td>easily reciclable</td>
+                                </tr>
+                                <tr>
+                                        <td>1 DVD per machine... what do we do with it?</td>
+                                        <td>No DVDs required</td>
+                                </tr>
+                                <tr>
+                                        <td>faster scrutiny than manual (~30%)</td>
+                                        <td>scrutiny could be automated</td>
+                                </tr>
+                                <tr>
+                                        <td>it is eVoting</td>
+                                        <td>it is not eVoting</td>
+                                </tr>
+                                </tbody>
+                        </table>
+                </div>
+                <!-- -->
+
+                <!-- bying votes and stuff... -->
+                <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1000]); ?> data-scale="1">
+                        <h2>Old threats updated</h2>
+                        <h4>Some common attacks against electoral systems</h4>
                         <ul>
-                                <li>Bad programing technics that lead to vulns</li>
+                                <li>Pregnant ballot box</li>
+                                <li>President of the Polling Station in favor of a party</li>
+                                <li>Chain-voting</li>
+                                <li>Clientelism</li>
+                                <li>Ballot-stealing</li>
+                                <li>Ballot-changing</li>
+                                <li>Interfering delivery of the scrutiny result</li>
+                        </ul>
+                        <p class="footnote">Much more <a class="link-shadow" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">detailed explanation</a> by Javier</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
+                        <p>There's no major advantage to eachother on any point.</p>
+                        <p>Yet, this system introduces a new way to <i>buy votes</i>, that can be exploited by <em>point men</em> (political bosses).</p>
+                        <img src="img/point-men.jpg" alt="Buying votes" width="1000" height="529" />
+                </div>
+                <!-- -->
+
+                <!-- international -->
+		<div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500], ["alpha" => -30]); ?> data-scale="1">
+                        <img src="img/world-evoting-map.png" alt="eVoting around the world" width="953" height="700" />
+                        <p class="footnote"><a class="link-shadow" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Reference</a></p>
+		</div>
+                <!-- -->
+
+                <!-- summary -->
+		<div class="step slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
+			<h1 style="text-align: center;">Summing up...</h1>
+                        <br />
+                        <ul>
+                                <li>Bad programing technics lead to <span class="pastel-red">vulns</span></li>
                                 <li>Awfull choice of vote support/storage system</li>
                                 <li>Doesn't fullfil requirements
                                 <ul>
-                                        <li>Violates the secrecy of the vote</li>
-                                        <li>It's obscure for the voter (and everyone else)</li>
+                                        <li><em>Violates</em> the secrecy of the vote</li>
+                                        <li>It's <em>obscure</em> for the voter (and everyone else)</li>
                                 </ul>
                                 </li>
-                                <li>Without manual scrutiny of votes, we get uncertainty of the election result (so what do we need this system for?)</li>
-                                <li>It does speedup the scrutiny by a margin of 20~30%</li>
+                                <li>No significant advantages compared to the Unique Paper Ballot system</li>
+                                <li>Scrutiny in BUP can be automated for fast provisional</li>
                         </ul>
 		</div>
                 <!-- -->
 
+                <!-- conclusions -->
+                <div class="step anim slide" <?php $pos->shiftprint([2500, 50, 50]); ?> data-scale="3">
+			<h1 style="text-align: center;">Conclusion</h1>
+                        <p>After all we saw:</p>
+                        <ul>
+                                <li>Do you really <em>believe</em> it's a <i>printer?</i></li>
+                                <li>Uncertainty of election result without manual scrutiny (so what do we need this system for?)</li>
+                                <li>Risks introduced by eVoting are greater that its benefits</li>
+                                <li><strong>No technical progress should undermine democracy</strong></li>
+                        </ul>
+                        <p><b class="positioning">We conclude that this system doesn't comply with its objectives and introduces risks to the electoral process</b></p>
+		</div>
+                <!-- -->
+
                 <!-- questions -->
-		<div class="step anim slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="2">
+		<div class="step slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="2">
 			<h1 style="text-align: center;">Questions?</h1>
                         <p>We hope you enjoyed this presentation!.  Ask <em>whatever</em> you want, there are no restrictions.</p>
                         <p>Perhaps you can ask...</p>
                         <ul>
                                 <li>Did they solve these issues?</li>
-                                <li>Which advantages has this system compared to the Unique Paper Ballot system?</li>
-                                <li>Attacks against RFID?</li>
+                                <li>Known attacks against RFID?</li>
                                 <li>Can the ballot box be remotely read?</li>
                                 <li>You mentioned BadUSB... what about it?</li>
                                 <li>What changes would you propose to this system?</li>
@@ -809,7 +906,7 @@ External access via a cable near the batteries.</li>
                 <!-- thanks -->
 		<div class="step anim slide" <?php $pos->shiftprint(1500); ?> data-scale="1">
 			<h1 style="text-align: center;">Thanks for listening!</h1>
-			<p>Also, we want to thank everybody who supported us:</p>
+			<p>Also, we want to <b class="scaling">thank everybody</b> who supported us:</p>
                         <ul>
                                 <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul)</li>
                                 <li><span class="soft-green">Fundación Via Libre</span></li>
@@ -836,7 +933,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- overview -->
-                <div id="overview" class="step" data-x="17000" data-y="10000" data-scale="27">
+                <div id="overview" class="step" data-x="17000" data-y="13000" data-scale="32">
                 </div>
                 <!-- -->
 	</div>
