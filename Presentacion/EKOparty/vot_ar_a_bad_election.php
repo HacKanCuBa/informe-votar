@@ -8,20 +8,79 @@
 
 error_reporting(E_ALL);
 
+/**
+ * Defines if Overview will be shown.
+ */
+define('SHOW_OVERVIEW', true);
+
 class Position 
 {
         /**
          * Coordinates (data-...)
          */
-        private $x, $y, $z;
+        private $_x, $_y, $_z;
         /**
          * Angles (data-rotate-...)
          */
-        private $alpha, $theta, $phi;
+        private $_alpha, $_theta, $_phi;
+        /**
+         * Overview position (could be automated)
+         */
+        private $_overviewX, $_overviewY, $_overviewS;
 
         function __construct() 
         {
                 $this->reset();
+        }
+
+        /**
+         * Sets the Overview coordinates. Values can be negative.
+         *
+         * @param array $coord 
+         * an array of coordinates such as
+         * [ "x" => 1, "y" => 2, "s" => 3] or [1, 2, 3]
+         * Note that S is the Scale.
+         * It's not necessary to set all three elements.
+         * Elements not set will be omitted, keeping it's current value!.
+         * 
+         */
+        public function set_overview($overview)
+        {
+                if (is_array($overview)) {
+                        $this->_overviewX = array_key_exists("x", $overview) 
+                                        ? $overview["x"] 
+                                        : (array_key_exists(0, $overview) 
+                                                ? $overview[0] 
+                                                : $this->_overviewX
+                                        );
+                        $this->_overviewY = array_key_exists("y", $overview) 
+                                        ? $overview["y"] 
+                                        : (array_key_exists(1, $overview) 
+                                                ? $overview[1] 
+                                                : $this->_overviewY
+                                        );
+                        $this->_overviewS = array_key_exists("s", $overview) 
+                                        ? $overview["s"] 
+                                        : (array_key_exists(2, $overview) 
+                                                ? $overview[2] 
+                                                : $this->_overviewS
+                                        );
+                        
+                }
+        }
+
+        /**
+         * This method calculates the overview coordinates based on the
+         * currently set coords, asuming these are the final ones, and that
+         * the first ones are [0,0]
+         */
+        public function autoset_overview()
+        {
+                $this->_overviewX =  (int) ($this->_x / 2);
+                $this->_overviewY =  (int) ($this->_y / 2);
+                // how can I calculate this? I think it can be done w/ the 
+                // screen resolution
+                //$this->_overviewS = 32
         }
 
         /**
@@ -38,26 +97,26 @@ class Position
         public function set_coord($coord)
         {
                 if (is_array($coord)) {
-                        $this->x = array_key_exists("x", $coord) 
+                        $this->_x = array_key_exists("x", $coord) 
                                         ? $coord["x"] 
                                         : (array_key_exists(0, $coord) 
                                                 ? $coord[0] 
-                                                : $this->x
+                                                : $this->_x
                                         );
-                        $this->y = array_key_exists("y", $coord) 
+                        $this->_y = array_key_exists("y", $coord) 
                                         ? $coord["y"] 
                                         : (array_key_exists(1, $coord) 
                                                 ? $coord[1] 
-                                                : $this->y
+                                                : $this->_y
                                         );
-                        $this->z = array_key_exists("z", $coord) 
+                        $this->_z = array_key_exists("z", $coord) 
                                         ? $coord["z"] 
                                         : (array_key_exists(2, $coord) 
                                                 ? $coord[2] 
-                                                : $this->z
+                                                : $this->_z
                                         );
                 } elseif (is_numeric($coord)) {
-                        $this->x = $coord;
+                        $this->_x = $coord;
                 }
         }
 
@@ -75,26 +134,26 @@ class Position
         public function set_angle($angle)
         {
                 if (is_array($angle)) {
-                        $this->alpha = array_key_exists("alpha", $angle) 
+                        $this->_alpha = array_key_exists("alpha", $angle) 
                                         ? $angle["alpha"] 
                                         : (array_key_exists(0, $angle) 
                                                 ? $angle[0] 
-                                                : $this->alpha
+                                                : $this->_alpha
                                         );
-                        $this->theta = array_key_exists("theta", $angle) 
+                        $this->_theta = array_key_exists("theta", $angle) 
                                         ? $angle["theta"] 
                                         : (array_key_exists(1, $angle) 
                                                 ? $angle[1] 
-                                                : $this->theta
+                                                : $this->_theta
                                         );
-                        $this->phi = array_key_exists("phi", $angle) 
+                        $this->_phi = array_key_exists("phi", $angle) 
                                         ? $angle["phi"] 
                                         : (array_key_exists(2, $angle) 
                                                 ? $angle[2] 
-                                                : $this->phi
+                                                : $this->_phi
                                         );
                 } elseif (is_numeric($angle)) {
-                        $this->alpha = $angle;
+                        $this->_alpha = $angle;
                 }
         }
 
@@ -140,12 +199,21 @@ class Position
         }
 
         /**
+         * Sets overview to [0, 0, 0].
+         */
+        private function reset_overview()
+        {
+                $this->set_overview([0, 0, 0]);
+        }
+
+        /**
          * Sets coords and angles to 0.
          */
         public function reset()
         {
                 $this->reset_coord();
                 $this->reset_angle();
+                $this->reset_overview();
         }
 
 
@@ -156,7 +224,7 @@ class Position
          */
         public function get_coord()
         {
-                return [$this->x, $this->y, $this->z];
+                return [$this->_x, $this->_y, $this->_z];
         }
 
         /**
@@ -166,7 +234,7 @@ class Position
          */
         public function get_angle()
         {
-                return [$this->alpha, $this->theta, $this->phi];
+                return [$this->_alpha, $this->_theta, $this->_phi];
         }
 
         /**
@@ -182,26 +250,26 @@ class Position
         public function shift_coord($delta)
         {
                 if (is_array($delta)) {
-                        $this->x += array_key_exists("x", $delta) 
+                        $this->_x += array_key_exists("x", $delta) 
                                         ? $delta["x"] 
                                         : (array_key_exists(0, $delta) 
                                                 ? $delta[0] 
                                                 : 0
                                         );
-                        $this->y += array_key_exists("y", $delta) 
+                        $this->_y += array_key_exists("y", $delta) 
                                         ? $delta["y"] 
                                         : (array_key_exists(1, $delta) 
                                                 ? $delta[1] 
                                                 : 0
                                         );
-                        $this->z += array_key_exists("z", $delta) 
+                        $this->_z += array_key_exists("z", $delta) 
                                         ? $delta["z"] 
                                         : (array_key_exists(2, $delta) 
                                                 ? $delta[2] 
                                                 : 0
                                         );
                 } elseif (is_numeric($delta)) {
-                        $this->x += $delta;
+                        $this->_x += $delta;
                 }
         }
 
@@ -218,26 +286,26 @@ class Position
         public function shift_angle($delta)
         {
                 if (is_array($delta)) {
-                        $this->alpha += array_key_exists("alpha", $delta) 
+                        $this->_alpha += array_key_exists("alpha", $delta) 
                                         ? $delta["alpha"] 
                                         : (array_key_exists(0, $delta) 
                                                 ? $delta[0] 
                                                 : 0
                                         );
-                        $this->theta += array_key_exists("theta", $delta) 
+                        $this->_theta += array_key_exists("theta", $delta) 
                                         ? $delta["theta"] 
                                         : (array_key_exists(1, $delta) 
                                                 ? $delta[1] 
                                                 : 0
                                         );
-                        $this->phi += array_key_exists("phi", $delta) 
+                        $this->_phi += array_key_exists("phi", $delta) 
                                         ? $delta["phi"] 
                                         : (array_key_exists(2, $delta) 
                                                 ? $delta[2] 
                                                 : 0
                                         );
                 } elseif (is_numeric($delta)) {
-                        $this->alpha += $delta;
+                        $this->_alpha += $delta;
                 }
         }
 
@@ -260,15 +328,15 @@ class Position
          */
         public function printc()
         {
-                echo 'data-x="' . $this->x 
-                        . '" data-y="' . $this->y 
-                        . '" data-z="' . $this->z . '"';
+                echo 'data-x="' . $this->_x 
+                        . '" data-y="' . $this->_y 
+                        . '" data-z="' . $this->_z . '"';
 
                 echo ' ';
 
-                echo 'data-rotate-x="' . $this->alpha 
-                        . '" data-rotate-y="' . $this->theta 
-                        . '" data-rotate-z="' . $this->phi . '"';
+                echo 'data-rotate-x="' . $this->_alpha 
+                        . '" data-rotate-y="' . $this->_theta 
+                        . '" data-rotate-z="' . $this->_phi . '"';
                 
         }
 
@@ -283,9 +351,19 @@ class Position
                 $this->shift($delta_coord, $delta_angle);
                 $this->printc();
         }
+
+        public function print_overview()
+        {
+                echo '<div id="overview" class="step" ' 
+                        . 'data-x="' . $this->_overviewX . '" ' 
+                        . 'data-y="' . $this->_overviewY . '" '
+                        . 'data-scale="' . $this->_overviewS . '"'
+                        . '></div>';
+        }
 }
 
 $pos = new Position;
+$pos->set_overview(["s" => 32]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -307,6 +385,7 @@ $pos = new Position;
         <link href="css/presentation.css" rel="stylesheet" />
         <link href="font/opensans.css" rel="stylesheet" />
         <link href="font/oswald.css" rel="stylesheet" />
+        <link href="font/anonymouspro.css" rel="stylesheet" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -335,7 +414,7 @@ $pos = new Position;
                         <h3>A presentation about the <i class="scaling flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
                         <br /><br />
                         <p>Also, a bit about <i>eVoting</i>.</p>
-                        <p class="footnote"><a class="link-shadow" href="https://twitter.com/hashtag/VotArABadElection" target="_blank">#VotArABadElection</a> <a class="link-shadow" href="https://twitter.com/hashtag/eko11" target="_blank">#eko11</a></p>
+                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/VotArABadElection">#VotArABadElection</a> <a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/eko11">#eko11</a></p>
 		</div>
                 <!-- -->
 
@@ -343,15 +422,15 @@ $pos = new Position;
                 <!-- -short intro about the people involved, what moved us to do this. -->
                 <div id="authors" class="step anim" <?php $pos->shift([7000, 600]); $pos->printc(); ?> data-scale="10">
                         <p>Authors: 
-                                <a class="link" href="https://twitter.com/famato" target="_blank">Francisco Amato</a>, 
-                                <a class="link" href="https://twitter.com/hackancuba" target="_blank">Iv&aacute;n A. Barrera Oro</a>, 
-                                <a class="link" href="https://twitter.com/FViaLibre" target="_blank">Enrique Chaparro</a>, 
-                                <a class="link" href="https://twitter.com/SDLerner" target="_blank">Sergio Demian Lerner</a>, 
-                                <a class="link" href="https://twitter.com/ortegaalfredo" target="_blank">Alfredo Ortega</a>, 
-                                <a class="link" href="https://twitter.com/julianor" target="_blank">Juliano Rizzo</a>, 
-                                <a class="link" href="#authors" target="_self">Fernando Russ</a>, 
-                                <a class="link" href="https://twitter.com/mis2centavos" target="_blank">Javier Smaldone</a>,
-                                <a class="link" href="https://twitter.com/nicowaisman" target="_blank">Nicolas Waisman</a>
+                                <a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/hackancuba">Iv&aacute;n A. Barrera Oro</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>, 
+                                <a class="link" target="_self" href="#authors">Fernando Russ</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier Smaldone</a>,
+                                <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>
                         </p>
                         <p class="footnote">Presenters: <b class="scaling"><i>Iv&aacute;n</i> & <i>Javier</i></b></p>
                 </div>
@@ -375,7 +454,7 @@ $pos = new Position;
                         <ul>
                                 <li>Bad design, worst implementation</li>
                                 <li>Vulnerabilities due to bad software practice</li>
-                                <li>An very expensive system that doesn't present considerable advantages compared to the unique paper ballot system</li>
+                                <li>A very expensive system that doesn't present considerable advantages compared to the unique paper ballot system</li>
                         </ul>
                 </div>
                 <!-- - -->
@@ -441,13 +520,13 @@ $pos = new Position;
 
                 <!-- how is it supposed to be -->
                 <div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
-                        <h2>Requirements for the system (by it's patent & law)</h2>
+                        <h2>Requirements for Vot.Ar (by it's patent & law)</h2>
                         <ol>
-                                <li><strong>Free (as in freedom)</strong>*</li>
                                 <li><strong>Universal</strong>*</li>
+                                <li><strong>Equal</strong>*</li>
                                 <li class="pastel-red"><strong>Secret</strong>*</li>
                                 <li><strong>Mandatory</strong>*</li>
-                                <li>Equal</li>
+                                <li>Free (as in freedom)</li>
                                 <li class="pastel-red">One vote per elector</li>
                         </ol>
                         <p class="footnote">* Constitutional rights</p>
@@ -556,9 +635,9 @@ $pos = new Position;
                 </div>
 
                 <div class="step" <?php $pos->shiftprint(["y" => 815], 10); ?> data-scale="2">
-                        <div class="overlay-img-txt txt-reduced centered bottom flag-blue">
+                        <div class="overlay-img-txt centered">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
-                                <span>So here we were, tweeting from a "printer"...</span>
+                                <span class="bottom flag-blue txt-reduced">So here we were, tweeting from a "printer"...</span>
                         </div>
                 </div>
                 <!-- -->
@@ -581,11 +660,13 @@ $pos = new Position;
                                 <li>JTAG port: used to program/debug the microcontroller.
 External access via a cable near the batteries.</li>
                         </ul>
-                        <div class="overlay-img-txt txt-tiny soft-green" style="text-align: center;">
+                        <div class="overlay-img-txt centered">
                                 <img src="img/jtag-elections.jpg" alt="JTAG exposed during elections" width="580" height="435" />
-                                <span>Some machines had it even during elections!</span>
+                                <span class="soft-green txt-tiny">Some machines had it even during elections!</span>
+                                <span class="bottom threat">Threat level: <i class="pastel-red">high</i></span>
                         </div>
-                        <p class="footnote">More on this at <a class="link" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">Javier's blog</a></p>
+                        <p class="txt-tiny centered pastel-red">Can be used to reprogram the uC!</p>
+                        <p class="footnote">More on this at <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">Javier's blog</a></p>
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint([-1200, -100], [25, 0, -25]); ?> data-scale="1">
@@ -628,11 +709,16 @@ External access via a cable near the batteries.</li>
                 </div>
 
                 <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -20]); ?> data-scale="1">
-                        <h4>The RFID Chip</h4>
-                        <ul>
-                                <li>ICODE SLI SL2 ICS20 (ISO 15693)</li>
-                                <li>has a unique ID code</li>
-                        </ul>
+                        <table>
+                                <tr>
+                                        <th colspan="3">The RFID Chip</th>
+                                </tr>
+                                <tr>
+                                        <td>ICODE SLI SL2 ICS20 (ISO 15693)</td>
+                                        <td>Mem size: 112 bytes</td>
+                                        <td>has a unique ID code</td>
+                                </tr>
+                        </table>
                         <table>
                         <thead>
                                 <tr>
@@ -643,30 +729,96 @@ External access via a cable near the batteries.</li>
                                 <tr>
                                         <td>
                                         <ul>
-                                                <li>Empty Tag</li>
-                                                <li>Vote</li>
-                                                <li>Technician</li>
-                                                <li>President of the Polling Station</li>
+                                                <li>Empty Tag 0x0000</li>
+                                                <li>Vote 0x0001</li>
+                                                <li>Technician 0x0002</li>
+                                                <li>President of the Polling Station 0x0003</li>
                                         </ul>
                                         </td>
                                         <td>
                                         <ul>
-                                                <li>Scrutiny Finalised</li>
-                                                <li>Polling Station Open</li>
-                                                <li>Scrutiny Transmission</li>
-                                                <li>Demonstration</li>
+                                                <li>Scrutiny Finalised 0x0004</li>
+                                                <li>Polling Station Open 0x0005</li>
+                                                <li>Scrutiny Transmission 0x007F</li>
+                                                <li>Demonstration 0x0006</li>
                                         </ul>
                                         <td>
                                         <ul>
-                                                <li>Virgin Tag (?)</li>
-                                                <li>Addendum (?)</li>
-                                                <li>Unknown (?)</li>
+                                                <li>Virgin Tag 0x0007 (?)</li>
+                                                <li>Addendum 0x007F (?)</li>
+                                                <li>Unknown Tag 0xFFFF (?)</li>
                                         </ul>
                                         </td>
                                 </tr>
                         </tbody>
                         </table>
-                        <p class="footnote">More info about the chip and how data is stored, in the report</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 1000], 10); ?> data-scale="1">
+                        <h4>Data structure inside the tag</h4>
+                        <code>K1 T2 T1 L1 C4 C3 C2 C1 D1...Dn W1 W2 W3 W4</code>
+                        <table>
+                        <thead>
+                                <tr>
+                                        <th>Type</th>
+                                        <th>Desc</th>
+                                        <th>Size (bytes)</th>
+                                        <th>Endianness</th>
+                                        <th>Stored as</th>
+                                        <th>Fixed value</th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>K</td>
+                                        <td>Token</td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td>hex</td>
+                                        <td>0x1C</td>
+                                </tr>
+                                <tr>
+                                        <td>T</td>
+                                        <td>Tag category</td>
+                                        <td>2</td>
+                                        <td>little-endian</td>
+                                        <td>hex</td>
+                                        <td>-</td>
+                                </tr>
+                                <tr>
+                                        <td>L</td>
+                                        <td>Data lenght</td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td>hex</td>
+                                        <td>-</td>
+                                </tr>
+                                <tr>
+                                        <td>C</td>
+                                        <td>CRC32(Data)</td>
+                                        <td>4</td>
+                                        <td>little-endian</td>
+                                        <td>hex</td>
+                                        <td>-</td>
+                                </tr>
+                                <tr>
+                                        <td>D</td>
+                                        <td>Data</td>
+                                        <td>n</td>
+                                        <td>-</td>
+                                        <td>ASCII</td>
+                                        <td>-</td>
+                                </tr>
+                                <tr>
+                                        <td>W</td>
+                                        <td>Write test?</td>
+                                        <td>4</td>
+                                        <td>-</td>
+                                        <td>ASCII</td>
+                                        <td>W_OK</td>
+                                </tr>
+                        </tbody>
+                        </table>
+                        <p class="footnote">More info about the chip and how data is stored: see IV. B of the report</p>
                 </div>
                 <!-- - -->
                 <!-- -->
@@ -674,7 +826,7 @@ External access via a cable near the batteries.</li>
                 <!-- SW deep-->
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1500, 800]); ?> data-scale="1">
                         <h2>Time to analyse the SW</h2>
-                        <p>We were able to do it thanks to the help of someone named <a class="link" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
+                        <p>We were able to do it thanks to the help of someone named <a class="link" target="_blank" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" target="_blank" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
                         <ul>
                                 <li>Written in Python</li>
                                 <li>Comes in a DVD 
@@ -719,7 +871,8 @@ External access via a cable near the batteries.</li>
                                 <li>First name: <pre>John</pre></li>
                                 <li>Last name: <pre>Doe;echo 'this is bad!'</pre></li>
                         </ul>
-                        <p>Nevertheless, the name input screen does sanitise and has a length limit, so exploiting this is complicated.</p>
+                        <p>The name input screen does sanitise and has a length limit, so exploiting this is complicated.</p>
+                        <p class="centered threat">Threat level: <i class="medium-orange">medium</i></p>
                 </div>
                 <!-- - -->
 
@@ -728,6 +881,7 @@ External access via a cable near the batteries.</li>
                         <h2>Multivote</h2>
                         <p>This vulnerability allows an attacker to <strong class="pastel-red">add several votes</strong> to the RFID chip, as many as the chip's memory amount supports (about <strong>10~12 votes</strong>).</p>
                         <p>Also, it's <em>not mandatory to distribute the votes in any way</em>: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
+                        <p class="centered threat">Threat level: <i class="pastel-red">critical</i></p>
                 </div>
                 <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
                         <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
@@ -737,6 +891,13 @@ External access via a cable near the batteries.</li>
                         <p>You <em>cannot differentiate</em> between a <em>multivote ballot</em> and a <em>normal one</em> with a naked eye.</p>
                         <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes from beforehand</em> that are very hard to detect.</p>
                         </div>
+                </div>
+                <div class="step" <?php $pos->shiftprint([-800, 0, -1200], ["theta" => 10]); ?> data-scale="1">
+                        <h4>Multivoting is easy, one just need to build a vote string</h4>
+                        <p>This would be a normal vote for  "Representative" (DIP), "Mayor"
+(JEF) and "Commune Chief" (COM) for the Autonomous City of Buenos Aires (CABA): <code>06CABA.1COM567DIP432JEF123</code></p>
+                        <p>And this would be a <i>multivote</i> string: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> where the Mayor got <em>three votes</em> and the rest of the categories, one</p>
+                        <p class="footnote">See point IV. B. 1 and Appendix B. C of the report</p>
                 </div>
                 <!-- - -->
 
@@ -775,8 +936,9 @@ External access via a cable near the batteries.</li>
                         <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/maintenance-screen.jpg" alt="Maintenance screen" width="900" height="566" />
                                 <span>...access maintenance mode</span>
+                                <span class="bottom centered threat">Threat level: <i class="medium-orange">medium</i></span>
                         </div>
-                        <p class="footnote">Threat level: low.  But it shows awfull design...</p>
+                        <p class="txt-reduced">Allows dvd ejection & some DoS.  Another proof of an awful design...</p>
                 </div>
                 <!-- - -->
                 <!-- -->
@@ -806,16 +968,16 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                                         <td>No batteries needed</td>
                                 </tr>
                                 <tr>
-                                        <td>ballots hard to recycle</td>
-                                        <td>easily reciclable</td>
+                                        <td>Ballots hard to recycle</td>
+                                        <td>Easily reciclable</td>
                                 </tr>
                                 <tr>
-                                        <td>1 DVD per machine... what do we do with it?</td>
+                                        <td>1 DVD per machine... what do we do with them? Coasters?</td>
                                         <td>No DVDs required</td>
                                 </tr>
                                 <tr>
-                                        <td>faster scrutiny than manual (~30%)</td>
-                                        <td>scrutiny could be automated</td>
+                                        <td>Provisional scrutiny faster than manual (~30%)</td>
+                                        <td>Manual provisional scrutiny, but could be automated</td>
                                 </tr>
                                 <tr>
                                         <td>it is eVoting</td>
@@ -839,11 +1001,16 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                                 <li>Ballot-changing</li>
                                 <li>Interfering delivery of the scrutiny result</li>
                         </ul>
-                        <p class="footnote">Much more <a class="link-shadow" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">detailed explanation</a> by Javier</p>
+                        <p class="footnote">Much more detailed explanation <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">by Javier</a></p>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
-                        <p>There's no major advantage to eachother on any point.</p>
+                        <p>There's no major advantage to each other on any point.</p>
+                        <p>(so, no improvements from a simple sheet of paper?)</p>
+                        <br />
                         <p>Yet, this system introduces a new way to <i>buy votes</i>, that can be exploited by <em>point men</em> (political bosses).</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
+                        <p>It's plain easy to hide a mobile phone under clothes with an app reading the contents of the chip</p>
                         <img src="img/point-men.jpg" alt="Buying votes" width="1000" height="529" />
                 </div>
                 <!-- -->
@@ -851,14 +1018,13 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                 <!-- international -->
 		<div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500], ["alpha" => -30]); ?> data-scale="1">
                         <img src="img/world-evoting-map.png" alt="eVoting around the world" width="953" height="700" />
-                        <p class="footnote"><a class="link-shadow" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Reference</a></p>
+                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Reference</a></p>
 		</div>
                 <!-- -->
 
                 <!-- summary -->
-		<div class="step slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
+		<div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
 			<h1 style="text-align: center;">Summing up...</h1>
-                        <br />
                         <ul>
                                 <li>Bad programing technics lead to <span class="pastel-red">vulns</span></li>
                                 <li>Awfull choice of vote support/storage system</li>
@@ -869,19 +1035,23 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                                 </ul>
                                 </li>
                                 <li>No significant advantages compared to the Unique Paper Ballot system</li>
-                                <li>Scrutiny in BUP can be automated for fast provisional</li>
                         </ul>
+		</div>
+		<div class="step" <?php $pos->shiftprint(2500, 45); ?> data-scale="2">
+                        <p>As the General Court in Germany ruled, according to its Constitution:</p>
+                        <blockquote>When electronic voting machines are deployed, it must be possible for the <b>citizen</b> to <b>check the essential steps in the election act</b> and in the ascertainment of the results reliably and <b>without special expert knowledge</b></blockquote>
+                        <!--<p class="footnote"><a class="link-shadow" target="_blank" href="http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2009/03/cs20090303_2bvc000307en.html">Reference</a></p>-->
 		</div>
                 <!-- -->
 
                 <!-- conclusions -->
-                <div class="step anim slide" <?php $pos->shiftprint([2500, 50, 50]); ?> data-scale="3">
+                <div class="step anim slide" <?php $pos->reset_angle(); $pos->shiftprint([3000, 50, 50]); ?> data-scale="3">
 			<h1 style="text-align: center;">Conclusion</h1>
                         <p>After all we saw:</p>
                         <ul>
                                 <li>Do you really <em>believe</em> it's a <i>printer?</i></li>
                                 <li>Uncertainty of election result without manual scrutiny (so what do we need this system for?)</li>
-                                <li>Risks introduced by eVoting are greater that its benefits</li>
+                                <li>Risks introduced by eVoting are greater than its benefits</li>
                                 <li><strong>No technical progress should undermine democracy</strong></li>
                         </ul>
                         <p><b class="positioning">We conclude that this system doesn't comply with its objectives and introduces risks to the electoral process</b></p>
@@ -925,16 +1095,15 @@ BUP for Unique Paper Ballot (in Spanish)<p>
 			<h1 style="text-align: center;">Hungry for information?</h1>
 			<br />
 			<p>You can get the full report, this presentation and more at the git repo:</p>
-                        <p class="right txt-big"><a class="link" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+                        <p class="right txt-verybig"><a class="link" target="_self" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
                         <p>Feel free to share! (CC BY-SA v4.0).</p>
-			<br /><br /><br /><br />
-			<p class="footnote">Powered by <a href="https://github.com/bartaz/impress.js" class="link-shadow" target="_blank">impress.js</a></p>
+			<br /><br /><br />
+			<p class="footnote">Powered by <a class="link-shadow" target="_blank" href="https://github.com/bartaz/impress.js">impress.js</a></p>
 		</div>
                 <!-- -->
 
                 <!-- overview -->
-                <div id="overview" class="step" data-x="17000" data-y="13000" data-scale="32">
-                </div>
+                <?php if (SHOW_OVERVIEW) { $pos->autoset_overview(); $pos->print_overview(); } ?>
                 <!-- -->
 	</div>
 

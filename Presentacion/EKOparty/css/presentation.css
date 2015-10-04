@@ -73,12 +73,11 @@ blockquote {
 
 blockquote:before {
 	position: absolute;
-	top: 30px;
+	top: -30px;
 	left: -75px;
 	content: "\201C";
-	color: #DDD;
 	font-family: serif;
-	font-size: 70px;
+	font-size: 300%;
 }
 
 blockquote cite {
@@ -100,7 +99,7 @@ table tr:nth-child(even) {
 	background: #F8F8F8;
 }
 table th,table td {
-	padding: 6px 0;
+	padding: 6px 1px 0px 1px;
 }
 table th {
 	font-weight: bold;
@@ -308,7 +307,7 @@ audio {
         width: 100%;
 }
 
-.overlay-img-txt.bottom span {
+.overlay-img-txt .bottom {
         bottom: 0;
         top: auto;
         margin-bottom: 20px;
@@ -316,6 +315,10 @@ audio {
 
 .txt-big {
         font-size: 120%;
+}
+
+.txt-verybig {
+        font-size: 150%;
 }
 
 .txt-reduced {
@@ -334,6 +337,11 @@ audio {
         text-align: right;
 }
 
+.threat {
+        font-family: "Anonymous Pro";
+        font-size: 80%;
+}
+
 /* colours */
 .flag-blue {
         color: #75AADB;
@@ -349,6 +357,10 @@ audio {
 
 .soft-green {
         color: rgba(127, 203, 130, 0.91);
+}
+
+.medium-orange {
+        color: rgba(219, 170, 96, 0.95);
 }
 /**/
 /**/
