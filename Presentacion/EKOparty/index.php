@@ -6,6 +6,9 @@
         Feel free to share!!
 */
 
+/**
+ * Default language
+ */
 define('LANG_DEFAULT', 'en');
 
 /**
@@ -13,12 +16,19 @@ define('LANG_DEFAULT', 'en');
  */
 $lang;
 
+// functions
+
+function get_opt($opt)
+{
+        return (array_key_exists($opt, $_GET) 
+                        ? $_GET[$opt]
+                        : '');
+}
+
 function get_lang() 
 {
         $lang;
-        $get = array_key_exists('lang', $_GET) 
-                        ? strtolower($_GET['lang']) 
-                        : LANG_DEFAULT;
+        $get = strtolower(get_opt('lang'));
 
         switch ($get) {
                 case 'es': 
@@ -37,7 +47,22 @@ function get_lang()
         return $lang;
 }
 
+// main
+
 $lang = get_lang();
+
+if (get_opt('skipintro')) {
+        switch ($lang) {
+                case 'es': 
+                        header("Location: vot_ar_una_mala_eleccion.php");
+                        break;
+
+                case 'en': 
+                        header("Location: vot_ar_a_bad_election.php");
+                        break;
+        }
+        exit;
+}
 
 ?>
 <!DOCTYPE html>
