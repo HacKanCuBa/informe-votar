@@ -428,7 +428,7 @@ $pos->set_overview(["s" => 32]);
                                 <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>, 
                                 <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>, 
                                 <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>, 
-                                <a class="link" target="_self" href="#authors">Fernando Russ</a>, 
+                                <a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>, 
                                 <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier Smaldone</a>,
                                 <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>
                         </p>
@@ -493,7 +493,7 @@ $pos->set_overview(["s" => 32]);
 
                 <!-- about vot.ar, brief desc -->
 		<div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
-                        <p><strong>Vot.Ar</strong> by MSA Group is a paper-based eVoting system, with two main elements:</p>
+                        <p><strong>Vot.Ar</strong> aka <strong>BUE</strong> for Unique Electronic Ballot (in Spanish) by MSA Group is a paper-based eVoting system, with two main elements:</p>
                         <ul>
                                 <li>The vote-casting and counting machine</li>
                                 <li>The ballot</li>
@@ -502,7 +502,7 @@ $pos->set_overview(["s" => 32]);
                         <p class="footnote pastel-red">among others...</p>
                 </div><!-- +(0,0,0) -->
 		<div class="step hidden" <?php $pos->printc(); ?> data-scale="1">
-                        <div style="position:absolute; top: 45px; left: 580px;">
+                        <div style="position:absolute; top: 115px; left: 580px;">
                                 <div class="overlay-img-txt txt-tiny pale-yellow">
                                         <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
                                         <span>It's RFID based!</span>
@@ -518,9 +518,9 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- -->
 
-                <!-- how is it supposed to be -->
+                <!-- some details  -->
                 <div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
-                        <h2>Requirements for Vot.Ar (by it's patent & law)</h2>
+                        <h2>Requirements for Vot.Ar (by its patent & law)</h2>
                         <ol>
                                 <li><strong>Universal</strong>*</li>
                                 <li><strong>Equal</strong>*</li>
@@ -541,16 +541,15 @@ $pos->set_overview(["s" => 32]);
                                 <li>Over 7 years of development
                                 <ul>
                                         <li>Used in Salta</li>
+                                        <li>Recently used in the capital city of Chaco and Neuquén</li>
                                 </ul>
                                 </li>
-                                <li>Recently used in Resistencia, Chaco</li>
-                                <li>Soon to be used in Neuquén</li>
                         </ul>
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint([900, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>2 official audits by the time of this report:
+                                <li>2 official audits by the time of the report (july 2015):
                                 <ul>
                                         <li>Prof. Righetti, FCEN, UBA: OAT 03/15
                                         <br /><strong>Conclusion</strong>: <em>small issues, but ok</em></li>
@@ -576,14 +575,14 @@ $pos->set_overview(["s" => 32]);
                 <div class="step" <?php $pos->shiftprint(-1200, ["phi" => -10]); ?> data-scale="1">
                         <p>It has on the left:</p>
                         <ul>
-                                <li>Touchscreen for operation (to pick candidates and stuff)</li>
+                                <li>Touch screen for operation (to pick candidates and stuff)</li>
                         </ul>
                 </div>
 
                 <div class="step" <?php $pos->shiftprint(1950, ["phi" => 20]); ?> data-scale="1">
                         <p>It has on the right:</p>
                         <ul>
-                                <li>An RFID reader/writer + thermal printer unit</li>
+                                <li>Ballot slot: an RFID reader/writer + thermal printer unit</li>
                         </ul>
                 </div>
 
@@ -642,9 +641,163 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- -->
 
+                <!-- electoral process -->
+                <!-- -whole procedure -->
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1700]); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Electoral procedure</h2>
+                        <p>For any given Polling Station</p>
+                        <ol>
+                                <li>Open the Polling Station by setting the machine to vote mode</li>
+                                <li>Voting begins...</li>
+                                <li>When it ends, close the Polling Station by setting the machine into scrutiny mode</li>
+                                <li>Count votes</li>
+                                <li>Send the scrutiny result to the Electoral Authority</li>
+                        </ol>
+                </div>
+                <!-- - -->
+                <!-- -opening station -->
+                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Opening Polling Station</h2>
+                        <ul>
+                                <li>The company provides machines and a group of technicians</li>
+                                <li>Technicians have an Id card w/ RFID chip</li>
+                                <li>The Electoral Authority provides the software DVD in a closed envelope, together with a President Id card (w/ RFID chip)</li>
+                        </ul>
+                        <div class="overlay-img-txt centered">
+                                <img src="img/dvd.jpg" alt="DVDs and President Id card" width="500" height="281" />
+                                <span></span>
+                        </div>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
+                        <ol>
+                                <li>Turn on the machine, insert DVD</li>
+                                <li>Follow instructions to calibrate touch screen</li>
+                                <li>Use President Id card to open a log-in screen, then type in Polling Station number & PIN</li>
+                                <li>Select the option to open the Polling Station, fill in required data</li>
+                                <li>Insert special ballot, that will be printed with the names of the Polling Station Authorities, the time it was opened and an QR code containing that same info.  Also, it will be stored in its chip</li>
+                        </ol>
+                </div>
+                <!-- -->
+                <!-- -voting -->
+                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Voting</h2>
+                        <table>
+                        <tr>
+                        <td>
+                                <ol>
+                                        <li>Go to the Polling Table, present Identity Document, and get a ballot.  A part of the die-cutting of the ballot will be kept by the President</li>
+                                </ol>
+                        </td>
+                        <td>
+                                <div class="overlay-img-txt centered">
+                                        <img src="img/ballot-front.jpg" alt="Ballot" width="320" height="120" />
+                                        <span class="soft-green">1</span>
+                                </div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="2">
+                                <ol start="2">
+                                        <li>With the ballot, go where the machine stands</li>
+                                </ol>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                                <ol start="3">
+                                        <li>Insert the ballot in the slot</li>
+                                </ol>
+                        </td>
+                        <td>
+                                <div class="overlay-img-txt centered">
+                                        <img src="img/inserting-ballot.jpg" alt="Inserting ballot" width="180" height="320" />
+                                        <span class="soft-green">3</span>
+                                </div>
+                        </td>
+                        </tr>
+                        </table>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 1200]); ?> data-scale="1">
+                        <table>
+                        <tr>
+                        <td>
+                                <ol start="4">
+                                        <li>Pick a candidate from the screen</li>
+                                <ol>
+                        </td>
+                        <td>
+                                <div class="overlay-img-txt centered">
+                                        <img src="img/picking-candidate.jpg" alt="Picking candidate" width="180" height="250" />
+                                        <span class="soft-green">4</span>
+                                </div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                                <ol start="5">
+                                        <li>When done, pick the option to vote (prints ballot and stores vote in chip). Remove the ballot from the slot</li>
+                                </ol>
+                        </td>
+                        <td>
+                                <div class="overlay-img-txt centered">
+                                        <img src="img/ballot-back.jpg" alt="Ballot printed" width="320" height="131" />
+                                        <span class="soft-green">5</span>
+                                </div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td colspan="2">
+                                <ol start="6">
+                                        <li>Approach the ballot to the reader (or insert into slot again) to verify the vote, bend it over and return to the table</li>
+                                        <li>The President will verify and remove the second part of the die-cutting.  After that, insert ballot into the ballot box and retrieve your document</li>
+                                </ol>
+                        </td>
+                        </tr>
+                        </table>
+                </div>
+                <!-- - -->
+                <!-- -closing -->
+                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Closing Station</h2>
+                        <p>When the voting ends (at 6 PM)</p>
+                        <ol>
+                                <li>Log-in as President</li>
+                                <li>Insert the Station Opening Ballot</li>
+                                <li>Select the option to close the station, set the current time</li>
+                                <li>Insert a special ballot that will get printed with similar information as the Station Opening one</li>
+                        </ol>
+                </div>
+                <!-- - -->
+                <!-- -scrutiny -->
+                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Scrutiny</h2>
+                        <ol>
+                                <li>Immediatly after closing, the scrutiny mode is set</li>
+                                <li>Pick a ballot from the box, check that it's correctly printed and has no strange marks</li>
+                                <li>Approach it to the machine to get it counted</li>
+                                <li>Repeat for the entire ballot box</li>
+                                <li>When done, insert a special ballot that will get printed with the result of the scrutiny.  Many can be printed, as needed</li>
+                                <li>Now, a Scrutiny Transmission Ballot must be inserted to be able to continue</li>
+                        </ol>
+                </div>
+                <!-- - -->
+                <!-- -transmission -->
+                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                        <h2 class="centered">Quick peek: Scrutiny Transmission</h2>
+                        <ol>
+                                <li>Connect the machine to the LAN</li>
+                                <li>Insert the special ballot</li>
+                                <li>???</li>
+                        </ol>
+                        <p>We weren't able to obtain information regarding this point.</p>
+                        <p>During our testing, we couldn't create a special transmission ballot, hence we were never able to complete this procedure</p>
+                </div>
+                <!-- - -->
+                <!-- -->
+
                 <!-- HW deep -->
                 <!-- -inside, all -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1600]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1500]); ?> data-scale="1">
                         <h2>Now let's get deep into the HW</h2>
                         <p>What's inside the machine?</p>
                         <img src="img/inside.jpg" alt="Inside the machine" width="1000" height="645" />
@@ -718,14 +871,9 @@ External access via a cable near the batteries.</li>
                                         <td>Mem size: 112 bytes</td>
                                         <td>has a unique ID code</td>
                                 </tr>
-                        </table>
-                        <table>
-                        <thead>
                                 <tr>
                                         <th colspan="3">Tag Categories</th>
                                 </tr>
-                        </thead>
-                        <tbody>
                                 <tr>
                                         <td>
                                         <ul>
@@ -750,13 +898,12 @@ External access via a cable near the batteries.</li>
                                         </ul>
                                         </td>
                                 </tr>
-                        </tbody>
                         </table>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 1000], 10); ?> data-scale="1">
                         <h4>Data structure inside the tag</h4>
                         <code>K1 T2 T1 L1 C4 C3 C2 C1 D1...Dn W1 W2 W3 W4</code>
-                        <table>
+                        <table class="white-row">
                         <thead>
                                 <tr>
                                         <th>Type</th>
@@ -948,7 +1095,7 @@ External access via a cable near the batteries.</li>
                         <h2 class="centered">A few words about Unique Paper Ballot</h2>
                         <p class="txt-tiny centered">BUE stands for Unique Electronic Ballot and
 BUP for Unique Paper Ballot (in Spanish)<p>
-                        <table>
+                        <table class="white-row">
                                 <thead>
                                 <tr>
                                         <th>BUE</th>

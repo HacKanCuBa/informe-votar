@@ -95,9 +95,6 @@ table {
 	margin-bottom: 24px;
         font-size: 75%;
 }
-table tr:nth-child(even) {
-	background: #F8F8F8;
-}
 table th,table td {
 	padding: 6px 1px 0px 1px;
 }
@@ -251,6 +248,10 @@ audio {
 /**/
 
 /* classes for elements */
+
+.white-row tr:nth-child(even) {
+	background: #F8F8F8;
+}
 
 .footnote {
         font-size: 26px;
