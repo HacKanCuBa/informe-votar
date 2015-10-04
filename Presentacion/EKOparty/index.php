@@ -15,21 +15,23 @@ $lang;
 
 function get_lang() 
 {
-        $lang = '';
-        if (array_key_exists('lang', $_GET)) {
-                switch (strtolower($_GET['lang'])) {
-                        case 'es': 
-                                $lang = 'es';
-                                break;
+        $lang;
+        $get = array_key_exists('lang', $_GET) 
+                        ? strtolower($_GET['lang']) 
+                        : LANG_DEFAULT;
 
-                        case 'en': 
-                                $lang = 'en';
-                                break;
+        switch ($get) {
+                case 'es': 
+                        $lang = 'es';
+                        break;
 
-                        default: 
-                                $lang = LANG_DEFAULT;
-                                break;
-                }
+                case 'en': 
+                        $lang = 'en';
+                        break;
+
+                default: 
+                        $lang = LANG_DEFAULT;
+                        break;
         }
 
         return $lang;
@@ -78,6 +80,7 @@ $lang = get_lang();
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@hackancuba" />
+        <meta name="twitter:image" content="img/logo.png" />
 <?php if ($lang == 'es') { ?>
         <meta name="twitter:title" content="Vot.Ar: una mala elecci&oacute;n" />
         <meta name="twitter:description" content="Presentaci&oacute;n para la #eko11, oct 2015" />

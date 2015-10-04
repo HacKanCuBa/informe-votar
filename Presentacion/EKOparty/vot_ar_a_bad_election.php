@@ -363,7 +363,7 @@ class Position
 }
 
 $pos = new Position;
-$pos->set_overview(["s" => 38]);
+$pos->set_overview(["s" => 40]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -394,6 +394,7 @@ $pos->set_overview(["s" => 38]);
         <meta name="twitter:site" content="@hackancuba" />
         <meta name="twitter:title" content="Vot.Ar: a bad election" />
         <meta name="twitter:description" content="Presentation for #eko11, oct 2015" />
+        <meta name="twitter:image" content="img/logo.png" />
 
         <meta property="og:title" content="Vot.Ar: a bad election" />
         <meta property="og:description" content="Presentation for #eko11, oct 2015" />
@@ -519,7 +520,7 @@ $pos->set_overview(["s" => 38]);
                 <!-- -->
 
                 <!-- some details  -->
-                <div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
+                <div id="req" class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
                         <h2>Requirements for Vot.Ar (by its patent & law)</h2>
                         <ol>
                                 <li><strong>Universal</strong>*</li>
@@ -567,7 +568,7 @@ $pos->set_overview(["s" => 38]);
 
                 <!-- macro description of the system -->
                 <!-- -machine -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([4000, 200]); ?> data-scale="1">
+                <div id="macro" class="step" <?php $pos->reset_angle(); $pos->shiftprint([4000, 200]); ?> data-scale="1">
                         <h2>Overview of Vot.Ar</h2>
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
                 </div>
@@ -749,7 +750,7 @@ $pos->set_overview(["s" => 38]);
                         <tr>
                         <td colspan="2">
                                 <ol start="6">
-                                        <li>Approach the ballot to the reader (or insert into slot again) to verify the vote, bend it over and return to the table</li>
+                                        <li>Approach the ballot to the reader (or insert it into slot again) to verify the vote, bend it over and return to the table</li>
                                         <li>The President will verify and remove the second part of the die-cutting.  After that, insert ballot into the ballot box and retrieve your document</li>
                                 </ol>
                         </td>
@@ -798,7 +799,7 @@ $pos->set_overview(["s" => 38]);
 
                 <!-- HW deep -->
                 <!-- -inside, all -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1500]); ?> data-scale="1">
+                <div id="hwdeep" class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1500]); ?> data-scale="1">
                         <h2>Now let's get deep into the HW</h2>
                         <p>What's inside the machine?</p>
                         <img src="img/inside.jpg" alt="Inside the machine" width="1000" height="645" />
@@ -975,7 +976,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- SW deep-->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1500, 800]); ?> data-scale="1">
+                <div id="swdeep" class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1500, 800]); ?> data-scale="1">
                         <h2>Time to analyse the SW</h2>
                         <p>We were able to do it thanks to the help of someone named <a class="link" target="_blank" href="https://twitter.com/prometheus_ar">Prometheus</a>, who <a class="link-shadow" target="_blank" href="https://github.com/prometheus-ar/vot.ar/">published the source code</a>.<p>
                         <ul>
@@ -1006,7 +1007,7 @@ External access via a cable near the batteries.</li>
                 </div>
 
                 <!-- -command injection -->
-                <div class="step" <?php $pos->shiftprint([1200, -100, 1500], ["theta" => 90]); ?> data-scale="1">
+                <div id="commi" class="step" <?php $pos->shiftprint([1200, -100, 1500], ["theta" => 90]); ?> data-scale="1">
                         <h2>Command injection</h2>
                         <p>Alfredo Ortega found a command injection vulnerability in the QR Code generator routine</p>
                         <ol>
@@ -1028,11 +1029,11 @@ External access via a cable near the batteries.</li>
                 <!-- - -->
 
                 <!-- -multivote -->
-                <div class="step" <?php $pos->shiftprint([400, 1200, 800], ["theta" => -180]); ?> data-scale="2">
+                <div id="multivote" class="step" <?php $pos->shiftprint([400, 1200, 800], ["theta" => -180]); ?> data-scale="2">
                         <h2>Multivote</h2>
                         <p>This vulnerability allows an attacker to <strong class="pastel-red">add several votes</strong> to the RFID chip, as many as the chip's memory amount supports (about <strong>10~12 votes</strong>).</p>
                         <p>Also, it's <em>not mandatory to distribute the votes in any way</em>: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
-                        <p class="centered threat">Threat level: <i class="pastel-red">critical</i></p>
+                        <p class="centered threat">Threat level: <i class="critical-purple">critical</i></p>
                 </div>
                 <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
                         <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
@@ -1053,7 +1054,7 @@ External access via a cable near the batteries.</li>
                 <!-- - -->
 
                 <!-- -bypassing log-in -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1200, 800]); ?> data-scale="1">
+                <div id="bypass" class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1200, 800]); ?> data-scale="1">
                         <h2>Bypassing log-in screen</h2>
                         <h3>Impersonating admin or President of the Polling Station</h3>
                         <p class="right">This is trivial, since <em>no authentication</em> is used with the chip's data</p>
@@ -1095,7 +1096,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- bue vs bup -->
-                <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
+                <div id="buebup" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
                         <h2 class="centered">A few words about Unique Paper Ballot</h2>
                         <p class="txt-tiny centered"><strong>BUE</strong> stands for Unique Electronic Ballot and <strong>BUP</strong> for Unique Paper Ballot (in Spanish)<p>
                         <table class="white-row">
@@ -1165,20 +1166,37 @@ External access via a cable near the batteries.</li>
                 </div>
                 <!-- -->
 
+                <!-- automating bup -->
+                <div class="step" <?php  $pos->set_angle([0, 0, 180]); $pos->shiftprint([1000, 1000, -100]); ?> data-scale="1">
+                        <h2>Automating BUP</h2>
+                        <p>The objective is to not have a machine between voter and vote (so it's not eVoting) and also improve speed of provisional scrutiny.</p>
+                        <p>However, we might introduce vulnerabilities!.</p>
+                        <p>So a final, manual scrutiny is needed <strong>ALWAYS</strong>.</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(1200, 30); ?> data-scale="1">
+                        <p>We propose a <strong>tradeoff</strong> solution by implementing a system that <strong>scans BUP</strong> and counts votes.  Then, it transmits them to the Electoral Authority.</p>
+                        <p>Measures must be taken to secure transmission and reception.</p>
+                        <p>Also, BUPs must be validated somehow, so no fakes can be introduced.</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint([-600, -700], ["alpha" => -45]); ?> data-scale="2">
+                        <p>This kind of things must be put into <strong>public discussion</strong>, and then, when a company provides a possible solution, it must be <em>open HW & SW</em>, <strong>publicly documented</strong> and <strong>publicly auditable</strong>.</p>
+                </div>
+                <!-- -->
+
                 <!-- international -->
-		<div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500], ["alpha" => -30]); ?> data-scale="1">
+		<div class="step" <?php $pos->set_angle([-30, 0, 0]); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="1">
                         <img src="img/world-evoting-map.png" alt="eVoting around the world" width="953" height="700" />
                         <p class="footnote"><a class="link-shadow" target="_blank" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Reference</a></p>
 		</div>
                 <!-- -->
 
                 <!-- summary -->
-		<div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
+		<div id="summary" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
 			<h1 style="text-align: center;">Summing up...</h1>
                         <ul>
                                 <li>Bad programing technics lead to <span class="pastel-red">vulns</span></li>
                                 <li>Awfull choice of vote support/storage system</li>
-                                <li>Doesn't fullfil requirements
+                                <li>Doesn't fullfil <a href="#req" class="link-shadow">requirements</a>
                                 <ul>
                                         <li><em>Violates</em> the secrecy of the vote</li>
                                         <li><em>More than one</em> vote per elector</li>
@@ -1196,7 +1214,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- conclusions -->
-                <div class="step anim slide" <?php $pos->reset_angle(); $pos->shiftprint([3000, 50, 50]); ?> data-scale="3">
+                <div id="conclusions" class="step anim slide" <?php $pos->reset_angle(); $pos->shiftprint([3000, 50, 50]); ?> data-scale="3">
 			<h1 style="text-align: center;">Conclusion</h1>
                         <p>After all we saw:</p>
                         <ul>
@@ -1242,7 +1260,7 @@ External access via a cable near the batteries.</li>
                 <!-- -->
 
                 <!-- goodbye -->
-		<div class="step slide" <?php $pos->shiftprint(1050); ?> data-scale="1">
+		<div id="last" class="step slide" <?php $pos->shiftprint(1050); ?> data-scale="1">
 			<h1 style="text-align: center;">Hungry for information?</h1>
 			<br />
 			<p>You can get the full report, this presentation and more at the git repo:</p>

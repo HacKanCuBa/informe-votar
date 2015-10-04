@@ -363,6 +363,10 @@ audio {
 .medium-orange {
         color: rgba(219, 170, 96, 0.95);
 }
+
+.critical-purple {
+        color: rgba(158, 39, 176, 0.7);
+}
 /**/
 /**/
 
