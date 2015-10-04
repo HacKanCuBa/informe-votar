@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 /**
  * Defines if Overview will be shown.
  */
-define('SHOW_OVERVIEW', true);
+define('SHOW_OVERVIEW', false);
 
 class Position 
 {
@@ -363,7 +363,7 @@ class Position
 }
 
 $pos = new Position;
-$pos->set_overview(["s" => 32]);
+$pos->set_overview(["s" => 38]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -414,7 +414,7 @@ $pos->set_overview(["s" => 32]);
                         <h3>A presentation about the <i class="scaling flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
                         <br /><br />
                         <p>Also, a bit about <i>eVoting</i>.</p>
-                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/VotArABadElection">#VotArABadElection</a> <a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/eko11">#eko11</a></p>
+                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/VotArUnaMalaEleccion">#VotArUnaMalaEleccion</a> <a class="link-shadow" target="_blank" href="https://twitter.com/hashtag/eko11">#eko11</a></p>
 		</div>
                 <!-- -->
 
@@ -535,7 +535,7 @@ $pos->set_overview(["s" => 32]);
                 <div class="step anim" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
                         <h2>Some things to note</h2>
                         <ul>
-                                <li>Completely closed HW & SW</li>
+                                <li>Completely closed HW & SW (a <em>black box</em> for us)</li>
                                 <li>Absolutely no public documentation<br />
 (yet the maker says it's open source!)</li>
                                 <li>Over 7 years of development
@@ -572,14 +572,14 @@ $pos->set_overview(["s" => 32]);
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(-1200, ["phi" => -10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(-900, ["phi" => -10]); ?> data-scale="1">
                         <p>It has on the left:</p>
                         <ul>
                                 <li>Touch screen for operation (to pick candidates and stuff)</li>
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(1950, ["phi" => 20]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(1650, ["phi" => 20]); ?> data-scale="1">
                         <p>It has on the right:</p>
                         <ul>
                                 <li>Ballot slot: an RFID reader/writer + thermal printer unit</li>
@@ -622,12 +622,13 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- - -->
 
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 300]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 400]); ?> data-scale="1">
                         <p>And then there's the ballot, which has an RFID chip + thermal paper on the back</p>
+                        <p>Also a die-cutting on one side, to verify that the ballot wasn't swapped</p>
                         <p class="footnote">Hang on, details are coming...</p>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(["y" => 250]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 350]); ?> data-scale="1">
                         <p>But propaganda said:</p>
                         <q>It's a printer, not a computer!</q>
                         <p><small>and everybody believed it!</small></p>
@@ -717,13 +718,13 @@ $pos->set_overview(["s" => 32]);
                         </tr>
                         </table>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 1200]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 1250]); ?> data-scale="1">
                         <table>
                         <tr>
                         <td>
                                 <ol start="4">
                                         <li>Pick a candidate from the screen</li>
-                                <ol>
+                                </ol>
                         </td>
                         <td>
                                 <div class="overlay-img-txt centered">
@@ -757,7 +758,7 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- - -->
                 <!-- -closing -->
-                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Quick peek: Closing Station</h2>
                         <p>When the voting ends (at 6 PM)</p>
                         <ol>
@@ -769,7 +770,7 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- - -->
                 <!-- -scrutiny -->
-                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Quick peek: Scrutiny</h2>
                         <ol>
                                 <li>Immediatly after closing, the scrutiny mode is set</li>
@@ -782,7 +783,7 @@ $pos->set_overview(["s" => 32]);
                 </div>
                 <!-- - -->
                 <!-- -transmission -->
-                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Quick peek: Scrutiny Transmission</h2>
                         <ol>
                                 <li>Connect the machine to the LAN</li>
@@ -861,42 +862,45 @@ External access via a cable near the batteries.</li>
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([-1750, 850], [-10, -20]); ?> data-scale="1">
-                        <table>
+                <div class="step" <?php $pos->shiftprint([-1750, 900], [-10, -20]); ?> data-scale="1">
+                        <h3>The RFID Chip</h3>
+                        <table class="white-row">
                                 <tr>
-                                        <th colspan="3">The RFID Chip</th>
+                                        <th>Brand</th>
+                                        <th>Model</th>
+                                        <th>Mem size (Bytes)</th>
+                                        <th>Note</th>
                                 </tr>
                                 <tr>
+                                        <td>NXP</td>
                                         <td>ICODE SLI SL2 ICS20 (ISO 15693)</td>
-                                        <td>Mem size: 112 bytes</td>
+                                        <td>112</td>
                                         <td>has a unique ID code</td>
                                 </tr>
+                        </table>
+                        <table class="white-row">
                                 <tr>
                                         <th colspan="3">Tag Categories</th>
                                 </tr>
                                 <tr>
-                                        <td>
-                                        <ul>
-                                                <li>Empty Tag 0x0000</li>
-                                                <li>Vote 0x0001</li>
-                                                <li>Technician 0x0002</li>
-                                                <li>President of the Polling Station 0x0003</li>
-                                        </ul>
-                                        </td>
-                                        <td>
-                                        <ul>
-                                                <li>Scrutiny Finalised 0x0004</li>
-                                                <li>Polling Station Open 0x0005</li>
-                                                <li>Scrutiny Transmission 0x007F</li>
-                                                <li>Demonstration 0x0006</li>
-                                        </ul>
-                                        <td>
-                                        <ul>
-                                                <li>Virgin Tag 0x0007 (?)</li>
-                                                <li>Addendum 0x007F (?)</li>
-                                                <li>Unknown Tag 0xFFFF (?)</li>
-                                        </ul>
-                                        </td>
+                                        <td>Empty Tag 0x0000</td>
+                                        <td>Vote 0x0001</td>
+                                        <td>Technician 0x0002</td>
+                                </tr>
+                                <tr>
+                                        <td>President of the Polling Station 0x0003</td>
+                                        <td>Scrutiny Finalised 0x0004</td>
+                                        <td>Polling Station Open 0x0005</td>
+                                </tr>
+                                <tr>
+                                        <td>Demonstration 0x0006</td>
+                                        <td>Scrutiny Transmission 0x007F</td>
+                                        <td></td>
+                                </tr>
+                                <tr>
+                                        <td>Virgin Tag 0x0007 (?)</td>
+                                        <td>Addendum 0x007F (?)</td>
+                                        <td>Unknown Tag 0xFFFF (?)</td>
                                 </tr>
                         </table>
                 </div>
@@ -1040,7 +1044,7 @@ External access via a cable near the batteries.</li>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([-800, 0, -1200], ["theta" => 10]); ?> data-scale="1">
-                        <h4>Multivoting is easy, one just need to build a vote string</h4>
+                        <h4>Multivoting is easy, one just needs to build a vote string</h4>
                         <p>This would be a normal vote for  "Representative" (DIP), "Mayor"
 (JEF) and "Commune Chief" (COM) for the Autonomous City of Buenos Aires (CABA): <code>06CABA.1COM567DIP432JEF123</code></p>
                         <p>And this would be a <i>multivote</i> string: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> where the Mayor got <em>three votes</em> and the rest of the categories, one</p>
@@ -1085,7 +1089,7 @@ External access via a cable near the batteries.</li>
                                 <span>...access maintenance mode</span>
                                 <span class="bottom centered threat">Threat level: <i class="medium-orange">medium</i></span>
                         </div>
-                        <p class="txt-reduced">Allows dvd ejection & some DoS.  Another proof of an awful design...</p>
+                        <p class="txt-reduced">Allows DVD ejection & some DoS.  Another proof of an awful design...</p>
                 </div>
                 <!-- - -->
                 <!-- -->
@@ -1093,8 +1097,7 @@ External access via a cable near the batteries.</li>
                 <!-- bue vs bup -->
                 <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
                         <h2 class="centered">A few words about Unique Paper Ballot</h2>
-                        <p class="txt-tiny centered">BUE stands for Unique Electronic Ballot and
-BUP for Unique Paper Ballot (in Spanish)<p>
+                        <p class="txt-tiny centered"><strong>BUE</strong> stands for Unique Electronic Ballot and <strong>BUP</strong> for Unique Paper Ballot (in Spanish)<p>
                         <table class="white-row">
                                 <thead>
                                 <tr>
@@ -1157,7 +1160,7 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                         <p>Yet, this system introduces a new way to <i>buy votes</i>, that can be exploited by <em>point men</em> (political bosses).</p>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
-                        <p>It's plain easy to hide a mobile phone under clothes with an app reading the contents of the chip</p>
+                        <p>It's plain easy to hide a mobile phone under the clothes with an app reading the contents of the chip</p>
                         <img src="img/point-men.jpg" alt="Buying votes" width="1000" height="529" />
                 </div>
                 <!-- -->
@@ -1178,6 +1181,7 @@ BUP for Unique Paper Ballot (in Spanish)<p>
                                 <li>Doesn't fullfil requirements
                                 <ul>
                                         <li><em>Violates</em> the secrecy of the vote</li>
+                                        <li><em>More than one</em> vote per elector</li>
                                         <li>It's <em>obscure</em> for the voter (and everyone else)</li>
                                 </ul>
                                 </li>
@@ -1225,7 +1229,7 @@ BUP for Unique Paper Ballot (in Spanish)<p>
 			<h1 style="text-align: center;">Thanks for listening!</h1>
 			<p>Also, we want to <b class="scaling">thank everybody</b> who supported us:</p>
                         <ul>
-                                <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Sergio Orbe, Andrés Paul)</li>
+                                <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Eugenia Núñez, Sergio Orbe, Andrés Paul)</li>
                                 <li><span class="soft-green">Fundación Via Libre</span></li>
                                 <li>Our <span class="soft-green">friends</span> that are always there...</li>
                                 <li><span class="soft-green">EKOparty organisers</span> for providing a place to share
