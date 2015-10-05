@@ -142,7 +142,7 @@ if (get_opt('skipintro')) {
 <?php if ($lang == 'es') { ?>
                         <h1 style="text-align: center;">Vot.Ar: una mala elecci&oacute;n</h1>
                         <br />
-                        <h3>Presentaci&oacute;n sobre el sistema <i style="color: #75AADB;">Vot.Ar</i> (o BUE), su HW, SW y Vulnerabilidades.</h3>
+                        <h3>Presentaci&oacute;n sobre el sistema <i class="flag-blue">Vot.Ar</i> (o BUE), su HW, SW y Vulnerabilidades.</h3>
                         <br />
                         <ul>
                                 <li><a class="link-shadow" href="vot_ar_una_mala_eleccion.php" target="_self">Quiero ver la presentaci&oacute;n</a></li>
@@ -152,7 +152,7 @@ if (get_opt('skipintro')) {
 <?php } elseif ($lang == 'en') { ?>
                         <h1 style="text-align: center;">Vot.Ar: a bad election</h1>
                         <br />
-                        <h3>A presentation about the <i style="color: #75AADB;">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
+                        <h3>A presentation about the <i class="flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
                         <br />
                         <ul>
                                 <li><a class="link-shadow" href="vot_ar_a_bad_election.php" target="_self">I want to see the presentation</a></li>
