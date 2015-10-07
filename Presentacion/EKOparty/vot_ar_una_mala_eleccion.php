@@ -375,6 +375,17 @@ $pos->set_overview(["s" => 40]);
         por HacKan | Ivan A. Barrera Oro
         Licencia CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Compartilo!!
+
+        Note: vulnerability level by DREAD:
+                                        {D, R, E, A, D} = [0, 10]
+        Given any vuln/threat t: 
+                                        t ∈ {low,med,high,crit} ⊂ R 
+                                        ∧ 10>crit>high>med>low>0
+                                        ∧ 0 < low < 2.5
+                                        ∧ med < 5
+                                        ∧ high < 7.5
+                                        ∧ crit < 10
+        => t=(D+R+E+A+D)/5
 -->
 <head>
         <meta charset="utf-8">
@@ -456,28 +467,25 @@ $pos->set_overview(["s" => 40]);
                 <div class="step" <?php $pos->shiftprint([0, 800], -20); ?> data-scale="1">
                         <h2>&iquest;Qu&eacute; encontramos?</h2>
                         <ul>
-                                <li>Un mal dise&ntilde;o, a&uacute;n peor implementaci&oacute;n</li>
-                                <li>Vulnerabilidades por malas pr&aacute;cticas de coding</li>
-                                <li>Un sistema muy costoso que no presenta ventajas significativas respecto del sistema de Boleta &Uacute;nica de Papel (BUP)</li>
+                                <li>Un <em>mal</em> dise&ntilde;o, a&uacute;n peor implementaci&oacute;n.</li>
+                                <li><span class="pastel-red">Vulnerabilidades</span> por malas pr&aacute;cticas de coding.</li>
+                                <li>Un sistema muy costoso que no presenta ventajas significativas respecto del sistema de Boleta &Uacute;nica de Papel (BUP).</li>
                         </ul>
                 </div>
                 <!-- - -->
 
                 <!-- -how did we do it? -->
-                <div class="step" <?php $pos->shiftprint([0, 1100], -40); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([0, 1550, -300], -40); ?> data-scale="1">
                         <h2>&iquest;C&oacute;mo lo hicimos?</h2>
                         <ul>
-                                <li>Cerca de una semana de laburo</li>
-                                <li>No oficial: ninguna asistencia fue proporcionada por la empresa ni el gob</li>
-                                <li>Yendo a puntos de consulta p&uacute;blicos para tener acceso a m&aacute;quinas y boletas
-                                <ul>
-                                        <li>Enchufando un teclado y dejando que la m&aacute;gia suceda :D</li>
-                                </ul>
-                                </li>
+                                <li>Cerca de una semana de trabajo.</li>
+                                <li><strong>No oficial</strong>: ninguna asistencia fue proporcionada por la empresa ni el gob.</li>
+                                <li>Yendo a puntos de consulta p&uacute;blicos para tener acceso a m&aacute;quinas y boletas.</li>
                         </ul>
+                        <div class="centered"><img src="img/consultation-point.jpg" alt="Public constultation point" width="533" height="300" /></div>
                 </div>
 
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 500, -400]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 510, -400]); ?> data-scale="1">
                         <ul>
                                 <li>Construyendo algunos dispositivos:
                                 <ul>
@@ -503,11 +511,11 @@ $pos->set_overview(["s" => 40]);
                                 <li>La boleta</li>
                         </ul>
                         <br />
-                        <p><b class="scaling pastel-red">&iquest;Su principal inconveniente?</b></p>
-                        <p class="footnote pastel-red">entre otros...</p>
+                        <p><b class="scaling pastel-red">&iquest;Su vulnerabilidad m&aacute;s evidente?</b></p>
+                        <p class="footnote pastel-red">entre otras...</p>
                 </div><!-- +(0,0,0) -->
 		<div class="step hidden" <?php $pos->printc(); ?> data-scale="1">
-                        <div style="position: absolute; top: 80px; left: 580px;">
+                        <div style="position: absolute; top: 40px; left: 580px;">
                                 <div class="overlay-img-txt txt-tiny pale-yellow">
                                         <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
                                         <span>&iexcl;Est&aacute; basado en RFID!</span>
@@ -540,9 +548,9 @@ $pos->set_overview(["s" => 40]);
                 <div class="step" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
                         <h2>Cosas a tener en cuenta respecto de Vot.Ar</h2>
                         <ul>
-                                <li>HW y SW completamente cerrado (<em>black box</em>)</li>
-                                <li>Absolutamente nada de documentaci&oacute;n p&uacute;blica (&iexcl;as&iacute; y todo los creadores dicen que es c&oacute;digo abierto!)</li>
-                                <li>M&aacute;s de 7 a&ntilde;os de desarrollo
+                                <li>HW y SW completamente cerrado (<em>black box</em>).</li>
+                                <li>Absolutamente nada de documentaci&oacute;n p&uacute;blica: &iexcl;as&iacute; y todo los creadores dicen que es c&oacute;digo abierto!</li>
+                                <li>M&aacute;s de 7 a&ntilde;os de desarrollo:
                                 <ul>
                                         <li>Usado en Salta</li>
                                         <li>Recientemente usado en las capitales de Chaco y Neuqu&eacute;n</li>
@@ -556,9 +564,9 @@ $pos->set_overview(["s" => 40]);
                                 <li>2 auditorias oficiales al momento del informe (julio 2015):
                                 <ul>
                                         <li>Prof. Righetti, FCEN, UBA: OAT 03/15
-                                        <br /><strong>Conclusi&oacute;n</strong>: <em>algunos inconvenientes, pero ok</em></li>
+                                        <br /><strong>Conclusi&oacute;n</strong>: <em>algunos inconvenientes, pero ok</em>.</li>
                                         <li>Departamento de Inform&aacute;tica, ITBA: DVT 56-504
-                                        <br /><strong>Conclusi&oacute;n</strong>: <em>inconcluyente, se dan recomendaciones</em></li>
+                                        <br /><strong>Conclusi&oacute;n</strong>: <em>inconcluyente, se dan recomendaciones</em>.</li>
                                 </ul>
                                 </li>
                         </ul>
@@ -627,9 +635,9 @@ $pos->set_overview(["s" => 40]);
                 <!-- - -->
 
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 420]); ?> data-scale="1">
-                        <p>Luego est&aacute; la boleta, que tiene un chip RFID + papel t&eacute;rmico al dorso</p>
-                        <p>Tambi&eacute;n cuenta con un troquel en una esquina, para verificar que la boleta no haya sido intercambiada</p>
-                        <p class="footnote">Banc&aacute;, ya vienen los detalles...</p>
+                        <p>Luego est&aacute; la boleta, que tiene un chip RFID + papel t&eacute;rmico al dorso.</p>
+                        <p>Tambi&eacute;n cuenta con un troquel en una esquina, para verificar que la boleta no haya sido intercambiada.</p>
+                        <p class="footnote">Enseguida los detalles...</p>
                 </div>
 
                 <div class="step" <?php $pos->shiftprint(["y" => 420]); ?> data-scale="1">
@@ -650,13 +658,13 @@ $pos->set_overview(["s" => 40]);
                 <!-- -whole procedure -->
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1700]); ?> data-scale="1">
                         <h2 class="centered">Vistazo r&aacute;pido: Procedimiento electoral</h2>
-                        <p>Para cualquier mesa de votaci&oacute;n</p>
+                        <p>Para cualquier mesa de votaci&oacute;n:</p>
                         <ol>
-                                <li>Abrir la mesa poniendo a la m&aacute;quina en modo votaci&oacute;n</li>
+                                <li>Abrir la mesa poniendo a la m&aacute;quina en modo votaci&oacute;n.</li>
                                 <li>Comienza la votaci&oacute;n...</li>
-                                <li>Al concluir, cerrar la mesa poniendo la m&aacute;quina en modo escrutinio</li>
-                                <li>Contar los votos</li>
-                                <li>Enviar el escrutinio a la Autoridad Electoral</li>
+                                <li>Al concluir, cerrar la mesa poniendo la m&aacute;quina en modo escrutinio.</li>
+                                <li>Contar los votos...</li>
+                                <li>Enviar el escrutinio a la Autoridad Electoral.</li>
                         </ol>
                 </div>
                 <!-- - -->
@@ -664,22 +672,22 @@ $pos->set_overview(["s" => 40]);
                 <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
                         <h2 class="centered">Vistazo r&aacute;pido: Abriendo la mesa</h2>
                         <ul>
-                                <li>La empresa provee de m&aacute;quinas y de un grupo de t&eacute;cnicos</li>
-                                <li>Los t&eacute;cnicos tienen una credencial (chip RFID)</li>
-                                <li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Presidente de Mesa (c/ chip RFID)</li>
+                                <li>La empresa provee de m&aacute;quinas y de un grupo de t&eacute;cnicos.</li>
+                                <li>Los t&eacute;cnicos tienen una credencial (chip RFID).</li>
+                                <li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Presidente de Mesa (c/ chip RFID).</li>
                         </ul>
                         <div class="overlay-img-txt centered">
                                 <img src="img/dvd.jpg" alt="DVDs and President Id card" width="500" height="281" />
-                                <span></span>
+                                <span class="txt-reduced pale-yellow">Credenciales y DVDs</span>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
                         <ol>
-                                <li>Encender la m&aacute;quina e insertar el DVD</li>
-                                <li>Seguir las instrucciones para calibrar la pantalla t&aacute;ctil</li>
-                                <li>Usar credencial de Presidente para abrir pantalla de inicio, ingresar con # mesa y PIN</li>
-                                <li>Seleccionar la opci&oacute;n de Apertura de Mesa, ingresar la informaci&oacute;n solicitada</li>
-                                <li>Insertar boleta especial que se imprimir&aacute; con los nombres del Presidente y Fiscales, la hora de apertura y un c&oacute;digo QR conteniendo esa misma info, que tambi&eacute;n se grabar&aacute; en el chip</li>
+                                <li>Encender la m&aacute;quina e insertar el DVD.</li>
+                                <li>Seguir las instrucciones para calibrar la pantalla t&aacute;ctil.</li>
+                                <li>Usar credencial de Presidente para abrir pantalla de inicio, ingresar con # mesa y PIN.</li>
+                                <li>Seleccionar la opci&oacute;n de Apertura de Mesa, ingresar la informaci&oacute;n solicitada.</li>
+                                <li>Insertar boleta especial que se imprimir&aacute; con los nombres del Presidente y Fiscales, la hora de apertura y un c&oacute;digo QR conteniendo esa misma info, que tambi&eacute;n se grabar&aacute; en el chip.</li>
                         </ol>
                 </div>
                 <!-- -->
@@ -690,7 +698,7 @@ $pos->set_overview(["s" => 40]);
                         <tr>
                         <td>
                                 <ol>
-                                        <li>Ir a la mesa, presentar DNI y obtener la boleta.  Una parte del troquel ser&aacute; retenido por el Presidente de Mesa</li>
+                                        <li>Presentarse en la mesa, entregar DNI y obtener la boleta:<br />El Presidente de Mesa rentendr&aacute; una parte del troquel.</li>
                                 </ol>
                         </td>
                         <td>
@@ -703,14 +711,14 @@ $pos->set_overview(["s" => 40]);
                         <tr>
                         <td colspan="2">
                                 <ol start="2">
-                                        <li>Boleta en mano, dirigirse a la m&aacute;quina</li>
+                                        <li>Boleta en mano, dirigirse a la m&aacute;quina.</li>
                                 </ol>
                         </td>
                         </tr>
                         <tr>
                         <td>
                                 <ol start="3">
-                                        <li>Insertar la boleta en el slot</li>
+                                        <li>Insertar la boleta en el slot:</li>
                                 </ol>
                         </td>
                         <td>
@@ -727,7 +735,7 @@ $pos->set_overview(["s" => 40]);
                         <tr>
                         <td>
                                 <ol start="4">
-                                        <li>Elegir candidato o lista en la pantalla</li>
+                                        <li>Elegir candidato o lista en la pantalla:</li>
                                 </ol>
                         </td>
                         <td>
@@ -740,7 +748,7 @@ $pos->set_overview(["s" => 40]);
                         <tr>
                         <td>
                                 <ol start="5">
-                                        <li>Al terminar, seleccionar la opci&oacute;n de votar (imprime la boleta y graba el chip). Retirar la boleta del slot</li>
+                                        <li>Al terminar, seleccionar la opci&oacute;n de votar (imprime la boleta y graba el chip). Retirar la boleta del slot.</li>
                                 </ol>
                         </td>
                         <td>
@@ -753,8 +761,8 @@ $pos->set_overview(["s" => 40]);
                         <tr>
                         <td colspan="2">
                                 <ol start="6">
-                                        <li>Acercar la boleta al lector (o insertarla nuevamente) para verificar el voto, doblarla y volver a la mesa</li>
-                                        <li>El Presidente verificar&aacute; y remover&aacute; la otra parte del troquel.  Luego, meter la boleta en la urna y recuperar el DNI</li>
+                                        <li>Acercar la boleta al lector (o insertarla nuevamente) para verificar el voto, doblarla y volver a la mesa.</li>
+                                        <li>El Presidente verificar&aacute; y remover&aacute; la otra parte del troquel.  Luego, depositar la boleta en la urna y recuperar el DNI.</li>
                                 </ol>
                         </td>
                         </tr>
@@ -764,12 +772,12 @@ $pos->set_overview(["s" => 40]);
                 <!-- -closing -->
                 <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Vistazo r&aacute;pido: Cerrando la mesa</h2>
-                        <p>Al t&eacute;rmino de la votaci&oacute;n (18hs)</p>
+                        <p>Al t&eacute;rmino de la votaci&oacute;n (18hs):</p>
                         <ol>
-                                <li>Iniciar sesi&oacute;n como Presidente</li>
-                                <li>Insertar la Boleta de Apertura de Mesa</li>
-                                <li>Seleccionar la opci&oacute;n de Cierre de Mesa, ingresar la hora actual</li>
-                                <li>Insertar boleta especial de Cierre que tendr&aacute; informaci&oacute;n similar a la de Apertura</li>
+                                <li>Iniciar sesi&oacute;n como Presidente.</li>
+                                <li>Insertar la Boleta de Apertura de Mesa.</li>
+                                <li>Seleccionar la opci&oacute;n de Cierre de Mesa, ingresar la hora actual.</li>
+                                <li>Insertar boleta especial de Cierre que tendr&aacute; informaci&oacute;n similar a la de Apertura.</li>
                         </ol>
                 </div>
                 <!-- - -->
@@ -777,12 +785,12 @@ $pos->set_overview(["s" => 40]);
                 <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Vistazo r&aacute;pido: Escrutinio</h2>
                         <ol>
-                                <li>Inmediatamente luego de cerrar la mesa, se activa el modo escrutinio</li>
-                                <li>Elegir una boleta de la urna, verificar impresi&oacute;n y que no tenga marcas extra&ntilde;as</li>
-                                <li>Acercarla a la m&aacute;quina para contabilizarla</li>
-                                <li>Repetir para toda la urna</li>
-                                <li>Al terminar, insertar boleta especial que ser&aacute; impresa con el resultado del escrutinio.  Se pueden imprimir tantas como se necesiten</li>
-                                <li>Ahora debe insertarse una Boleta de Transimis&oacute;n de Escrutinio para continuar</li>
+                                <li>Inmediatamente luego de cerrar la mesa, se activa el modo escrutinio.</li>
+                                <li>Elegir una boleta de la urna, verificar impresi&oacute;n y que no tenga marcas extra&ntilde;as.</li>
+                                <li>Acercarla a la m&aacute;quina para contabilizarla.</li>
+                                <li>Repetir para toda la urna.</li>
+                                <li>Al terminar, insertar boleta especial que ser&aacute; impresa con el resultado del escrutinio.  Se pueden imprimir tantas como se necesiten.</li>
+                                <li>Ahora debe insertarse una Boleta de Transimis&oacute;n de Escrutinio para continuar.</li>
                         </ol>
                 </div>
                 <!-- - -->
@@ -790,8 +798,8 @@ $pos->set_overview(["s" => 40]);
                 <div class="step" <?php $pos->shiftprint(1200, -15); ?> data-scale="1">
                         <h2 class="centered">Vistazo r&aacute;pido: Transmisi&oacute;n del escrutinio</h2>
                         <ol>
-                                <li>Conectar la m&aacute;quina a la LAN</li>
-                                <li>Insertar boleta especial</li>
+                                <li>Conectar la m&aacute;quina a la LAN.</li>
+                                <li>Insertar boleta especial.</li>
                                 <li>&iquest;&iquest;&iquest;???</li>
                         </ol>
                         <p>No hemos podido obtener informaci&oacute;n respecto de este punto.</p>
@@ -821,7 +829,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <div class="overlay-img-txt centered">
                                 <img src="img/jtag-elections.jpg" alt="JTAG exposed during elections" width="580" height="435" />
                                 <span class="soft-green txt-tiny">&iexcl;Algunas lo ten&iacute;an durante las elecciones!</span>
-                                <span class="bottom threat">Threat level: <i class="pastel-red">high</i></span>
+                                <span class="bottom threat">Threat level: <i class="pastel-red">high</i></span><!-- DREAD 9 2 2 1 10 -->
                         </div>
                         <p class="txt-tiny centered pastel-red">&iexcl;Puede usarse para reprogramar el uC!</p>
                         <p class="footnote">M&aacute;s sobre esto en el <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar">blog de Javier</a></p>
@@ -849,7 +857,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <div class="step anim" <?php $pos->shiftprint([500, 50, 0], ["theta" => 10]); ?> data-scale="1">
                         <p>El uC ARM controla la impresora t&eacute;rmica y el lector/escritor RFID.</p>
                         <p>Su memoria E2PROM interna es <b class="scaling-right">suficiente para almacenar</b><br />todos los votos emitidos y m&aacute;s.</p>
-                        <p>We know <em>nothing</em> about this, Jon Snow!</p>
+                        <p>No sabemos <em>nada</em>, Jon Snow!</p>
                 </div>
                 <!-- - -->
 
@@ -861,8 +869,8 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
 
                 <div class="step" <?php $pos->shiftprint([2000, 100, -450], ["theta" => 10]); ?> data-scale="2">
                         <ul>
-                                <li>Papel grueso impreso en el frente y papel t&eacute;rmico + chip RFID en el dorso</li>
-                                <li>Una delgada l&aacute;mina met&aacute;lica protege al chip de ser le&iacute;do cuando la boleta se encuentra <em>perfectamente</em> doblada sobre s&iacute; misma</li>
+                                <li>Papel grueso impreso en el frente y papel t&eacute;rmico + chip RFID en el dorso.</li>
+                                <li>Una delgada l&aacute;mina met&aacute;lica protege al chip de ser le&iacute;do cuando la boleta se encuentra <em>perfectamente</em> doblada sobre s&iacute; misma.</li>
                         </ul>
                 </div>
 
@@ -983,40 +991,41 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <h2>Momento de analizar el SW</h2>
                         <p>Pudimos hacerlo gracias a alguien llamado <a class="link" target="_blank" href="https://twitter.com/prometheus_ar">Prometheus</a>, que <a class="link-shadow" target="_blank" href="https://github.com/prometheus-ar/vot.ar/">public&oacute; el c&oacute;digo fuente</a>.<p>
                         <ul>
-                                <li>Escrito en Python</li>
-                                <li>Viene en un DVD 
+                                <li>Escrito en Python.</li>
+                                <li>Se emplea un <i>live-dvd</i>:
                                 <ul>
-                                        <li>Linux Ubuntu-based (un poco recortado)</li>
-                                        <li>El contenido/archivo de hashes <em>no est&aacute; firmado criptogr&aacute;ficamente</em> (cualquiera puede cambiar el DVD en cualquier momento)</li>
+                                        <li>Linux Ubuntu-based (un poco recortado).</li>
+                                        <li>El contenido/archivo de hashes <em>no est&aacute; firmado criptogr&aacute;ficamente</em> (el DVD puede ser reemplazado sin más).</li>
+                                        <li>No se implementa UEFI/SecureBoot.</li>
                                 </ul></li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 610]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 660]); ?> data-scale="1">
                         <ul>
-                                <li>Carece completamente de documentaci&oacute;n (p&uacute;blica) y de documentaci&oacute;n en el c&oacute;digo</li>
-                                <li>Muy pocos comentarios, incluso desacertados</li>
-                                <li>C&oacute;digo desproligo</li>
-                                <li>Sin pruebas unitarias</li>
+                                <li>Carece completamente de documentaci&oacute;n (p&uacute;blica) y de documentaci&oacute;n en el c&oacute;digo.</li>
+                                <li>Muy pocos comentarios, incluso desacertados.</li>
+                                <li>C&oacute;digo desproligo.</li>
+                                <li>Sin pruebas unitarias.</li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 300]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 325]); ?> data-scale="1">
                         <p>Esto hace que el c&oacute;digo sea dif&iacute;cil de leer, auditar, mantener, mejorar...</p>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 125], 180); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 150], 180); ?> data-scale="1">
                         <p>...pero es ideal para gestar bugs desagradables...</p>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 125], -180); ?> data-scale="1">
-                        <p>...tales como <b class="scaling">#multivoto</b> y otros</p>
+                <div class="step" <?php $pos->shiftprint(["y" => 150], -180); ?> data-scale="1">
+                        <p>...tales como <b class="scaling">#multivoto</b> y otros...</p>
                 </div>
 
                 <!-- -command injection -->
                 <div id="commi" class="step" <?php $pos->shiftprint([1200, -100, 1500], ["theta" => 90]); ?> data-scale="1">
                         <h2>Inyecci&oacute;n de Comandos</h2>
-                        <p>Alfredo Ortega encontr&oacute; una vulnerabilidad de inyecci&oacute;n de comandos en la rutina de generador de c&oacute;digos QR</p>
+                        <p>Alfredo Ortega encontr&oacute; una vulnerabilidad de inyecci&oacute;n de comandos en la rutina de generador de c&oacute;digos QR.</p>
                         <ol>
-                                <li>msa/core/clases.py, line 190: <code>a_qr_str()</code> devuelve una lista de valores separados por comas</li>
-                                <li>msa/core/clases.py, line 206: <code>a_qr()</code> env&iacute;a esos valores a la funci&oacute;n vulnerable</li>
-                                <li>msa/core/qr.py, line 13: <code>crear_qr()</code> funci&oacute;n vulnerable, ejecuta el comando sin sanitizar</li>
+                                <li>msa/core/clases.py, l&iacute;nea 190: <code>a_qr_str()</code> devuelve una lista de valores separados por comas.</li>
+                                <li>msa/core/clases.py, l&iacute;nea 206: <code>a_qr()</code> env&iacute;a esos valores a la funci&oacute;n vulnerable.</li>
+                                <li>msa/core/qr.py, l&iacute;nea 13: <code>crear_qr()</code> <strong>funci&oacute;n vulnerable</strong>, ejecuta el comando sin sanitizar.</li>
                         </ol>
                 </div>
 
@@ -1028,7 +1037,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         </ul>
                         <p>La pantalla de ingreso de nombres s&iacute; sanitiza y tiene un l&iacute;mite de longitud, por lo que explotar esta vulnerabilidad es complicado.</p>
                         <p class="centered threat">Threat level: <i class="medium-orange">medium</i></p>
-                </div>
+                </div><!-- DREAD 3 1 8 1 10 -->
                 <!-- - -->
 
                 <!-- -multivote -->
@@ -1036,7 +1045,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <h2>Multivoto</h2>
                         <p>Esta vulnerabilidad permite a un atacante <strong class="pastel-red">a&ntilde;adir varios votos</strong> al chip RFID, tantos como soporte la memoria del chip (cerca de <strong>10~12 votos</strong>).</p>
                         <p><em>No es obligatorio distribuir los votos de forma especial</em>: pueden ser para un &uacute;nico candidato, o divirse entre varios candidatos, en la misma categor&iacute;a u otra.</p>
-                        <p class="centered threat">Threat level: <i class="critical-purple">critical</i></p>
+                        <p class="centered threat">Threat level: <i class="critical-purple">critical</i> (CVE-2015-6839)</p><!-- DREAD 9 8 3 10 10 -->
                 </div>
                 <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
                         <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
@@ -1049,8 +1058,8 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 </div>
                 <div class="step" <?php $pos->shiftprint([-800, 0, -1200], ["theta" => 10]); ?> data-scale="1">
                         <h4>Multivotar es f&aacute;cil, solo hay que construir el string de voto</h4>
-                        <p>Este ser&iacute;a un voto normal para “Diputado” (DIP), “Jefe de Gobierno” (JEF) y “Jefe Comunal” (COM) para la CABA: <code>06CABA.1COM567DIP432JEF123</code></p>
-                        <p>Y este ser&iacute;a el string de <i>multivoto</i>: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> donde el Jefe de Gobierno obtuvo <em>tres votos</em> y el resto de las categor&iacute;as, uno</p>
+                        <p>Este ser&iacute;a un voto normal para “Diputado” (DIP), “Jefe de Gobierno” (JEF) y “Jefe Comunal” (COM) para la CABA: <code>06CABA.1COM567DIP432JEF123</code>.</p>
+                        <p>Y este ser&iacute;a el string de <i>multivoto</i>: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> donde el Jefe de Gobierno obtuvo <em>tres votos</em> y el resto de las categor&iacute;as, uno.</p>
                         <p class="footnote">Ver punto IV. B. 1 y Ap&eacute;ndice B. C del informe</p>
                 </div>
                 <!-- - -->
@@ -1059,40 +1068,41 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <div id="bypass" class="step" <?php $pos->reset_angle(); $pos->shiftprint([-1200, 800]); ?> data-scale="1">
                         <h2>Salteando pantalla de inicio de sesi&oacute;n</h2>
                         <h3>Suplantar al T&eacute;cnico o Presidente de Mesa</h3>
-                        <p class="right">Esto es trivial dado que <em>ninguna autenticaci&oacute;n</em> es usada para con los datos del chip</p>
-                        <p>Consegu&iacute;te algunos chips RFID y:</p>
+                        <p class="right">Esto es trivial dado que <em>ninguna autenticaci&oacute;n</em> es usada para con los datos del chip.</p>
+                        <p>Obtener algunos chips RFID y:</p>
                         <ol>
-                                <li>Cre&aacute; una boleta falsa de <i>Apertura de Mesa</i></li>
-                                <li>Cre&aacute; una boleta de <i>Presidente de Mesa</i></li>
-                                <li>Cre&aacute; una boleta de <i>T&eacute;cnico</i></li>
+                                <li>Crear una boleta falsa de <i>Apertura de Mesa.</i></li>
+                                <li>Crear una boleta de <i>Presidente de Mesa.</i></li>
+                                <li>Crear una boleta de <i>T&eacute;cnico.</i></li>
                         </ol>
                 </div>
                 <div class="step" <?php $pos->shiftprint([-200, 1100, 50]); ?> data-scale="2">
                         <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/start-screen.jpg" alt="Home Screen" width="711" height="400" />
-                                <span>Us&aacute; la boleta de Presidente para<br />abrir la pantalla de inicio de sesi&oacute;n</span>
+                                <span>Usar la boleta de Presidente para<br />abrir la pantalla de inicio de sesi&oacute;n</span>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1800, 250], ["theta" => -25]); ?> data-scale="2">
                         <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/login-screen.jpg" alt="Log-in Screen" width="711" height="400" />
-                                <span>Us&aacute; la boleta de Apertura de Mesa<br />para saltear el ingreso de PIN</span>
+                                <span>Usar la boleta de Apertura de Mesa<br />para saltear el ingreso de PIN</span>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1400, 450, 150], ["theta" => -25]); ?> data-scale="2">
                         <div class="overlay-img-txt txt-reduced centered flag-blue">
                                 <img src="img/loggedin-screen.jpg" alt="Logged-in Screen" width="711" height="400" />
-                                <span>Logged-in :)</span>
+                                <span>¡Listo!</span>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([700, 100, 1300], ["theta" => -25]); ?> data-scale="1">
-                        <p>Ahora us&aacute;s la boleta de T&eacute;cnico y...</p>
+                        <p>Ahora con la boleta de T&eacute;cnico...</p>
                         <div class="overlay-img-txt txt-reduced pale-yellow">
                                 <img src="img/maintenance-screen.jpg" alt="Maintenance screen" width="900" height="566" />
-                                <span>...acced&eacute;s al modo mantenimiento</span>
-                                <span class="bottom centered threat">Threat level: <i class="medium-orange">medium</i></span>
+                                <span>...ingresar al modo mantenimiento</span>
+                                <span></span>
                         </div>
-                        <p class="txt-reduced">Permite eyectar el DVD y algunos DoS.  Otra prueba de un dise&ntilde;o horrible...</p>
+                        <p class="centered threat">Threat level: <i class="pastel-red">high</i></p><!-- DREAD 5 10 8 1 10 -->
+                        <p class="txt-reduced">Permite eyectar el DVD y algunos DoS.  Otra evidencia de un mal dise&ntilde;o...</p>
                 </div>
                 <!-- - -->
                 <!-- -->
@@ -1158,12 +1168,12 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
                         <p>No hay mayor ventaja de uno u otro sistema en ning&uacute;n punto.</p>
-                        <p>(o sea, &iquest;sin mejoras respecto de un simple papel?)</p>
+                        <p class="txt-reduced">(entonces, &iquest;sin mejoras respecto de un simple papel?)</p>
                         <br />
                         <p>Y sin embargo, este sistema introduce una nueva forma de <i>comprar votos</i>, que puede ser explotada por <em>los punteros</em>.</p>
                 </div>
                 <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
-                        <p>Es muy f&aacute;cil ocultar un tel&eacute;fono celular entre la ropa con una aplicaci&oacute;n para leer el contenido del chip</p>
+                        <p>Es muy f&aacute;cil ocultar un tel&eacute;fono celular entre la ropa con una aplicaci&oacute;n para leer el contenido del chip:</p>
                         <img src="img/point-men.jpg" alt="Buying votes" width="1000" height="529" />
                 </div>
                 <!-- -->
@@ -1188,7 +1198,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <!-- international -->
 		<div class="step" <?php $pos->set_angle([-30, 0, 0]); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2100]); ?> data-scale="1">
                         <img src="img/world-evoting-map.png" alt="eVoting around the world" width="953" height="700" />
-                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Reference</a></p>
+                        <p class="footnote"><a class="link-shadow" target="_blank" href="https://www.ndi.org/e-voting-guide/electronic-voting-and-counting-around-the-world">Referencia</a></p>
 		</div>
                 <!-- -->
 
@@ -1196,21 +1206,21 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
 		<div id="summary" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1500]); ?> data-scale="2">
 			<h1 style="text-align: center;">Resumiendo...</h1>
                         <ul>
-                                <li>Malas t&eacute;cnicas de programaci&oacute;n derivaron en <span class="pastel-red">vulnerabilidades</span></li>
-                                <li>P&eacute;sima elecci&oacute;n del sistema de soporte/almacenamiento de votos</li>
-                                <li>No satisface los <a href="#req" class="link-shadow">requerimientos</a>
+                                <li>Malas t&eacute;cnicas de programaci&oacute;n derivaron en <span class="pastel-red">vulnerabilidades</span>.</li>
+                                <li>P&eacute;sima elecci&oacute;n del sistema de soporte/almacenamiento de votos.</li>
+                                <li>No satisface los <a href="#req" class="link-shadow">requerimientos:</a>
                                 <ul>
-                                        <li><em>Viola</em> el secreto del voto</li>
-                                        <li><em>M&aacute;s de un</em> voto por elector</li>
-                                        <li>Es <em>oscuro</em> para el votante (y para todos)</li>
+                                        <li><em>Viola</em> el secreto del voto.</li>
+                                        <li><em>M&aacute;s de un</em> voto por elector.</li>
+                                        <li>Es <em>oscuro</em> para el votante (y para todos).</li>
                                 </ul>
                                 </li>
-                                <li>No se tienen ventajas significativas respecto del sistema de Boleta &Uacute;nica de Papel</li>
+                                <li>No se tienen ventajas significativas respecto del sistema de Boleta &Uacute;nica de Papel.</li>
                         </ul>
 		</div>
 		<div class="step" <?php $pos->shiftprint(2500, 45); ?> data-scale="2">
                         <p>Como la Suprema Corte de Alemania dictamin&oacute;, de acuerdo a su Constituci&oacute;n:</p>
-                        <blockquote>Cuando se utilizan m&aacute;quinas de voto electr&oacute;nico, <strong>debe ser posible para el ciudadano verificar los pasos escenciales del proceso electoral</strong> y verificar los resultados de forma fiable y <strong>sin ning&uacute;n conocimiento especial de experticia</strong></blockquote>
+                        <blockquote>Cuando se utilizan m&aacute;quinas de voto electr&oacute;nico, <strong>debe ser posible para el ciudadano verificar los pasos escenciales del proceso electoral</strong> y verificar los resultados de forma fiable y <strong>sin ning&uacute;n conocimiento especial de experticia</strong>.</blockquote>
                         <!--<p class="footnote"><a class="link-shadow" target="_blank" href="http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/EN/2009/03/cs20090303_2bvc000307en.html">Reference</a></p>-->
 		</div>
                 <!-- -->
@@ -1220,7 +1230,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
 			<h1 style="text-align: center;">Conclusi&oacute;n</h1>
                         <p>Despu&eacute;s de todo lo visto:</p>
                         <ul>
-                                <li>&iquest;En verdad <em>cre&eacute;s</em> que es una <i>impresora</i>?</li>
+                                <li>&iquest;En verdad <em>creen</em> que es una <i>impresora</i>?</li>
                                 <li>Incertidumbre del resultado de la elecci&oacute;n sin escrutinio manual (&iquest;entonces para qu&eacute; necesitamos a este sistema?)</li>
                                 <li>Los riesgos introducidos por el voto electr&oacute;nico son mayores que sus beneficios</li>
                                 <li><strong>Ning&uacute;n avance t&eacute;cnico debe debilitar la democracia</strong></li>
@@ -1232,8 +1242,8 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <!-- questions -->
 		<div class="step slide" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="2">
 			<h1 style="text-align: center;">&iquest;Preguntas?</h1>
-                        <p>&iexcl;Esperamos que hayas disfrutado de esta presentaci&oacute;n!.  Pregunt&aacute; <em>lo que quieras</em>, no hay restricciones.</p>
-                        <p>Quiz&aacute; te interese preguntar...</p>
+                        <p>&iexcl;Esperamos que hayan disfrutado de esta presentaci&oacute;n!.  Pueden realizar cualquier pregunta, <em>sin restricciones</em>.</p>
+                        <p>Planteamos nosotros algunas:</p>
                         <ul>
                                 <li>&iquest;Resolvi&oacute; MSA estos problemas?</li>
                                 <li>&iquest;Ataques conocidos contra RFID?</li>
@@ -1247,7 +1257,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <!-- thanks -->
 		<div class="step anim slide" <?php $pos->shiftprint(1500); ?> data-scale="1">
 			<h1 style="text-align: center;">&iexcl;Gracias por escuchar!</h1>
-			<p>Queremos tambi&eacute;n <b class="scaling">agradecer a todos</b> los que nos bancaron:</p>
+			<p>Queremos tambi&eacute;n <b class="scaling">agradecer a todos</b> los que nos apoyaron:</p>
                         <ul>
                                 <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena Garc&iacute;a, Lucas Lakousky, Juan Muguerza, Eugenia N&uacute;&ntilde;ez, Sergio Orbe, Andr&eacute;s Paul)</li>
                                 <li><span class="soft-green">Fundaci&oacute;n Via Libre</span></li>
@@ -1262,11 +1272,13 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
 
                 <!-- goodbye -->
 		<div id="last" class="step slide" <?php $pos->shiftprint(1050); ?> data-scale="1">
-			<h1 style="text-align: center;">&iquest;Quer&eacute;s m&aacute;s informaci&oacute;n?</h1>
+			<h1 style="text-align: center;">&iquest;M&aacute;s informaci&oacute;n?</h1>
 			<br />
-			<p>Pod&eacute;s ver el informe, esta presentaci&oacute;n y m&aacute;s en el repo git:</p>
+			<p>Pueden ver el informe, esta presentaci&oacute;n y m&aacute;s en el repo git:</p>
                         <p class="right txt-verybig"><a class="link" target="_self" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+                        <br />
                         <p>Feel free to share! (CC BY-SA v4.0).</p>
+                        <br /><br /><br />
 			<p class="footnote">Powered by <a class="link-shadow" target="_blank" href="https://github.com/bartaz/impress.js">impress.js</a></p>
 		</div>
                 <!-- -->
