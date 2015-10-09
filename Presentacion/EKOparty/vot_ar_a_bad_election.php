@@ -448,7 +448,7 @@ $pos->set_overview(["s" => 40]);
                 </div>
                 <!-- - -->
                 <?php $pos->set([23000, -1000, 0]); ?>
-                <!-- -timeline -->
+                <!-- -begin -->
                 <div class="step" <?php $pos->printc(); ?> data-scale="1">
                         <h2>How did this investigation began?</h2>
                         <ol>
@@ -547,7 +547,7 @@ $pos->set_overview(["s" => 40]);
                         <ul>
                                 <li>Completely closed HW & SW (a <em>black box</em> for us).</li>
                                 <li>Absolutely no public documentation: yet the maker says it's open source!</li>
-                                <li>Over 7 years of development:
+                                <li>Over <strong>7 years of development</strong>:
                                 <ul>
                                         <li>Used in Salta</li>
                                         <li>Recently used in the capital city of Chaco and Neuquén</li>
@@ -556,9 +556,9 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step anim" <?php $pos->shiftprint([1100, 115], ["theta" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>2 official audits by the time of the report (july 2015):
+                                <li>2 official audits by the time of the report (june/july 2015):
                                 <ul>
                                         <li>Prof. Righetti, FCEN, UBA: OAT 03/15
                                         <br /><strong>Conclusion</strong>: <em>small issues, but ok</em>.</li>
@@ -569,7 +569,32 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step anim" <?php $pos->shiftprint([-200, 750], ["theta" => 10]); ?> data-scale="2">
+                <div class="step" <?php $pos->shiftprint([-1400, 680], ["theta" => -10]); ?> data-scale="1">
+                        <ul>
+                                <li>A <strong>serious security flaw</strong> leaves exposed the SSL certificates that were going to be used for transmitting the results!</li>
+                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reports this flaw to the company, only to get <strong>raided by the police two days before the elections</strong>.</li>
+                                <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason by which a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> such info was.</li>
+                        </ul>                
+                </div>
+
+                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
+                        <ul>
+                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNC, Claudio Vaucheret, was harshly criticized by stating:
+<blockquote><strong>Electronic voting has no advantages</strong>. <strong>Unique ballot paper does have</strong>: printing ballots and theft can be solved perfectly by voting with a pencil, not a machine.</blockquote></li>
+                        </ul>
+                
+                </div>
+
+                <!-- -timeline -->
+                <div id="timeline" class="step" <?php $pos->reset_angle(); $pos->shiftprint([2800, 1500, 100], ["phi" => 10]); ?> data-scale="3">
+                        <img src="img/timeline-1.png" alt="Timeline" width="1032" height="780" />
+                </div>
+                <div class="step" <?php $pos->shiftprint([3100, 548]); ?> data-scale="3">
+                        <img src="img/timeline-2.png" alt="Timeline" width="1100" height="780" />
+                </div>          
+                <!-- - -->
+
+                <div class="step anim" <?php $pos->set_angle([0, 30, 0]); $pos->shiftprint([2000, 850]); ?> data-scale="2">
                         <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
                 </div>
                 <!-- -->
@@ -581,14 +606,14 @@ $pos->set_overview(["s" => 40]);
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
                 </div>
 
-                <div class="step anim" <?php $pos->shiftprint(-900, ["phi" => -10]); ?> data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint(-950, ["phi" => -10]); ?> data-scale="1">
                         <p>It has on the left:</p>
                         <ul>
                                 <li>Touch screen for operation<br />(to pick candidates and stuff)</li>
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(1650, ["phi" => 20]); ?> data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint(1550, ["phi" => 20]); ?> data-scale="1">
                         <p>It has on the right:</p>
                         <ul>
                                 <li>Ballot slot: an RFID reader/writer + thermal printer unit</li>
@@ -1108,6 +1133,21 @@ External access via a cable near the batteries.</li>
                 <!-- bue vs bup -->
                 <div id="buebup" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
                         <h2 class="centered">A few words about Unique Paper Ballot</h2>
+                        <img src="img/bue-voto-economia.jpg" alt="voto economia" width="504" height="699" />
+                        <p class="footnote">Infographics by <a class="link" href="https://twitter.com/rusosnith">Andres Snitcofsky</a></p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(0, ["theta" => 90]); ?> data-scale="1">
+                        <h2></h2>
+                        <img src="img/bue-bateria.jpg" alt="bateria" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->shiftprint(["z" => -600]); ?> data-scale="1">
+                        <h2></h2>
+                        <img src="img/bue-dvds.jpg" alt="dvds" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->shiftprint([600, 33, 600], ["theta" => -90]); ?> data-scale="1">
+                        <img src="img/bue-boleta.jpg" alt="boleta" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 1400, 600]); ?> data-scale="1">
                         <p class="txt-tiny centered"><strong>BUE</strong> stands for Unique Electronic Ballot and <strong>BUP</strong> for Unique Paper Ballot (in Spanish)<p>
                         <table class="white-row">
                                 <thead>
@@ -1164,7 +1204,7 @@ External access via a cable near the batteries.</li>
                         </ul>
                         <p class="footnote">Much more detailed explanation <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">by Javier</a></p>
                 </div>
-                <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1300, 100], ["phi" => 10]); ?> data-scale="1">
                         <p>There's no major advantage to each other on any point.</p>
                         <p class="txt-reduced">(so, no improvements from a simple sheet of paper?)</p>
                         <br />

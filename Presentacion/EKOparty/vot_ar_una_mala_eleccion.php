@@ -451,7 +451,7 @@ $pos->set_overview(["s" => 40]);
                 </div>
                 <!-- - -->
                 <?php $pos->set([23000, -1000, 0]); ?>
-                <!-- -timeline -->
+                <!-- -begin -->
                 <div class="step" <?php $pos->printc(); ?> data-scale="1">
                         <h2>&iquest;C&oacute;mo comenz&oacute; esta investigaci&oacute;n?</h2>
                         <ol>
@@ -550,7 +550,7 @@ $pos->set_overview(["s" => 40]);
                         <ul>
                                 <li>HW y SW completamente cerrado (<em>black box</em>).</li>
                                 <li>Absolutamente nada de documentaci&oacute;n p&uacute;blica: &iexcl;as&iacute; y todo los creadores dicen que es c&oacute;digo abierto!</li>
-                                <li>M&aacute;s de 7 a&ntilde;os de desarrollo:
+                                <li>M&aacute;s de <strong>7 a&ntilde;os de desarrollo</strong>:
                                 <ul>
                                         <li>Usado en Salta</li>
                                         <li>Recientemente usado en las capitales de Chaco y Neuqu&eacute;n</li>
@@ -559,20 +559,45 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step anim" <?php $pos->shiftprint([1150, 115], ["theta" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>2 auditorias oficiales al momento del informe (julio 2015):
+                                <li>2 auditorias oficiales al momento del informe (junio/julio 2015):
                                 <ul>
                                         <li>Prof. Righetti, FCEN, UBA: OAT 03/15
                                         <br /><strong>Conclusi&oacute;n</strong>: <em>algunos inconvenientes, pero ok</em>.</li>
                                         <li>Departamento de Inform&aacute;tica, ITBA: DVT 56-504
-                                        <br /><strong>Conclusi&oacute;n</strong>: <em>inconcluyente, se dan recomendaciones</em>.</li>
+                                        <br /><strong>Conclusi&oacute;n</strong>: <em>inconcluyente, recomendaciones dadas</em>.</li>
                                 </ul>
                                 </li>
                         </ul>
                 </div>
 
-                <div class="step anim" <?php $pos->shiftprint([-200, 750], ["theta" => 10]); ?> data-scale="2">
+                <div class="step" <?php $pos->shiftprint([-1400, 900], ["theta" => -10]); ?> data-scale="1">
+                        <ul>
+                                <li>&iexcl;Una <strong>grave falla de seguridad</strong> deja al descubierto los <em>certificados SSL</em> empleados para asegurar la transmisi&oacute;n de resultados!</li>
+                                <li>Un programador independiente, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reporta esta falla a la empresa, solo para ser <strong>allanado por la polic&iacute;a dos d&iacute;as antes de los comicios</strong>.</li>
+                                <li>Asimismo, hackeos independientes ocurren, provocando la fuga de datos personales de los t&eacute;cnicos de la empresa, motivo por el cual una Jueza decide <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">bloquear</a> el sitio <a class="link" href="https://justpaste.it">justpaste.it</a> donde resid&iacute;a esta informaci&oacute;n.</li>
+                        </ul>                
+                </div>
+
+                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
+                        <ul>
+                                <li>Durante los comicios en Neuqu&eacute;n, el Decano de la Facultad de Inform&aacute;tica de la UNC, Claudio Vaucheret, fue duramente criticado por afirmar que:
+<blockquote><strong>El voto electrónico no tiene ninguna ventaja</strong>. <strong>Sí la boleta única de papel</strong>: la impresión de boletas y el robo se pueden solucionar perfectamente votando con un lápiz, no con una máquina.</blockquote></li>
+                        </ul>
+                
+                </div>
+
+                <!-- -timeline -->
+                <div id="timeline" class="step" <?php $pos->reset_angle(); $pos->shiftprint([2600, 1300, 100], ["phi" => 10]); ?> data-scale="3">
+                        <img src="img/timeline-1.png" alt="Timeline" width="1032" height="780" />
+                </div>
+                <div class="step" <?php $pos->shiftprint([3100, 548]); ?> data-scale="3">
+                        <img src="img/timeline-2.png" alt="Timeline" width="1100" height="780" />
+                </div>          
+                <!-- - -->
+
+                <div class="step anim" <?php $pos->set_angle([0, 30, 0]); $pos->shiftprint([2000, 700]); ?> data-scale="2">
                         <p><strong>El sistema aqu&iacute; reportado es tal cual fue usado en las elecciones de este a&ntilde;o</strong> en la CABA</p>
                 </div>
                 <!-- -->
@@ -591,7 +616,7 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(1650, ["phi" => 20]); ?> data-scale="1">
+                <div class="step anim" <?php $pos->shiftprint(1550, ["phi" => 20]); ?> data-scale="1">
                         <p>Tiene a la derecha:</p>
                         <ul>
                                 <li>Slot de boleta: un lector/escritor RFID + impresora t&eacute;rmica</li>
@@ -660,9 +685,9 @@ $pos->set_overview(["s" => 40]);
                         <h2 class="centered">Vistazo r&aacute;pido: Procedimiento electoral</h2>
                         <p>Para cualquier mesa de votaci&oacute;n:</p>
                         <ol>
-                                <li>Abrir la mesa poniendo a la m&aacute;quina en modo votaci&oacute;n.</li>
+                                <li>Abrir la mesa: m&aacute;quina en modo votaci&oacute;n.</li>
                                 <li>Comienza la votaci&oacute;n...</li>
-                                <li>Al concluir, cerrar la mesa poniendo la m&aacute;quina en modo escrutinio.</li>
+                                <li>Al concluir, cerrar la mesa: m&aacute;quina en modo escrutinio.</li>
                                 <li>Contar los votos...</li>
                                 <li>Enviar el escrutinio a la Autoridad Electoral.</li>
                         </ol>
@@ -673,7 +698,7 @@ $pos->set_overview(["s" => 40]);
                         <h2 class="centered">Vistazo r&aacute;pido: Abriendo la mesa</h2>
                         <ul>
                                 <li>La empresa provee de m&aacute;quinas y de un grupo de t&eacute;cnicos.</li>
-                                <li>Los t&eacute;cnicos tienen una credencial (chip RFID).</li>
+                                <li>Los t&eacute;cnicos poseen credencial (chip RFID).</li>
                                 <li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Presidente de Mesa (c/ chip RFID).</li>
                         </ul>
                         <div class="overlay-img-txt centered">
@@ -685,7 +710,7 @@ $pos->set_overview(["s" => 40]);
                         <ol>
                                 <li>Encender la m&aacute;quina e insertar el DVD.</li>
                                 <li>Seguir las instrucciones para calibrar la pantalla t&aacute;ctil.</li>
-                                <li>Usar credencial de Presidente para abrir pantalla de inicio, ingresar con # mesa y PIN.</li>
+                                <li>Usar credencial de Presidente para abrir pantalla de inicio, ingresar # mesa y PIN.</li>
                                 <li>Seleccionar la opci&oacute;n de Apertura de Mesa, ingresar la informaci&oacute;n solicitada.</li>
                                 <li>Insertar boleta especial que se imprimir&aacute; con los nombres del Presidente y Fiscales, la hora de apertura y un c&oacute;digo QR conteniendo esa misma info, que tambi&eacute;n se grabar&aacute; en el chip.</li>
                         </ol>
@@ -1048,7 +1073,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <p class="centered threat">Threat level: <i class="critical-purple">critical</i> (CVE-2015-6839)</p><!-- DREAD 9 8 3 10 10 -->
                 </div>
                 <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
-                        <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
+                        <img src="img/multivoto.png" alt="Multivote" width="595" height="700" />
                 </div>
                 <div class="step" <?php $pos->shiftprint([-500, 0, -650],["theta" => 30]); ?> data-scale="1">
                         <div style="width: 70%;">
@@ -1110,6 +1135,21 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <!-- bue vs bup -->
                 <div id="buebup" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
                         <h2 class="centered">Algunas palabras sobre la BUP</h2>
+                        <img src="img/bue-voto-economia.jpg" alt="voto economia" width="504" height="699" />
+                        <p class="footnote">Infograf&iacute;as por <a class="link" href="https://twitter.com/rusosnith">Andres Snitcofsky</a></p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(0, ["theta" => 90]); ?> data-scale="1">
+                        <h2></h2>
+                        <img src="img/bue-bateria.jpg" alt="bateria" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->shiftprint(["z" => -600]); ?> data-scale="1">
+                        <h2></h2>
+                        <img src="img/bue-dvds.jpg" alt="dvds" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->shiftprint([600, 33, 600], ["theta" => -90]); ?> data-scale="1">
+                        <img src="img/bue-boleta.jpg" alt="boleta" width="504" height="699" />
+                </div>
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 1400, 600]); ?> data-scale="1">
                         <p class="txt-tiny centered"><strong>BUE</strong> significa Boleta &Uacute;nica Electr&oacute;nica y <strong>BUP</strong>, Boleta &Uacute;nica de Papel<p>
                         <table class="white-row">
                                 <thead>
@@ -1152,7 +1192,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <!-- -->
 
                 <!-- bying votes and stuff... -->
-                <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1000]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1200]); ?> data-scale="1">
                         <h2>Viejas amenazas actualizadas</h2>
                         <h4>Algunos ataques comunes a los sistemas electorales</h4>
                         <ul>
@@ -1166,7 +1206,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         </ul>
                         <p class="footnote">Explicaci&oacute;n mucho m&aacute;s detallada <a class="link" target="_blank" href="https://blog.smaldone.com.ar/2015/09/04/boleta-unica-versus-boleta-unica-electronica/">por Javier</a></p>
                 </div>
-                <div class="step" <?php $pos->shiftprint([1300, 200], ["phi" => 10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([1300, 100], ["phi" => 10]); ?> data-scale="1">
                         <p>No hay mayor ventaja de uno u otro sistema en ning&uacute;n punto.</p>
                         <p class="txt-reduced">(entonces, &iquest;sin mejoras respecto de un simple papel?)</p>
                         <br />
