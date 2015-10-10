@@ -905,14 +905,14 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                                 <tr>
                                         <th>Marca</th>
                                         <th>Modelo</th>
-                                        <th>Tama&ntilde;o Memoria (Bytes)</th>
+                                        <th>Memoria (Bytes)</th>
                                         <th>Nota</th>
                                 </tr>
                                 <tr>
                                         <td>NXP</td>
-                                        <td>ICODE SLI SL2 ICS20 (ISO 15693)</td>
+                                        <td>ICODE SLI SL2ICS20 o SLIX SL2S2002 (ISO 15693)</td>
                                         <td>112</td>
-                                        <td>tiene un c&oacute;digo ID &uacute;nico</td>
+                                        <td>c&oacute;digo ID &uacute;nico</td>
                                 </tr>
                         </table>
                         <table class="white-row">

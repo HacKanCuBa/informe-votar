@@ -907,7 +907,7 @@ External access via a cable near the batteries.</li>
                                 </tr>
                                 <tr>
                                         <td>NXP</td>
-                                        <td>ICODE SLI SL2 ICS20 (ISO 15693)</td>
+                                        <td>ICODE SLI SL2ICS20 or SLIX SL2S2002 (ISO 15693)</td>
                                         <td>112</td>
                                         <td>has a unique ID code</td>
                                 </tr>
