@@ -1029,7 +1029,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <ul>
                                 <li>Carece completamente de documentaci&oacute;n (p&uacute;blica) y de documentaci&oacute;n en el c&oacute;digo.</li>
                                 <li>Muy pocos comentarios, incluso desacertados.</li>
-                                <li>C&oacute;digo desproligo.</li>
+                                <li>C&oacute;digo desprolijo.</li>
                                 <li>Sin pruebas unitarias.</li>
                         </ul>
                 </div>
