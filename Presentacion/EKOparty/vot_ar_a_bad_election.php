@@ -1028,7 +1028,7 @@ External access via a cable near the batteries.</li>
                 <div class="step" <?php $pos->shiftprint(["y" => 720]); ?> data-scale="1">
                         <ul>
                                 <li>The program runs as <em>root</em>.</li>
-                                <li>Log-in credentials are hardcoded in .json</li>
+                                <li>Log-in credentials are hardcoded in .json file.</li>
                                 <li>Lacks completely of (public) documentation and also in-code documentation.</li>
                                 <li>Very few comments, even some wrong.</li>
                                 <li>Untidy code.</li>

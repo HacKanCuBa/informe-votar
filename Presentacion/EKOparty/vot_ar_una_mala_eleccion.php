@@ -1031,7 +1031,7 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                 <div class="step" <?php $pos->shiftprint(["y" => 750]); ?> data-scale="1">
                         <ul>
                                 <li>El programa se ejecuta como <em>root</em>.</li>
-                                <li>Credenciales de Log-in se hardcodean en .json</li>
+                                <li>Credenciales de Log-in se hardcodean en archivo .json.</li>
                                 <li>Carece completamente de documentaci&oacute;n (p&uacute;blica) y de documentaci&oacute;n en el c&oacute;digo.</li>
                                 <li>Muy pocos comentarios, incluso desacertados.</li>
                                 <li>C&oacute;digo desprolijo.</li>
