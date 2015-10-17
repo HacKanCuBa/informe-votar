@@ -373,6 +373,8 @@ $pos->set_overview(["s" => 40]);
         Licence CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Feel free to share!!
 
+        v20151016
+
         Note: vulnerability level by DREAD:
                                         {D, R, E, A, D} = [0, 10]
         Given any vuln/threat t: 
@@ -579,7 +581,7 @@ $pos->set_overview(["s" => 40]);
 
                 <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNC, Claudio Vaucheret, was harshly criticized by stating:
+                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNCOMA, Claudio Vaucheret, was harshly criticized by stating:
 <blockquote><strong>Electronic voting has no advantages</strong>. <strong>Unique ballot paper does have</strong>: printing ballots and theft can be solved perfectly by voting with a pencil, not a machine.</blockquote></li>
                         </ul>
                 
@@ -604,6 +606,7 @@ $pos->set_overview(["s" => 40]);
                 <div id="macro" class="step" <?php $pos->reset_angle(); $pos->shiftprint([4000, 200]); ?> data-scale="1">
                         <h2>Overview of Vot.Ar</h2>
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
+                        <p class="txt-reduced">Portable unit, somewhat bigger than a suitcase</p>
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint(-950, ["phi" => -10]); ?> data-scale="1">
@@ -647,7 +650,7 @@ $pos->set_overview(["s" => 40]);
                         <p class="footnote">* BadUSB?...</p>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([100, 1350], -60); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([100, 1400], -60); ?> data-scale="1">
                         <p>It has on the bottom:</p>
                         <ul>
                                 <li>a power source + 2 packs of batteries</li>
@@ -696,7 +699,7 @@ $pos->set_overview(["s" => 40]);
                         <ul>
                                 <li>The company provides machines and a group of technicians.</li>
                                 <li>Technicians have an Id card w/ RFID chip.</li>
-                                <li>The Electoral Authority provides the software DVD in a closed envelope, together with a President Id card (w/ RFID chip).</li>
+                                <li>The Electoral Authority provides the software DVD, with a President Id card (w/ RFID chip) and Log-in credentials, in a sealed envelope.</li>
                         </ul>
                         <div class="overlay-img-txt centered">
                                 <img src="img/dvd.jpg" alt="DVDs and President Id card" width="500" height="281" />
@@ -1022,15 +1025,17 @@ External access via a cable near the batteries.</li>
                                 </ul></li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 650]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 720]); ?> data-scale="1">
                         <ul>
+                                <li>The program runs as <em>root</em>.</li>
+                                <li>Log-in credentials are hardcoded in .json</li>
                                 <li>Lacks completely of (public) documentation and also in-code documentation.</li>
                                 <li>Very few comments, even some wrong.</li>
                                 <li>Untidy code.</li>
                                 <li>No unit testing.</li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 300]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 360]); ?> data-scale="1">
                         <p>This makes the code hard to read, audit, maintain, improve...</p>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 125], 180); ?> data-scale="1">
@@ -1084,6 +1089,13 @@ External access via a cable near the batteries.</li>
 (JEF) and "Commune Chief" (COM) for the Autonomous City of Buenos Aires (CABA): <code>06CABA.1COM567DIP432JEF123</code>.</p>
                         <p>And this would be a <i>multivote</i> string: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> where the Mayor got <em>three votes</em> and the rest of the categories, one.</p>
                         <p class="footnote">See point IV. B. 1 and Appendix B. C of the report</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 800]); ?> data-scale="1">
+                        <p>For example, it's possible to find some info online, at the electoral authority's website:</p>
+                        <div class="centered">
+                                <img src="img/login-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/" width="511" height="300" />
+                                <img src="img/candidatos-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json" width="360" height="600" class="right" />
+                        </div>
                 </div>
                 <!-- - -->
 

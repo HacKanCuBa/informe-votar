@@ -376,6 +376,8 @@ $pos->set_overview(["s" => 40]);
         Licencia CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Compartilo!!
 
+        v20151016
+
         Note: vulnerability level by DREAD:
                                         {D, R, E, A, D} = [0, 10]
         Given any vuln/threat t: 
@@ -582,7 +584,7 @@ $pos->set_overview(["s" => 40]);
 
                 <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>Durante los comicios en Neuqu&eacute;n, el Decano de la Facultad de Inform&aacute;tica de la UNC, Claudio Vaucheret, fue duramente criticado por afirmar que:
+                                <li>Durante los comicios en Neuqu&eacute;n, el Decano de la Facultad de Inform&aacute;tica de la UNCOMA, Claudio Vaucheret, fue duramente criticado por afirmar que:
 <blockquote><strong>El voto electrónico no tiene ninguna ventaja</strong>. <strong>Sí la boleta única de papel</strong>: la impresión de boletas y el robo se pueden solucionar perfectamente votando con un lápiz, no con una máquina.</blockquote></li>
                         </ul>
                 
@@ -607,6 +609,7 @@ $pos->set_overview(["s" => 40]);
                 <div id="macro" class="step" <?php $pos->reset_angle(); $pos->shiftprint([4000, 200]); ?> data-scale="1">
                         <h2>Visi&oacute;n general de Vot.Ar</h2>
                         <img src="img/overview.png" alt="overview" width="700" height="700" />
+                        <p class="txt-reduced">Unidad portable, algo más grande que un malet&iacute;n</p>
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint(-900, ["phi" => -10]); ?> data-scale="1">
@@ -650,7 +653,7 @@ $pos->set_overview(["s" => 40]);
                         <p class="footnote">* BadUSB?...</p>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([100, 1350], -60); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([100, 1400], -60); ?> data-scale="1">
                         <p>Tiene por debajo:</p>
                         <ul>
                                 <li>una fuente de alimentaci&oacute;n + 2 packs de bater&iacute;as</li>
@@ -699,7 +702,7 @@ $pos->set_overview(["s" => 40]);
                         <ul>
                                 <li>La empresa provee de m&aacute;quinas y de un grupo de t&eacute;cnicos.</li>
                                 <li>Los t&eacute;cnicos poseen credencial (chip RFID).</li>
-                                <li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Presidente de Mesa (c/ chip RFID).</li>
+                                <li>La Autoridad Electoral provee el DVD en sobre lacrado junto a la credencial de Pte. de Mesa (c/ chip RFID) y datos de Log-in.</li>
                         </ul>
                         <div class="overlay-img-txt centered">
                                 <img src="img/dvd.jpg" alt="DVDs and President Id card" width="500" height="281" />
@@ -1025,15 +1028,17 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                                 </ul></li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 660]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 750]); ?> data-scale="1">
                         <ul>
+                                <li>El programa se ejecuta como <em>root</em>.</li>
+                                <li>Credenciales de Log-in se hardcodean en .json</li>
                                 <li>Carece completamente de documentaci&oacute;n (p&uacute;blica) y de documentaci&oacute;n en el c&oacute;digo.</li>
                                 <li>Muy pocos comentarios, incluso desacertados.</li>
                                 <li>C&oacute;digo desprolijo.</li>
                                 <li>Sin pruebas unitarias.</li>
                         </ul>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 325]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 415]); ?> data-scale="1">
                         <p>Esto hace que el c&oacute;digo sea dif&iacute;cil de leer, auditar, mantener, mejorar...</p>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 150], 180); ?> data-scale="1">
@@ -1086,6 +1091,13 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         <p>Este ser&iacute;a un voto normal para “Diputado” (DIP), “Jefe de Gobierno” (JEF) y “Jefe Comunal” (COM) para la CABA: <code>06CABA.1COM567DIP432JEF123</code>.</p>
                         <p>Y este ser&iacute;a el string de <i>multivoto</i>: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> donde el Jefe de Gobierno obtuvo <em>tres votos</em> y el resto de las categor&iacute;as, uno.</p>
                         <p class="footnote">Ver punto IV. B. 1 y Ap&eacute;ndice B. C del informe</p>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 750]); ?> data-scale="1">
+                        <p>Por ejemplo, es factible conseguir algo de info online, en la p&aacute;gina de la autoridad electoral:</p>
+                        <div class="centered">
+                                <img src="img/login-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/" width="511" height="300" />
+                                <img src="img/candidatos-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json" width="360" height="600" class="right" />
+                        </div>
                 </div>
                 <!-- - -->
 

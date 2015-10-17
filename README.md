@@ -16,8 +16,8 @@ Para mayor abundamiento, recomendamos la lectura de los siguientes textos:
 ## Presentaciones
 Hemos presentado el informe en distintas conferencias de la rama.  Las fuentes se encuentran en el directorio correspondiente de este repositorio.  
 
-* [EKOparty #11](http://ekoparty.org) Octubre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11/vot_ar_a_bad_election.html)  
-* [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/sbseg15/vot_ar_a_bad_election.html)  
+* [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11)  
+* [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
 
 ## Repercusión nacional
 Durante todas las instancias que hemos recorrido, algunos semanas antes de las elecciones, otros desde hace años, los medios nacionales eligieron no hablar mucho del tema. Los motivos, desconocidos, aún teniendo información de primicia servida en bandeja.  Sin embargo y de a poco, algunos medios comienzan a tratar este tema como corresponde, faltando un largo camino por recorrer siendo que todo el proceso fue tratado a oscuras de los electores.  
@@ -25,6 +25,8 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * [Todo lo que no te cuentan los medios del #VotoElectronico en Argentina](http://www.infosertec.com.ar/blog/?p=56547)  
 * [Algunas reflexiones sobre el voto electrónico](http://www.lanacion.com.ar/1809389-algunas-reflexiones-sobre-el-voto-electronico)  
 * [06-07-2015 - Radio LED con Enrique Chaparro](https://www.youtube.com/watch?v=l7kttGNkN_E)  
+* [Con los chips de punta por la falta de control](http://www.pagina12.com.ar/diario/elpais/1-276357-2015-07-04.html)
+* [Clarín, Página y Perfil anticipan problemas con el voto electrónico](http://www.diariosobrediarios.com.ar/dsd/notas/1/34116-clarin-pagina-y-perfil-anticipan-problemas-con-el-voto-electronico.php)
 
 ## Repercusión internacional
 * [Argentinien: Razzia nach Hinweis auf Sicherheitslücke in Wahlcomputern](http://www.spiegel.de/netzwelt/netzpolitik/razzia-nach-hinweis-auf-sicherheitsluecke-in-wahlcomputern-a-1042657.html)  
