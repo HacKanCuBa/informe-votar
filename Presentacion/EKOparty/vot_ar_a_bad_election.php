@@ -373,7 +373,7 @@ $pos->set_overview(["s" => 40]);
         Licence CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Feel free to share!!
 
-        v20151016
+        v20151019
 
         Note: vulnerability level by DREAD:
                                         {D, R, E, A, D} = [0, 10]
@@ -455,9 +455,9 @@ $pos->set_overview(["s" => 40]);
                         <h2>How did this investigation began?</h2>
                         <ol>
                                 <li>Through CaFeLUG group I was contacted for a private audit on the system.</li>
-                                <li>I got mad because of <em class="pastel-red">prohibition</em> to touch/modify/carefully analyse things.</li>
-                                <li>I contacted Javier, who always gives talks in <em class="soft-green">FLISOL</em> about eVoting and told him my experience.</li>
-                                <li>He tells me about an idea, and things got in motion...</li>
+                                <li>I was mad because of <em class="pastel-red">prohibition</em> to touch/modify/carefully analyse things.</li>
+                                <li>I contacted Javier, who always gives talks in <em class="soft-green">FLISOL</em> about eVoting, and told him my experience.</li>
+                                <li>He told me about an idea, and things got in motion...</li>
                         </ol>
                 </div>
                 <!-- - -->
@@ -478,7 +478,7 @@ $pos->set_overview(["s" => 40]);
                         <h2>How did we do this?</h2>
                         <ul>
                                 <li>About a week or so of hard work.</li>
-                                <li><strong>Unofficial</strong>: no assistance was provided by company nor govt.</li>
+                                <li><strong>Unofficially</strong>: no assistance was provided by the company nor govt.</li>
                                 <li>By going to public consultation points to have access to machines and ballots.</li>
                         </ul>
                         <div class="centered"><img src="img/consultation-point.jpg" alt="Public constultation point" width="533" height="300" /></div>
@@ -486,7 +486,7 @@ $pos->set_overview(["s" => 40]);
 
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 510, -400]); ?> data-scale="1">
                         <ul>
-                                <li>Building a few devices for hardware tests:
+                                <li>By building a few devices for hardware tests:
                                 <ul>
                                         <li>ballot reader</li>
                                         <li>ballot burner</li>
@@ -504,7 +504,7 @@ $pos->set_overview(["s" => 40]);
 
                 <!-- about vot.ar, brief desc -->
 		<div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
-                        <p><strong>Vot.Ar</strong> aka <strong>BUE</strong> for Unique Electronic Ballot (in Spanish) by MSA Group is a paper-based eVoting system, with two main elements:</p>
+                        <p><strong>Vot.Ar</strong> a.k.a <strong>BUE</strong> that stands for Unique Electronic Ballot in Spanish, is a paper-based eVoting system by MSA Group.  It has two main elements:</p>
                         <ul>
                                 <li>The vote-casting and counting machine</li>
                                 <li>The ballot</li>
@@ -571,18 +571,18 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([-1400, 680], ["theta" => -10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([-1400, 700], ["theta" => -10]); ?> data-scale="1">
                         <ul>
-                                <li>A <strong>serious security flaw</strong> leaves exposed the SSL certificates that were going to be used for transmitting the results!</li>
-                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reports this flaw to the company, only to get <strong>raided by the police two days before the elections</strong>.</li>
-                                <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason by which a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> such info was.</li>
+                                <li>A <strong>serious security flaw</strong> left exposed the SSL certificates that were going to be used for transmitting the results!</li>
+                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reported this flaw to the company, only to get <strong>raided by the police two days before the elections</strong>.</li>
+                                <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason why a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> where the info was published.</li>
                         </ul>                
                 </div>
 
                 <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
                         <ul>
-                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNCOMA, Claudio Vaucheret, was harshly criticized by stating:
-<blockquote><strong>Electronic voting has no advantages</strong>. <strong>Unique ballot paper does have</strong>: printing ballots and theft can be solved perfectly by voting with a pencil, not a machine.</blockquote></li>
+                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNCOMA, Claudio Vaucheret, was harshly criticized for stating:
+<blockquote><strong>Electronic voting has no advantages</strong>. <strong>Unique ballot paper does</strong>: ballot printing and theft can be solved perfectly by voting with a pencil, not a machine.</blockquote></li>
                         </ul>
                 
                 </div>
@@ -610,21 +610,21 @@ $pos->set_overview(["s" => 40]);
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint(-950, ["phi" => -10]); ?> data-scale="1">
-                        <p>It has on the left:</p>
+                        <p>On the left:</p>
                         <ul>
-                                <li>Touch screen for operation<br />(to pick candidates and stuff)</li>
+                                <li>Touch screen for operation<br />(to pick candidates and other functions)</li>
                         </ul>
                 </div>
 
                 <div class="step anim" <?php $pos->shiftprint(1550, ["phi" => 20]); ?> data-scale="1">
-                        <p>It has on the right:</p>
+                        <p>On the right:</p>
                         <ul>
                                 <li>Ballot slot: an RFID reader/writer + thermal printer unit</li>
                         </ul>
                 </div>
 
                 <div class="step" <?php $pos->shiftprint([-850, -700], [30, 0, -10]); ?> data-scale="1">
-                        <p>It has on the top:</p>
+                        <p>On the top:</p>
                         <ul>
                                 <li>
                                 DVD R/W, status LEDs & ports: 
@@ -651,16 +651,16 @@ $pos->set_overview(["s" => 40]);
                 </div>
 
                 <div class="step" <?php $pos->shiftprint([100, 1400], -60); ?> data-scale="1">
-                        <p>It has on the bottom:</p>
+                        <p>On the bottom:</p>
                         <ul>
                                 <li>a power source + 2 packs of batteries</li>
-                                <li>and sometimes, a JTAG cable!</li>
+                                <li>sometimes, a JTAG cable!</li>
                         </ul>
                 </div>
                 <!-- - -->
 
                 <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 400]); ?> data-scale="1">
-                        <p>And then there's the ballot, which has an RFID chip + thermal paper on the back.</p>
+                        <p>On the other hand there's the ballot, which has an RFID chip + thermal paper on the back.</p>
                         <p>Also a die-cutting on one side, to verify that the ballot wasn't swapped.</p>
                         <p class="footnote">Details in a moment...</p>
                 </div>
@@ -895,7 +895,7 @@ External access via a cable near the batteries.</li>
                 <div class="step" <?php $pos->shiftprint([2000, 100, -450], ["theta" => 10]); ?> data-scale="2">
                         <ul>
                                 <li>Paperboard with a print on one side, and thermal paper on the other + RFID chip.</li>
-                                <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> bent over.</li>
+                                <li>The thin metal layer protects the chip from being read when the ballot is <em>perfectly</em> fold.</li>
                         </ul>
                 </div>
 
@@ -1029,8 +1029,8 @@ External access via a cable near the batteries.</li>
                         <ul>
                                 <li>The program runs as <em>root</em>.</li>
                                 <li>Log-in credentials are hardcoded in .json file.</li>
-                                <li>Lacks completely of (public) documentation and also in-code documentation.</li>
-                                <li>Very few comments, even some wrong.</li>
+                                <li>Completely lacks of (public) documentation and in-code documentation.</li>
+                                <li>Very few comments, some where wrong.</li>
                                 <li>Untidy code.</li>
                                 <li>No unit testing.</li>
                         </ul>
@@ -1080,7 +1080,7 @@ External access via a cable near the batteries.</li>
                 <div class="step" <?php $pos->shiftprint([-500, 0, -650],["theta" => 30]); ?> data-scale="1">
                         <div style="width: 70%;">
                         <p>You <em>cannot differentiate</em> between a <em>multivote ballot</em> and a <em>normal one</em> with a naked eye.</p>
-                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes from beforehand</em> that are very hard to detect.</p>
+                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes beforehand</em> that are very hard to detect.</p>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([-800, 0, -1200], ["theta" => 10]); ?> data-scale="1">
@@ -1206,7 +1206,7 @@ External access via a cable near the batteries.</li>
                         <h2>Old threats updated</h2>
                         <h4>Some common attacks against electoral systems</h4>
                         <ul>
-                                <li>Pregnant ballot box</li>
+                                <li>"Pregnant" ballot box</li>
                                 <li>President of the Polling Station in favor of a party</li>
                                 <li>Chain-voting</li>
                                 <li>Clientelism</li>
