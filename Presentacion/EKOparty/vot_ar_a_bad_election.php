@@ -843,7 +843,11 @@ External access via a cable near the batteries.</li>
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([-1750, 900], [-10, -20]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([3000, 1000, 0], ["theta" => 10]); ?> data-scale="2">
+                        <img src="img/patente.jpg" alt="Patente voto electronico" width="1000" height="794" />
+                </div>
+
+                <div class="step" <?php $pos->shiftprint([-1750, 1750], [-10, -30]); ?> data-scale="1">
                         <h3>The RFID Chip</h3>
                         <table class="white-row">
                                 <tr>
