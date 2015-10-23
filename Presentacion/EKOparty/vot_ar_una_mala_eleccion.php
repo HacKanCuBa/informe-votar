@@ -376,7 +376,7 @@ $pos->set_overview(["s" => 40]);
         Licencia CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Compartilo!!
 
-        v20151016
+        v20151022
 
         Note: vulnerability level by DREAD:
                                         {D, R, E, A, D} = [0, 10]
@@ -457,7 +457,7 @@ $pos->set_overview(["s" => 40]);
                                 </ul>
                                 (algunos funcionaron, otros no)
                                 </li>
-                                <li>Mucha investigaci&oacute;n en internet (gracias al c&oacute;digo fuente filtrado)</li>
+                                <li>Mucha investigaci&oacute;n en internet (gracias al c&oacute;digo fuente y fotos filtradas)</li>
                                 <li>Gran esfuerzo</li>
                         </ul>
                 </div>
@@ -625,7 +625,7 @@ $pos->set_overview(["s" => 40]);
                         <p><small>&iexcl;y todos lo creyeron!</small></p>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 410]); ?> data-scale="1">
-                        <video width="864" height="480" controls>
+                        <video width="854" height="480" controls>
                                 <source src="vid/es_una_impresora.webm" type="video/webm">
                                 Montenegro y Angelini: Es una impresora.
                         </video>
@@ -977,12 +977,12 @@ Acceso externo a trav&eacute;s de un cable cerca de las bater&iacute;as.</li>
                         </ul>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 680]); ?> data-scale="1">
-                        <video width="864" height="480" controls>
+                        <video width="854" height="480" controls>
                                 <source src="vid/angelini.webm" type="video/webm">
                                 Angelini sobre la maquina.
                         </video>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 600]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 620]); ?> data-scale="1">
                         <ul>
                                 <li>El programa se ejecuta como <em>root</em>.</li>
                                 <li>Credenciales de Log-in se hardcodean en archivo .json.</li>
