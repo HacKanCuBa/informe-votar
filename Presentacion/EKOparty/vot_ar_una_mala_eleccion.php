@@ -366,7 +366,7 @@ class Position
 }
 
 $pos = new Position;
-$pos->set_overview(["s" => 40]);
+$pos->set_overview(["s" => 45]);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -631,7 +631,7 @@ $pos->set_overview(["s" => 40]);
                         </video>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint(["y" => 900], 10); ?> data-scale="2">
+                <div class="step" <?php $pos->shiftprint(["y" => 910], 10); ?> data-scale="2">
                         <div class="overlay-img-txt centered">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
                                 <span class="bottom flag-blue txt-reduced">As&iacute; que ac&aacute; tuiteabamos, desde una "impresora"...</span>

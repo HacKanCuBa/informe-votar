@@ -363,7 +363,7 @@ class Position
 }
 
 $pos = new Position;
-$pos->set_overview(["s" => 40]);
+$pos->set_overview(["s" => 45]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -373,7 +373,7 @@ $pos->set_overview(["s" => 40]);
         Licence CC BY-SA v4.0: http://creativecommons.org/licenses/by-sa/4.0/
         Feel free to share!!
 
-        v20151019
+        v20151022
 
         Note: vulnerability level by DREAD:
                                         {D, R, E, A, D} = [0, 10]
@@ -432,47 +432,7 @@ $pos->set_overview(["s" => 40]);
 		</div>
                 <!-- -->
 
-                <!-- intro -->
-                <!-- -short intro about the people involved, what moved us to do this. -->
-                <div id="authors" class="step anim" <?php $pos->shift([7000, 600]); $pos->printc(); ?> data-scale="10">
-                        <p>Authors: 
-                                <a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/hackancuba">Iv&aacute;n A. Barrera Oro</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>, 
-                                <a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>, 
-                                <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier Smaldone</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>
-                        </p>
-                        <p class="footnote">Presenters: <b class="scaling"><i>Iv&aacute;n</i> & <i>Javier</i></b></p>
-                </div>
-                <!-- - -->
                 <?php $pos->set([23000, -1000, 0]); ?>
-                <!-- -begin -->
-                <div class="step" <?php $pos->printc(); ?> data-scale="1">
-                        <h2>How did this investigation began?</h2>
-                        <ol>
-                                <li>Through CaFeLUG group I was contacted for a private audit on the system.</li>
-                                <li>I was mad because of <em class="pastel-red">prohibition</em> to touch/modify/carefully analyse things.</li>
-                                <li>I contacted Javier, who always gives talks in <em class="soft-green">FLISOL</em> about eVoting, and told him my experience.</li>
-                                <li>He told me about an idea, and things got in motion...</li>
-                        </ol>
-                </div>
-                <!-- - -->
-
-                <!-- -what did we find? -->
-                <div class="step" <?php $pos->shiftprint([0, 800], -20); ?> data-scale="1">
-                        <h2>What did we find?</h2>
-                        <ul>
-                                <li><em>Bad</em> design, worst implementation.</li>
-                                <li><span class="pastel-red">Vulnerabilities</span> due to bad coding practices.</li>
-                                <li>A very expensive system that doesn't present considerable advantages compared to the unique paper ballot system.</li>
-                        </ul>
-                </div>
-                <!-- - -->
-
                 <!-- -how did we do it? -->
                 <div class="step" <?php $pos->shiftprint([0, 1550, -300], -40); ?> data-scale="1">
                         <h2>How did we do this?</h2>
@@ -484,7 +444,7 @@ $pos->set_overview(["s" => 40]);
                         <div class="centered"><img src="img/consultation-point.jpg" alt="Public constultation point" width="533" height="300" /></div>
                 </div>
 
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 510, -400]); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 650, -400]); ?> data-scale="1">
                         <ul>
                                 <li>By building a few devices for hardware tests:
                                 <ul>
@@ -494,8 +454,7 @@ $pos->set_overview(["s" => 40]);
                                 </ul>
                                 (some worked, some didn't)
                                 </li>
-                                <li>Lots of internet research</li>
-                                <li>Lots of thinking</li>
+                                <li>Lots of internet research (thanks to the leaked source code and photos)</li>
                                 <li>Great effort</li>
                         </ul>
                 </div>
@@ -551,7 +510,7 @@ $pos->set_overview(["s" => 40]);
                                 <li>Absolutely no public documentation: yet the maker says it's open source!</li>
                                 <li>Over <strong>7 years of development</strong>:
                                 <ul>
-                                        <li>Used in Salta</li>
+                                        <li>Used in Salta (and audited there)</li>
                                         <li>Recently used in the capital city of Chaco and Neuquén</li>
                                 </ul>
                                 </li>
@@ -571,20 +530,12 @@ $pos->set_overview(["s" => 40]);
                         </ul>
                 </div>
 
-                <div class="step" <?php $pos->shiftprint([-1400, 700], ["theta" => -10]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([-1400, 750], ["theta" => -10]); ?> data-scale="1">
                         <ul>
                                 <li>A <strong>serious security flaw</strong> left exposed the SSL certificates that were going to be used for transmitting the results!</li>
-                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reported this flaw to the company, only to get <strong>raided by the police two days before the elections</strong>.</li>
+                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reported this flaw to the company, only to get <strong>raided by the police two days before the elections</strong> and during late afternoon/in the night.</li>
                                 <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason why a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> where the info was published.</li>
                         </ul>                
-                </div>
-
-                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
-                        <ul>
-                                <li>During elections in Neuqu&eacute;n, the Dean of the Faculty of Computer Science at UNCOMA, Claudio Vaucheret, was harshly criticized for stating:
-<blockquote><strong>Electronic voting has no advantages</strong>. <strong>Unique ballot paper does</strong>: ballot printing and theft can be solved perfectly by voting with a pencil, not a machine.</blockquote></li>
-                        </ul>
-                
                 </div>
 
                 <!-- -timeline -->
@@ -670,8 +621,14 @@ $pos->set_overview(["s" => 40]);
                         <q>It's a printer, not a computer!</q>
                         <p><small>and everybody believed it!</small></p>
                 </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 410]); ?> data-scale="1">
+                        <video width="854" height="480" controls>
+                                <source src="vid/es_una_impresora.webm" type="video/webm">
+                                Montenegro y Angelini: Es una impresora.
+                        </video>
+                </div>
 
-                <div class="step" <?php $pos->shiftprint(["y" => 815], 10); ?> data-scale="2">
+                <div class="step" <?php $pos->shiftprint(["y" => 910], 10); ?> data-scale="2">
                         <div class="overlay-img-txt centered">
                                 <img src="img/tweeting-machine.png" alt="Tweeting from a Vot.Ar machine" width="1219" height="652" />
                                 <span class="bottom flag-blue txt-reduced">So here we were, tweeting from a "printer"...</span>
@@ -680,21 +637,8 @@ $pos->set_overview(["s" => 40]);
                 <!-- -->
 
                 <!-- electoral process -->
-                <!-- -whole procedure -->
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1700]); ?> data-scale="1">
-                        <h2 class="centered">Quick peek: Electoral procedure</h2>
-                        <p>For any given Polling Station:</p>
-                        <ol>
-                                <li>Open the Polling Station by setting the machine to vote mode.</li>
-                                <li>Voting begins...</li>
-                                <li>When it ends, close the Polling Station by setting the machine into scrutiny mode.</li>
-                                <li>Count votes...</li>
-                                <li>Send the scrutiny result to the Electoral Authority.</li>
-                        </ol>
-                </div>
-                <!-- - -->
                 <!-- -opening station -->
-                <div class="step" <?php $pos->shiftprint(1200, 15); ?> data-scale="1">
+                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1700]); ?> data-scale="1">
                         <h2 class="centered">Quick peek: Opening Polling Station</h2>
                         <ul>
                                 <li>The company provides machines and a group of technicians.</li>
@@ -1026,6 +970,12 @@ External access via a cable near the batteries.</li>
                         </ul>
                 </div>
                 <div class="step" <?php $pos->shiftprint(["y" => 720]); ?> data-scale="1">
+                        <video width="854" height="480" controls>
+                                <source src="vid/angelini.webm" type="video/webm">
+                                Angelini sobre la maquina.
+                        </video>
+                </div>
+                <div class="step" <?php $pos->shiftprint(["y" => 540]); ?> data-scale="1">
                         <ul>
                                 <li>The program runs as <em>root</em>.</li>
                                 <li>Log-in credentials are hardcoded in .json file.</li>
@@ -1074,13 +1024,11 @@ External access via a cable near the batteries.</li>
                         <p>Also, it's <em>not mandatory to distribute the votes in any way</em>: they can be for a single candidate, or split among several candidates, in the same or different electoral category.</p>
                         <p class="centered threat">Threat level: <i class="critical-purple">critical</i> (CVE-2015-6839)</p><!-- DREAD 9 8 3 10 10 -->
                 </div>
-                <div class="step" <?php $pos->shiftprint([0, -300, -1200], ["theta" => 10]); ?> data-scale="1">
-                        <img src="img/multivote.png" alt="Multivote" width="595" height="700" />
-                </div>
-                <div class="step" <?php $pos->shiftprint([-500, 0, -650],["theta" => 30]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint([0, -300, -1500],["theta" => 10]); ?> data-scale="1">
                         <div style="width: 70%;">
-                        <p>You <em>cannot differentiate</em> between a <em>multivote ballot</em> and a <em>normal one</em> with a naked eye.</p>
-                        <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes beforehand</em> that are very hard to detect.</p>
+                                <p>You <em>cannot differentiate</em> between a <em>multivote ballot</em> and a <em>normal one</em> with a naked eye.</p>
+                                <p>So, an attacker with access to a thermal printer and blank ballots (not too hard to get) <em>could cast fake votes beforehand</em> that are very hard to detect.</p>
+                                <p>It was recognized by Prof. Righetti's latest audit (but it's importance was diminished).</p>
                         </div>
                 </div>
                 <div class="step" <?php $pos->shiftprint([-800, 0, -1200], ["theta" => 10]); ?> data-scale="1">
@@ -1090,7 +1038,7 @@ External access via a cable near the batteries.</li>
                         <p>And this would be a <i>multivote</i> string: <code>06CABA.1JEF123JEF123JEF123COM567DIP432</code> where the Mayor got <em>three votes</em> and the rest of the categories, one.</p>
                         <p class="footnote">See point IV. B. 1 and Appendix B. C of the report</p>
                 </div>
-                <div class="step" <?php $pos->shiftprint(["y" => 800]); ?> data-scale="1">
+                <div class="step" <?php $pos->shiftprint(["y" => 810]); ?> data-scale="1">
                         <p>For example, it's possible to find some info online, at the electoral authority's website:</p>
                         <div class="centered">
                                 <img src="img/login-json-online.jpg" alt="https://www.eleccionesciudad.gob.ar/simulador/datos/" width="511" height="300" />
@@ -1228,23 +1176,6 @@ External access via a cable near the batteries.</li>
                 </div>
                 <!-- -->
 
-                <!-- automating bup -->
-                <div class="step" <?php  $pos->set_angle([0, 0, 180]); $pos->shiftprint([1000, 1000, -100]); ?> data-scale="1">
-                        <h2>Automating BUP</h2>
-                        <p>The objective is to not have a machine between voter and vote (so it's not eVoting) and also improve speed of provisional scrutiny.</p>
-                        <p>However, we might introduce vulnerabilities!.</p>
-                        <p>So a final, manual scrutiny is needed <strong>ALWAYS</strong>.</p>
-                </div>
-                <div class="step" <?php $pos->shiftprint(1200, 30); ?> data-scale="1">
-                        <p>We propose a <strong>tradeoff</strong> solution by implementing a system that <strong>scans BUP</strong> and counts votes.  Then, it transmits them to the Electoral Authority.</p>
-                        <p>Measures must be taken to secure transmission and reception.</p>
-                        <p>Also, BUPs must be validated somehow, so no fakes can be introduced (but without a machine to cast a vote!).</p>
-                </div>
-                <div class="step" <?php $pos->shiftprint([-600, -700], ["alpha" => -45]); ?> data-scale="2">
-                        <p>This kind of things must be put into <strong>public discussion</strong>, and then, when a company provides a possible solution, it must be <em>free HW & SW</em>, <strong>publicly documented</strong> and <strong>publicly auditable</strong>.</p>
-                </div>
-                <!-- -->
-
                 <!-- international -->
 		<div class="step" <?php $pos->set_angle([-30, 0, 0]); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 2000]); ?> data-scale="1">
                         <img src="img/world-evoting-map.png" alt="eVoting around the world" width="953" height="700" />
@@ -1309,13 +1240,14 @@ External access via a cable near the batteries.</li>
 			<h1 style="text-align: center;">Thanks for listening!</h1>
 			<p>Also, we want to <b class="scaling">thank everybody</b> who supported us:</p>
                         <ul>
-                                <li><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Eugenia Núñez, Sergio Orbe, Andrés Paul)</li>
-                                <li><span class="soft-green">Fundación Via Libre</span></li>
-                                <li>Our <span class="soft-green">friends</span> that are always there...</li>
+                                <li class="txt-reduced"><span class="soft-green">CaFeLUG</span> (Sergio Aranda Peralta, Ximena García, Lucas Lakousky, Juan Muguerza, Eugenia Núñez, Sergio Orbe, Andrés Paul)</li>
+                                <li class="txt-reduced"><span class="soft-green">Fundación Via Libre</span></li>
+                                <li class="txt-reduced"><span class="soft-green">Julio L&oacute;pez</span> and <span class="soft-green">Trist&aacute;n Grimaux</span></li>
+                                <li class="txt-reduced">Our <span class="soft-green">friends</span> that are always there...</li>
                         </ul>
                         <p>And the <span class="soft-green">EKOparty organisers</span> for providing a place to share:</p>
                         <ul>
-                                <li>Juan Pablo Daniel Borgna, Leonardo Pigñer, Federico Kirschbaum, Jerónimo Basaldúa, Francisco Amato</li>
+                                <li class="txt-reduced">Juan Pablo Daniel Borgna, Leonardo Pigñer, Federico Kirschbaum, Jerónimo Basaldúa, Francisco Amato</li>
                         </ul>
 		</div>
                 <!-- -->
@@ -1332,6 +1264,22 @@ External access via a cable near the batteries.</li>
 			<p class="footnote">Powered by <a class="link-shadow" target="_blank" href="https://github.com/bartaz/impress.js">impress.js</a></p>
 		</div>
                 <!-- -->
+
+                <!-- authors -->
+                <div id="authors" class="step anim" <?php $pos->shift([1500, 600]); $pos->printc(); ?> data-scale="2">
+                        <p>Presenters: <b class="scaling"><a class="link" target="_blank" href="https://twitter.com/hackancuba">Iv&aacute;n</a> & <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier</a></b></p>
+                        <p>Colaborators: 
+                                <a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>, 
+                                <a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>, 
+                                <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>.
+                        </p>
+                        <p class="footnote">And the people of the internet...</p>                      
+                </div>
+                <!-- - -->
 
                 <!-- overview -->
                 <?php if (SHOW_OVERVIEW) { $pos->autoset_overview(); $pos->print_overview(); } ?>
