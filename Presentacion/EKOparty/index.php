@@ -9,7 +9,7 @@
 /**
  * Default language
  */
-define('LANG_DEFAULT', 'en');
+define('LANG_DEFAULT', 'es');
 
 /**
  * Global to set the language
@@ -137,7 +137,7 @@ if (get_opt('skipintro')) {
 
 	<div id="impress">
                 <!-- welcome -->
-                <div id="title" class="step slide" data-x="0" data-y="0" data-scale="1">
+                <div id="title" class="step slide anim" data-x="0" data-y="0" data-scale="1">
                         <div class="right txt-tiny" style="padding-right: 10px;"><a href="?lang=es" class="link-shadow">ES</a> | <a href="?lang=en" class="link-shadow">EN</a></div>
 <?php if ($lang == 'es') { ?>
                         <h1 style="text-align: center;">Vot.Ar: una mala elecci&oacute;n</h1>
@@ -145,9 +145,9 @@ if (get_opt('skipintro')) {
                         <h3>Presentaci&oacute;n sobre el sistema <i class="flag-blue">Vot.Ar</i> (o BUE), su HW, SW y Vulnerabilidades.</h3>
                         <br />
                         <ul>
-                                <li><a class="link-shadow" href="vot_ar_una_mala_eleccion.php" target="_self">Quiero ver la presentaci&oacute;n</a></li>
-                                <li><a class="link-shadow" href="/vot-ar-una-mala-eleccion" target="_self">Quiero leer el informe</a></li>
-                                <li><a class="link-shadow" href="https://github.com/HacKanCuBa/informe-votar" target="_blank">¡Quiero ver las fuentes!</a></li>
+                                <li><b class="scaling"><a class="link" href="vot_ar_una_mala_eleccion.php" target="_self">Quiero ver la presentaci&oacute;n</a></b></li>
+                                <li><a class="link" href="/vot-ar-una-mala-eleccion" target="_self">Quiero leer el informe</a></li>
+                                <li><a class="link" href="https://github.com/HacKanCuBa/informe-votar" target="_blank">¡Quiero ver las fuentes!</a></li>
                         </ul>
 <?php } elseif ($lang == 'en') { ?>
                         <h1 style="text-align: center;">Vot.Ar: a bad election</h1>
@@ -155,9 +155,9 @@ if (get_opt('skipintro')) {
                         <h3>A presentation about the <i class="flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW & Vulns.</h3>
                         <br />
                         <ul>
-                                <li><a class="link-shadow" href="vot_ar_a_bad_election.php" target="_self">I want to see the presentation</a></li>
-                                <li><a class="link-shadow" href="/vot-ar-a-bad-election" target="_self">I want to read the report</a></li>
-                                <li><a class="link-shadow" href="https://github.com/HacKanCuBa/informe-votar" target="_blank">I want to see the source!</a></li>
+                                <li><b class="scaling"><a class="link" href="vot_ar_a_bad_election.php" target="_self">I want to see the presentation</a></b></li>
+                                <li><a class="link" href="/vot-ar-a-bad-election" target="_self">I want to read the report</a></li>
+                                <li><a class="link" href="https://github.com/HacKanCuBa/informe-votar" target="_blank">I want to see the source!</a></li>
                         </ul>
 <?php } ?>                       
                         <p class="footnote"><a class="link-shadow" href="https://twitter.com/hashtag/VotArUnaMalaEleccion" target="_blank">#VotArUnaMalaEleccion</a> <a class="link-shadow" href="https://twitter.com/hashtag/eko11" target="_blank">#eko11</a></p>
