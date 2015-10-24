@@ -80,3 +80,4 @@ https://github.com/HacKanCuBa/informe-votar/blob/master/Anexo%20A/ps.txt
 [67] Datos sobre los códigos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/
 [68] Códigos de los candidatos.  Disponible en: https://www.eleccionesciudad.gob.ar/simulador/datos/CABA/Candidatos.json
 [69] STMicroelectronics, NfcV-reader, Google Play.  Disponible en: https://play.google.com/store/apps/details?id=com.nfc.apps&hl=es
+[70] NXP, I-CODE SLIX SL2S2002, Datasheet.  Disponible en:  http://www.nxp.com/documents/data_sheet/SL2S2002_SL2S2102.pdf
