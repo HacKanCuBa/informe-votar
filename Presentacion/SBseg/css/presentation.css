@@ -343,6 +343,12 @@ audio {
         font-size: 80%;
 }
 
+.facepalm {
+  position: absolute;
+  top: 10px;
+  left: 350px;
+}
+
 /* colours */
 .flag-blue {
         color: #75AADB;
@@ -386,6 +392,7 @@ audio {
 
 .sbseg-intro {
   background-image: url("../img/HQ-FHL-20001-15.jpg");
+  background-position: bottom;
 }
 
 .sbseg-intro .content {
@@ -406,7 +413,7 @@ audio {
 
 .step {
         position: relative;
-        width: 800px;
+        width: 1000px;
         padding: 40px;
         margin: 20px auto;
 
@@ -416,7 +423,7 @@ audio {
         box-sizing:         border-box;
 
         font-family: 'Open Sans', sans-serif;
-        font-size: 42px;
+        font-size: 38px;
         line-height: 1.5;
 }
 

@@ -424,132 +424,160 @@ $pos->set_overview(["s" => 45]);
     <!-- welcome -->
     <div id="title" class="step anim" <?php $pos->printc(); ?> data-scale="3">
       <h1 class="centered">Vot.Ar: a bad election</h1>
-      <h3>A presentation about the <i class="scaling flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW &amp; Vulns.</h3>
-      <br /><br />
-      <p>Also, a bit about <i>eVoting</i>.</p>
+      <div class="sbseg-intro">
+        <div class="content">
+          <h3>A presentation about the <i class="scaling flag-blue">Vot.Ar</i> (aka BUE) system, its HW, SW &amp; Vulns.</h3>
+          <p>Also, a bit about <i>eVoting</i>.</p>
+          <p>For the <a class="link" href="http://sbseg2015.univali.br/">SBSeg 15</a>, Florianopolis, Brasil.</p>
+        </div>
+      </div>
       <p class="footnote"><a class="link-shadow" href="https://twitter.com/hashtag/VotArUnaMalaEleccion" target="_blank">#VotArUnaMalaEleccion</a> <a class="link-shadow" href="https://twitter.com/hashtag/sbseg15" target="_blank">#sbseg15</a></p>
 		</div>
-                <!-- -->
+    <!-- -->
 
-                <?php $pos->set([23000, -1000, 0]); ?>
-                <!-- -how did we do it? -->
-                <div class="step" <?php $pos->shiftprint([0, 1550, -300], -40); ?> data-scale="1">
-                        <h2>How did we do this?</h2>
-                        <ul>
-                                <li>About a week or so of hard work.</li>
-                                <li><strong>Unofficially</strong>: no assistance was provided by the company nor govt.</li>
-                                <li>By going to public consultation points to have access to machines and ballots.</li>
-                        </ul>
-                        <div class="centered"><img src="img/consultation-point.jpg" alt="Public constultation point" width="533" height="300" /></div>
-                </div>
+    <!-- authors -->
+    <div id="authors" class="step" <?php $pos->shift(["y" => 4000], -30); $pos->printc(); ?> data-scale="10">
+      <p>Presenter: <a class="link" target="_blank" href="https://twitter.com/hackancuba">Iv&aacute;n (HacKan) A. Barrera Oro</a>.</p>
+      <p>Colaborators:
+        <a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>,
+        <a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>,
+        <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>,
+        <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>,
+        <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>,
+        <a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>,
+        <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier Smaldone</a>,
+        <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>.
+      </p>
+      <p class="footnote">And the people of the internet...</p>
+    </div>
+    <?php $pos->shift(8500); ?>
+    <!-- - -->
 
-                <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 650, -400]); ?> data-scale="1">
-                        <ul>
-                                <li>By building a few devices for hardware tests:
-                                <ul>
-                                        <li>ballot reader</li>
-                                        <li>ballot burner</li>
-                                        <li>RFID jammer</li>
-                                </ul>
-                                (some worked, some didn't)
-                                </li>
-                                <li>Lots of internet research (thanks to the leaked source code and photos)</li>
-                                <li>Great effort</li>
-                        </ul>
-                </div>
-                <!-- - -->
-                <!-- -->
+    <!-- intro -->
+    <div class="step" <?php $pos->reset_angle(); $pos->shiftprint(["z" => -300], -40); ?> data-scale="1">
+      <h2>How did we do this?</h2>
+      <ul>
+        <li>About a week or so of hard work.</li>
+        <li><strong>Unofficially</strong>: no assistance was provided by the company nor govt.</li>
+      </ul>
+    </div>
+    <div class="step" <?php $pos->shiftprint(["y"=>"730"]); ?> data-scale="1">
+      <ul>
+        <li>By going to public consultation points to have access to machines and ballots.</li>
+      </ul>
+      <div class="centered"><img src="img/consultation-point.jpg" alt="Public constultation point" width="533" height="300" /></div>
+    </div>
+    <div class="step" <?php $pos->reset_angle(); $pos->shiftprint([0, 430, -400]); ?> data-scale="1">
+      <ul>
+        <li>By building a few devices for hardware tests:
+          <ul>
+            <li>ballot reader</li>
+            <li>ballot burner</li>
+            <li>RFID jammer</li>
+          </ul>
+        (some worked, some didn't)
+        </li>
+        <li>Lots of internet research (thanks to the leaked source code and photos)</li>
+        <li>Great effort</li>
+      </ul>
+    </div>
+    <!-- -->
 
-                <!-- about vot.ar, brief desc -->
+    <!-- about vot.ar, brief desc -->
 		<div class="step anim" <?php $pos->reset_angle(); $pos->shiftprint([0, 1050, 400]); ?> data-scale="1">
-                        <p><strong>Vot.Ar</strong> a.k.a <strong>BUE</strong> that stands for Unique Electronic Ballot in Spanish, is a paper-based eVoting system by MSA Group.  It has two main elements:</p>
-                        <ul>
-                                <li>The vote-casting and counting machine</li>
-                                <li>The ballot</li>
-                        </ul>
-                        <br />
-                        <p><b class="scaling pastel-red">Most obvious vulnerability?</b></p>
-                        <p class="footnote pastel-red">among others...</p>
-                </div><!-- +(0,0,0) -->
+      <p><strong>Vot.Ar</strong> a.k.a <strong>BUE</strong> that stands for Unique Electronic Ballot in Spanish, is a paper-based eVoting system by MSA Group.  It has two main elements:</p>
+      <ul>
+        <li>The vote-casting and counting machine</li>
+        <li>The ballot</li>
+      </ul>
+      <br /><br /><br />
+      <p><b class="scaling pastel-red">Most obvious vulnerability?</b></p>
+      <p class="footnote pastel-red">among others...</p>
+    </div><!-- +(0,0,0) -->
 		<div class="step hidden" <?php $pos->printc(); ?> data-scale="1">
-                        <div style="position:absolute; top: 85px; left: 580px;">
-                                <div class="overlay-img-txt txt-tiny pale-yellow">
-                                        <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
-                                        <span>It's RFID based!</span>
-                                </div>
-                        </div>
-                </div>
-                <!-- -->
+      <div class="facepalm">
+        <div class="overlay-img-txt txt-tiny pale-yellow">
+          <img src="img/facepalm.jpg" alt="facepalm" width="300" height="225" />
+          <span>It's RFID based!</span>
+        </div>
+      </div>
+    </div>
+    <!-- -->
 
-                <!-- israel case -->
-                <div class="step hidden" <?php $pos->shiftprint([1100], ["theta" => -25]); ?> data-scale="1">
-                        <p>Why is RFID such a bad idea?</p>
-                        <img src="img/evoting-rfid.jpg" alt="e-voting rfid" width="1050" height="625" />
-                </div>
-                <!-- -->
+    <!-- israel case -->
+    <div class="step hidden" <?php $pos->shiftprint([1100], ["theta" => -25]); ?> data-scale="1">
+      <p>Why is RFID such a bad idea?</p>
+      <img src="img/evoting-rfid.jpg" alt="e-voting rfid" width="1050" height="625" />
+    </div>
+    <!-- -->
 
-                <!-- some details  -->
-                <div id="req" class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
-                        <h2>Requirements for Vot.Ar (by its patent &amp; law)</h2>
-                        <ol>
-                                <li><strong>Universal</strong>*</li>
-                                <li><strong>Equal</strong>*</li>
-                                <li class="pastel-red"><strong>Secret</strong>*</li>
-                                <li><strong>Mandatory</strong>*</li>
-                                <li>Free (as in freedom)</li>
-                                <li class="pastel-red">One vote per elector</li>
-                        </ol>
-                        <p class="footnote">* Constitutional rights</p>
-                </div>
+    <!-- some details  -->
+    <div id="req" class="step anim" <?php $pos->reset_angle(); $pos->shiftprint(["y" => 1100]); ?> data-scale="1">
+      <h2>Requirements for Vot.Ar (by its patent &amp; law)</h2>
+      <ol>
+        <li><strong>Universal</strong>*</li>
+        <li><strong>Equal</strong>*</li>
+        <li class="pastel-red"><strong>Secret</strong>*</li>
+        <li><strong>Mandatory</strong>*</li>
+        <li>Free (as in freedom)</li>
+        <li class="pastel-red">One vote per elector</li>
+      </ol>
+      <p class="footnote">* Constitutional rights</p>
+    </div>
 
-                <div class="step" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
-                        <h2>Some things to note about Vot.Ar</h2>
-                        <ul>
-                                <li>Completely closed HW &amp; SW (a <em>black box</em> for us).</li>
-                                <li>Absolutely no public documentation: yet the maker says it's open source!</li>
-                                <li>Over <strong>7 years of development</strong>:
-                                <ul>
-                                        <li>Used in Salta (and audited there)</li>
-                                        <li>Recently used in the capital city of Chaco and Neuquén</li>
-                                </ul>
-                                </li>
-                        </ul>
-                </div>
+    <div class="step" <?php $pos->shiftprint(["y" => 1000], ["theta" => 10]); ?> data-scale="1">
+      <h2>Some things to note about Vot.Ar</h2>
+      <ul>
+        <li>Completely closed HW &amp; SW (a <em>black box</em> for us).</li>
+        <li>Absolutely no public documentation: yet the maker says it's open source!</li>
+        <li>Over <strong>7 years of development</strong>:
+          <ul>
+            <li>Used in Salta (and audited there)</li>
+            <li>Recently used in the capital city of Chaco and Neuquén</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-                <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
-                        <ul>
-                                <li>2 official audits by the time of the report (june/july 2015):
-                                <ul>
-                                        <li>Prof. Righetti, FCEN, UBA: OAT 03/15
-                                        <br /><strong>Conclusion</strong>: <em>small issues, but ok</em>.</li>
-                                        <li>Departamento de Inform&aacute;tica, ITBA: DVT 56-504
-                                        <br /><strong>Conclusion</strong>: <em>inconclusive, recommendations given</em>.</li>
-                                </ul>
-                                </li>
-                        </ul>
-                </div>
+    <div class="step" <?php $pos->shiftprint([1400, 115], ["theta" => 10]); ?> data-scale="1">
+      <ul>
+        <li>2 official audits by the time of the report (june/july 2015):
+          <ul>
+              <li>Prof. Righetti, FCEN, UBA: OAT 03/15
+              <br /><strong>Conclusion</strong>: <em>small issues, but ok</em>.</li>
+              <li>Departamento de Inform&aacute;tica, ITBA: DVT 56-504
+              <br /><strong>Conclusion</strong>: <em>inconclusive, recommendations given</em>.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 
-                <div class="step" <?php $pos->shiftprint([-1400, 750], ["theta" => -10]); ?> data-scale="1">
-                        <ul>
-                                <li>A <strong>serious security flaw</strong> left exposed the SSL certificates that were going to be used for transmitting the results!</li>
-                                <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reported this flaw to the company, only to get <strong>raided by the police two days before the elections</strong> and during late afternoon/in the night.</li>
-                                <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason why a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> where the info was published.</li>
-                        </ul>
-                </div>
+    <div class="step" <?php $pos->shiftprint([-1400, 750], ["theta" => -10]); ?> data-scale="1">
+      <ul>
+        <li>A <strong>serious security flaw</strong> left exposed the SSL certificates that were going to be used for transmitting the results!</li>
+        <li>An independent programmer, <a href="https://twitter.com/_joac" class="link">Joaqu&iacute;n Sorianello</a>, reported this flaw to the company, only to get <strong>raided by the police two days before the elections</strong> (he still has a criminal case for reporting the flaw).</li>
+      </ul>
+    </div>
 
-                <!-- -timeline -->
-                <div id="timeline" class="step" <?php $pos->reset_angle(); $pos->shiftprint([2800, 1500, 100], ["phi" => 10]); ?> data-scale="3">
-                        <img src="img/timeline-1.png" alt="Timeline" width="1032" height="780" />
-                </div>
-                <div class="step" <?php $pos->shiftprint([3100, 548]); ?> data-scale="3">
-                        <img src="img/timeline-2.png" alt="Timeline" width="1100" height="780" />
-                </div>
-                <!-- - -->
+    <div class="step" <?php $pos->shiftprint(1400, ["theta" => 10]); ?> data-scale="1">
+      <ul>
+        <li>Also, independent hacks occur, causing leakage of personal data of company technicians, reason why a Judge decides to <a href="http://pastebin.com/gHC89Mh6" class="link-shadow">block</a> the site <a class="link" href="https://justpaste.it">justpaste.it</a> where the info was published.</li>
+      </ul>
+    </div>
 
-                <div class="step anim" <?php $pos->set_angle([0, 30, 0]); $pos->shiftprint([2000, 850]); ?> data-scale="2">
-                        <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
-                </div>
-                <!-- -->
+    <!-- -timeline -->
+    <div id="timeline" class="step" <?php $pos->reset_angle(); $pos->shiftprint([2800, 1500, 100], ["phi" => 10]); ?> data-scale="3">
+            <img src="img/timeline-1.png" alt="Timeline" width="1032" height="780" />
+    </div>
+    <div class="step" <?php $pos->shiftprint([3100, 548]); ?> data-scale="3">
+            <img src="img/timeline-2.png" alt="Timeline" width="1100" height="780" />
+    </div>
+    <!-- - -->
+
+    <div class="step anim" <?php $pos->set_angle([0, 30, 0]); $pos->shiftprint([2000, 850]); ?> data-scale="2">
+            <p><strong>The system reported here is as it was used in this year's elections</strong> in Buenos Aires Autonomous City (CABA)</p>
+    </div>
+    <!-- -->
 
                 <!-- macro description of the system -->
                 <!-- -machine -->
@@ -1255,42 +1283,26 @@ External access via a cable near the batteries.</li>
 		</div>
                 <!-- -->
 
-                <!-- goodbye -->
+    <!-- goodbye -->
 		<div id="last" class="step slide" <?php $pos->shiftprint(1050); ?> data-scale="1">
 			<h1 style="text-align: center;">More information?</h1>
 			<br />
 			<p>You can get the full report, this presentation and more at the git repo:</p>
-                        <p class="right txt-verybig"><a class="link" target="_self" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
-                        <br />
-                        <p>Feel free to share! (CC BY-SA v4.0).</p>
-                        <br /><br /><br />
+      <p class="right txt-verybig"><a class="link" target="_self" href="https://bit.ly/votar-report">bit.ly/votar-report</a></p>
+      <br />
+      <p>Feel free to share! (CC BY-SA v4.0).</p>
+      <br /><br /><br />
 			<p class="footnote">Powered by <a class="link-shadow" target="_blank" href="https://github.com/bartaz/impress.js">impress.js</a></p>
 		</div>
-                <!-- -->
+    <!-- -->
 
-                <!-- authors -->
-                <div id="authors" class="step anim" <?php $pos->shift([1500, 600]); $pos->printc(); ?> data-scale="2">
-                        <p>Presenters: <b class="scaling"><a class="link" target="_blank" href="https://twitter.com/hackancuba">Iv&aacute;n</a> &amp; <a class="link" target="_blank" href="https://twitter.com/mis2centavos">Javier</a></b></p>
-                        <p>Colaborators:
-                                <a class="link" target="_blank" href="https://twitter.com/famato">Francisco Amato</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/FViaLibre">Enrique Chaparro</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/SDLerner">Sergio Demian Lerner</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/ortegaalfredo">Alfredo Ortega</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/julianor">Juliano Rizzo</a>,
-                                <a class="link" target="_blank" href="https://www.onapsis.com/blog/author/fernando-russ">Fernando Russ</a>,
-                                <a class="link" target="_blank" href="https://twitter.com/nicowaisman">Nicolas Waisman</a>.
-                        </p>
-                        <p class="footnote">And the people of the internet...</p>
-                </div>
-                <!-- - -->
-
-                <!-- overview -->
-                <?php if (SHOW_OVERVIEW) { $pos->autoset_overview(); $pos->print_overview(); } ?>
-                <!-- -->
+    <!-- overview -->
+    <?php if (SHOW_OVERVIEW) { $pos->autoset_overview(); $pos->print_overview(); } ?>
+    <!-- -->
 	</div>
 
-        <!-- impress code -->
-        <!-- -hint -->
+  <!-- impress code -->
+  <!-- -hint -->
 	<div class="hint">
 		<p>Use the arrow keys to move forward/backward</p>
 	</div>
@@ -1299,10 +1311,10 @@ External access via a cable near the batteries.</li>
 		document.querySelector(".hint").innerHTML = "<p>Touch the right side of the screen to move forward</p>";
 		}
 	</script>
-        <!-- - -->
+  <!-- - -->
 
 	<script src="js/impress.js"></script>
 	<script>impress().init();</script>
-        <!-- -->
+  <!-- -->
 </body>
 </html>
