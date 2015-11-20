@@ -6,7 +6,7 @@
 
 /* element definition */
 body {
-        font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 	min-height: 740px;
 	font-size: 30px;
 	line-height: 1.62em;
@@ -42,22 +42,22 @@ h1,h2,h3,h4,h5,h6 {
 	letter-spacing: 1px;
 }
 h1 {
-	font-size: 90px;
-}
-h2 {
 	font-size: 80px;
 }
+h2 {
+	font-size: 70px;
+}
 h3 {
-	font-size: 60px;
+	font-size: 50px;
 }
 h4 {
-	font-size: 45px;
+	font-size: 35px;
 }
 h5 {
-	font-size: 40px;
+	font-size: 30px;
 }
 h6 {
-	font-size: 37px;
+	font-size: 27px;
 }
 p {
 	margin-bottom: 24px;
@@ -302,9 +302,9 @@ audio {
 .overlay-img-txt span {
         position: absolute;
         top: 0;
-        bottom: 0; 
-        left: 0.5em;  
-        font-weight: bold; 
+        bottom: 0;
+        left: 0.5em;
+        font-weight: bold;
         width: 100%;
 }
 
@@ -312,6 +312,16 @@ audio {
         bottom: 0;
         top: auto;
         margin-bottom: 20px;
+}
+
+.align-left {
+  float: left;
+  margin: 5px;
+}
+
+.align-right {
+  float: right;
+  margin: 5px;
 }
 
 .txt-big {
@@ -341,6 +351,12 @@ audio {
 .threat {
         font-family: "Anonymous Pro";
         font-size: 80%;
+}
+
+.facepalm {
+  position: absolute;
+  top: 10px;
+  left: 350px;
 }
 
 /* colours */
@@ -383,9 +399,31 @@ audio {
 /* classes for wrappers */
 
 /* slide classes */
+
+.sbseg-intro {
+  background-image: url("../img/HQ-FHL-20001-15.jpg");
+  background-position: bottom;
+}
+
+.sbseg-intro .content {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.sbseg-intro .content h1 {
+  padding: 30px;
+}
+
+.sbseg-intro .content a {
+  color: rgba(101, 197, 112, 0.92);
+}
+
+.sbseg-intro .content .link:hover {
+  color: #d54e21;
+}
+
 .step {
         position: relative;
-        width: 1200px;
+        width: 1000px;
         padding: 40px;
         margin: 20px auto;
 
@@ -395,16 +433,15 @@ audio {
         box-sizing:         border-box;
 
         font-family: 'Open Sans', sans-serif;
-        font-size: 48px;
+        font-size: 38px;
         line-height: 1.5;
 }
 
 .slide {
         display: block;
 
-        width: 900px;
         height: 700px;
-        padding: 40px 60px;
+        padding: 30px 50px;
 
         background-color: white;
         border: 1px solid rgba(0, 0, 0, .3);
@@ -416,23 +453,21 @@ audio {
 
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;
-        line-height: 36px;
+        line-height: 1.2;
         letter-spacing: -1px;
 }
 
 .slide q {
         display: block;
-        font-size: 50px;
-        line-height: 72px;
+        font-size: 40px;
+        line-height: 62px;
 
-        margin-top: 100px;
+        margin-top: 90px;
 }
 
 .slide q strong {
         white-space: nowrap;
 }
-
-.anim { width: 900px }
 
 .anim b {
         display: inline-block;
