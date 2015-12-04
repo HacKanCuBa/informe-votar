@@ -594,7 +594,7 @@ $pos->set_overview(["s" => 50]);
       <h2>Visi&oacute;n general de Vot.Ar</h2>
       <div class="overlay-img-txt">
 	      <img src="img/overview.png" alt="overview" width="600" height="600" />
-        <span class="txt-tiny pale-yellow">Unidad portable, algo más grande que un malet&iacute;n</span>
+        <span class="txt-tiny pale-yellow">Unidad portable, algo m&aacute;s grande que un malet&iacute;n</span>
 			</div>
 		</div>
 
@@ -685,7 +685,7 @@ $pos->set_overview(["s" => 50]);
     </div>
 	  <div class="step" <?php $pos->shiftprint(["y" => 550], ["theta" => 10]); ?> data-scale="1">
 	  	<ul>
-				<li class="txt-reduced"><img class="align-left" src="img/dvd-recording.jpg" alt="DVDs recording" width="515" height="399" />El software se graba durante un evento llamado "de grabación de DVD", donde representantes de la empresa junto a representantes de la Autoridad Electoral, fiscales y veedores, <em>mientras reeven m&aacute;gicamente el c&oacute;digo fuente en una pantalla</em> lo graban y entregan a la Autoridad Electoral (TSJ).</li>
+				<li class="txt-reduced"><img class="align-left" src="img/dvd-recording.jpg" alt="DVDs recording" width="515" height="399" />El software se graba durante un evento llamado "de grabaci&oacute;n de DVD", donde representantes de la empresa junto a representantes de la Autoridad Electoral, fiscales y veedores, <em>mientras reeven m&aacute;gicamente el c&oacute;digo fuente en una pantalla</em> lo graban y entregan a la Autoridad Electoral (TSJ).</li>
     	</ul>
   	</div>
     <div class="step" <?php $pos->shiftprint(["y" => 550], ["theta" => 10]); ?> data-scale="1">
@@ -1026,7 +1026,7 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
         <li>Se emplea un <i>live-dvd</i>:
 		      <ul>
 		        <li>Linux Ubuntu-based (un poco recortado).</li>
-		        <li>El contenido/archivo de hashes <em>no est&aacute; firmado criptogr&aacute;ficamente</em> (el DVD puede ser reemplazado sin más).</li>
+		        <li>El contenido/archivo de hashes <em>no est&aacute; firmado criptogr&aacute;ficamente</em> (el DVD puede ser reemplazado sin m&aacute;s).</li>
 		        <li>No se implementa UEFI/SecureBoot.</li>
 		      </ul></li>
       </ul>
@@ -1099,7 +1099,7 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
 	    <p>Fue reconocido por la auditor&iacute;a del Prof. Righetti en su &uacute;ltima publicaci&oacute;n (pero disminuido de importancia).</p>
     </div>
     <div class="step" <?php $pos->shiftprint([-800, 0, -1200]); ?> data-scale="1">
-    	<p>El método vulnerable es <code>desde_string</code> de la clase <code>Seleccion</code> en <i>msa/core/clases.py</i></p>
+    	<p>El m&eacute;todo vulnerable es <code>desde_string</code> de la clase <code>Seleccion</code> en <i>msa/core/clases.py</i></p>
     	<h3>Pseudoc&oacute;digo</h3>
     	<img src="img/multivote-pseudo.jpg" alt="Multivote pseudocode" width="450" height="327" />
     </div>
@@ -1160,6 +1160,33 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
     <!-- - -->
     <!-- -->
 
+		<!-- homebanking -->
+    <div id="homebanking" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
+			<h1>&iquest;Por qu&eacute; s&iacute; <em>homebanking</em> y no voto electr&oacute;nico?</h1>
+			<blockquote>Pero, ¿no confiamos nuestro dinero y hasta nuestras vidas en sistemas inform&aacute;ticos? No, no lo hacemos. Usamos cajeros y homebanking para mover nuestro dinero, pero al hacer un movimiento importante seguramente conservaremos el n&uacute;mero de comprobante hasta asegurarnos de que todo ha ido bien.</blockquote>
+		</div>
+    <div class="step" <?php $pos->shiftprint(["y" => 900]); ?> data-scale="1">
+			<blockquote>Usamos sistemas inform&aacute;ticos en nuestros autom&oacute;viles, pero lejos estamos de dejarlos conducir despreocupadamente.  Y todo esto, a&uacute;n cuando podemos suponer que tanto los fabricantes de cajeros como los de autom&oacute;viles no har&aacute;n ninguna manipulaci&oacute;n para que sus productos se comporten de forma indeseada. ¿Podemos asegurar esto cuando hablamos de un sistema electoral? Claramente, no.</blockquote>
+			<p class="footnote">J. Smaldone, <a class="link" href="http://www.perfil.com/politica/Por-que-es-peligroso-cualquier-sistema-de-voto-electronico-20150428-0050.html">Por qu&eacute; es peligroso cualquier sistema de voto electr&oacute;nico</a></p>
+		</div>
+    <div class="step anim" <?php $pos->shiftprint(1000); ?> data-scale="1">
+			<h3>Voto Electr&oacute;nico</h3>
+			<ul>
+				<li>totalmente an&oacute;nimo, secreto</li>
+			</ul>
+			<h3>Homebanking</h3>
+			<ul>
+				<li>se debe conocer y registrar los parametros de una transacci&oacute;n</li>
+				<li>m&uacute;ltiples registros: banco emisor, banco receptor, dispositivo  – cajero, posnet, etc. -, entidad financiera, cliente/usuario, etc.</li>
+			</ul>
+			<p class="centered">No solo no son semejantes, <b class="scaling">sino que son opuestos</b></p>
+		</div>
+    <div class="step" <?php $pos->shiftprint(["y" => 900]); ?> data-scale="1">
+			<blockquote>Todas las partes involucradas en el Homebanking se ven beneficiadas por un sistema seguro y confiable, pero eso todas ellas trabajan en conjunto para velar por su credibilidad. Aquellos que est&aacute;n interesados en vulnerar el sistema inform&aacute;tico bancario son externos al sistema en s&iacute; mismo buscando alg&uacute;n r&eacute;dito personal.<br />
+Con un sistema de votaci&oacute;n es exactamente al rev&eacute;s: muchas de sus partes involucradas se ven beneficiadas al vulnerar el sistema y sacar una tajada m&aacute;s de votos.</blockquote>
+		</div>
+    <!-- -->
+
     <!-- bue vs bup -->
     <div id="buebup" class="step" <?php $pos->reset_angle(); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1800]); ?> data-scale="1">
       <h2 class="centered">Algunas palabras sobre la BUP</h2>
@@ -1211,19 +1238,19 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
 		<div id="ethics" class="step" <?php $pos->set_angle([-30, 0, 0]); $pos->set_coord(["z" => 0]); $pos->shiftprint(["y" => 1200]); ?> data-scale="1">
       <h1>&Eacute;tica y moral</h1>
 			<blockquote>Technological  optimists  believe  that  technology makes  life  better.  According  to  this  view,  we  live  longer,  have  more  freedom, enjoy  more  leisure.  Technology  enriches  us  [and] has become this extraordinary tool for human development. At this point, it is central to mankind's mission.</blockquote>
-			<p style="footnote">P. Rogaway, p. 9, "The Moral Character of Cryptographic Work", 2015</p>
+			<p class="footnote">P. Rogaway, p. 9, "The Moral Character of Cryptographic Work", 2015</p>
 		</div>
     <div class="step" <?php $pos->shiftprint([1000, 300], ["phi" => 20]); ?> data-scale="1">
 			<h2>&iquest;Pero y qu&eacute; si las ciencias de la computaci&oacute;n no est&aacute;n beneficiandonos?</h2>
 		</div>
     <div class="step" <?php $pos->shiftprint([700, 500], ["phi" => 20]); ?> data-scale="1">
 			<blockquote>our moral duties extend beyond the imperative that you personally do no harm: you have to try to promote the social good, too. [...] your moral duties stem not just from your stature as a moral individual, but, also, from the professional communities to which you belong: cryptographer, computer scientist, scientist, technologist</blockquote>
-			<p style="footnote">P. Rogaway, p. 10, "The Moral Character of Cryptographic Work", 2015</p>
+			<p class="footnote">P. Rogaway, p. 10, "The Moral Character of Cryptographic Work", 2015</p>
 		</div>
     <div class="step" <?php $pos->shiftprint([1000, 0], ["phi" => 20]); ?> data-scale="1">
 			<p>As&iacute; me hace sentir este tema:</p>
 			<blockquote>From my earliest days I had a passion for science. But science, the exercise of the supreme power of the human intellect, was always linked in my mind with benefit to people. I saw science as being in harmony with humanity. I did not imagine that the second half of my life would be spent on efforts to avert a mortal danger to humanity created by science.</blockquote>
-			<p style="footnote">J. Rotblat, "Remember your humanity", 1995</p>
+			<p class="footnote">J. Rotblat, "Remember your humanity", 1995</p>
 		</div>
     <!-- -->
 
@@ -1235,9 +1262,9 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
 		    <li>P&eacute;sima elecci&oacute;n del sistema de soporte/almacenamiento de votos.</li>
 		    <li>No satisface los <a href="#req" class="link-shadow">requerimientos:</a>
 		    <ul>
-		            <li><em>Viola</em> el secreto del voto.</li>
-		            <li><em>M&aacute;s de un</em> voto por elector.</li>
-		            <li>Es <em>oscuro</em> para el votante (y para todos).</li>
+          <li><em>Viola</em> el secreto del voto.</li>
+          <li><em>M&aacute;s de un</em> voto por elector.</li>
+          <li>Es <em>oscuro</em> para el votante (y para todos).</li>
 		    </ul>
 		    </li>
 		    <li>No se tienen ventajas significativas respecto del sistema de Boleta &Uacute;nica de Papel.</li>
@@ -1277,6 +1304,7 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
         <li>Mencionaron BadUSB... &iquest;qu&eacute; hay con eso?</li>
         <li>&iquest;Qu&eacute; cambios propondr&iacute;an a este sistema Vot.Ar?</li>
       </ul>
+			<p class="footnote">algunas restricciones pueden aplicar...</p>
 		</div>
     <!-- -->
 
@@ -1317,8 +1345,8 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
     <!-- -->
 	</div>
 
-        <!-- impress code -->
-        <!-- -hint -->
+	<!-- impress code -->
+	<!-- -hint -->
 	<div class="hint">
                 <p>Utiliza las flechas del teclado para avanzar/retroceder</p>
 	</div>
@@ -1327,10 +1355,10 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
 		document.querySelector(".hint").innerHTML = "<p>Toca la parte derecha de la pantalla para avanzar</p>";
 		}
 	</script>
-        <!-- - -->
+  <!-- - -->
 
 	<script src="js/impress.js"></script>
 	<script>impress().init();</script>
-        <!-- -->
+	<!-- -->
 </body>
 </html>
