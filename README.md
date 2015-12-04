@@ -21,6 +21,7 @@ Hemos presentado el informe en distintas conferencias de la rama.  Las fuentes s
 
 * [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11)  
 * [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
+* Ciclo de charlas Banco Frances Diciembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/bcofrances?lang=es)  
 
 ## Repercusión nacional
 Durante todas las instancias que hemos recorrido, algunos semanas antes de las elecciones, otros desde hace años, los medios nacionales eligieron no hablar mucho del tema. Los motivos, desconocidos, aún teniendo información de primicia servida en bandeja.  Sin embargo y de a poco, algunos medios comienzan a tratar este tema como corresponde, faltando un largo camino por recorrer siendo que todo el proceso fue tratado a oscuras de los electores.  

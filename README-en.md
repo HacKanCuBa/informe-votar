@@ -22,6 +22,8 @@ We have presented the report at different conferences. The sources are in the ap
 
 * [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/ekoparty11?lang=en)  
 * [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
+* Banco Frances Talks December 2015: [watch presentation](http://ivan.
+barreraoro.com.ar/presentation/bcofrances?lang=en)  
 
 ## National impact
 In all instances we have come, some of us weeks before the elections, some for years, the national media chose not to talk much about it. The reasons unknown, despite having information on a platter scoop. However and gradually, some media begin to address this issue properly, with still a long way to go given that the whole process was treated in the dark for the voters.  
