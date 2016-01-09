@@ -12,6 +12,7 @@ Para mayor abundamiento, recomendamos la lectura de los siguientes textos:
 * [Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la CABA - ITBA](http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf)  
 * [Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta](https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview#heading=h.4mjowkrd6bo2)  
 * [El sistema oculto en las máquinas de Vot.Ar](https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar)  
+* [Sobre el chip RFID de la “boleta única electrónica”](https://blog.smaldone.com.ar/2016/01/08/sobre-el-chip-rfid-de-la-boleta-unica-electronica)  
 
 ## Versión online
 [Versión online del presente informe](http://ivan.barreraoro.com.ar/vot-ar-una-mala-eleccion/)  
