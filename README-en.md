@@ -13,6 +13,7 @@ For the sake of completeness, we recommend reading the following texts:
 * [Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la CABA - ITBA](http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf)  
 * [Ataque a sistema de voto electrónico Vot.Ar (BUE) permite sumar multiples votos con una sola boleta](https://docs.google.com/document/d/1aH6kvoLR8O1qWOpEz89FAB2xFcBNB-QqHgZpXxg0vGE/preview#heading=h.4mjowkrd6bo2)  
 * [El sistema oculto en las máquinas de Vot.Ar](https://blog.smaldone.com.ar/2015/07/15/el-sistema-oculto-en-las-maquinas-de-vot-ar)  
+* [Sobre el chip RFID de la “boleta única electrónica”](https://blog.smaldone.com.ar/2016/01/08/sobre-el-chip-rfid-de-la-boleta-unica-electronica)  
 
 ## Online version
 [Online version of this report](http://ivan.barreraoro.com.ar/vot-ar-a-bad-election/)  
@@ -22,6 +23,8 @@ We have presented the report at different conferences. The sources are in the ap
 
 * [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/ekoparty11?lang=en)  
 * [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
+* Banco Frances Talks December 2015: [watch presentation](http://ivan.
+barreraoro.com.ar/presentation/bcofrances?lang=en)  
 
 ## National impact
 In all instances we have come, some of us weeks before the elections, some for years, the national media chose not to talk much about it. The reasons unknown, despite having information on a platter scoop. However and gradually, some media begin to address this issue properly, with still a long way to go given that the whole process was treated in the dark for the voters.  
