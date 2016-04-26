@@ -20,9 +20,14 @@ Para mayor abundamiento, recomendamos la lectura de los siguientes textos:
 ## Presentaciones
 Hemos presentado el informe en distintas conferencias de la rama.  Las fuentes se encuentran en el directorio correspondiente de este repositorio.  
 
-* [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11)  
-* [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
+* [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015
+ * [ver presentación](http://ivan.barreraoro.com.ar/presentation/ekoparty11)  
+ * [ver video de la presentación](https://www.youtube.com/watch?v=pjyi2xKupyc)  
+* [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [ver presentación (en inglés)](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
 * Ciclo de charlas Banco Frances Diciembre 2015: [ver presentación](http://ivan.barreraoro.com.ar/presentation/bcofrances?lang=es)  
+* [FLISoL #12](http://wiki.cafelug.org.ar/index.php/Flisol/2016) Abril 2016
+ * [ver presentación](http://ivan.barreraoro.com.ar/presentation/flisol12)  
+ * [ver video de la presentación](https://www.youtube.com/watch?v=5eENcWZZBB4)  
 
 ## Repercusión nacional
 Durante todas las instancias que hemos recorrido, algunos semanas antes de las elecciones, otros desde hace años, los medios nacionales eligieron no hablar mucho del tema. Los motivos, desconocidos, aún teniendo información de primicia servida en bandeja.  Sin embargo y de a poco, algunos medios comienzan a tratar este tema como corresponde, faltando un largo camino por recorrer siendo que todo el proceso fue tratado a oscuras de los electores.  
