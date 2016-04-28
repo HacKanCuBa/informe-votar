@@ -68,7 +68,7 @@ blockquote {
 	color: #444;
 	font-family: Georgia,"URW Bookman L",serif;
 	font-style: italic;
-	margin: 0 30px 0 60px;
+	margin: 60px 30px 0 60px;
 }
 
 blockquote:before {
@@ -434,7 +434,7 @@ audio {
 
         font-family: 'Open Sans', sans-serif;
         font-size: 38px;
-        line-height: 1.5;
+        line-height: 1.5em;
 }
 
 .slide {
@@ -453,7 +453,7 @@ audio {
 
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;
-        line-height: 1.2;
+        line-height: 1.2em;
         letter-spacing: -1px;
 }
 
@@ -543,7 +543,7 @@ audio {
 
 .fallback-message {
         font-family: 'Open Sans', sans-serif;
-        line-height: 1.3;
+        line-height: 1.3em;
 
         width: 780px;
         padding: 10px 10px 0;

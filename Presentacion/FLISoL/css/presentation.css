@@ -434,7 +434,7 @@ audio {
 
         font-family: 'Open Sans', sans-serif;
         font-size: 40px;
-        line-height: 1.2;
+        line-height: 1.2em;
 }
 
 .slide {
@@ -453,7 +453,7 @@ audio {
 
         font-family: 'Open Sans', sans-serif;
         font-size: 30px;
-        line-height: 1.2;
+        line-height: 1.2em;
         letter-spacing: -1px;
 }
 
@@ -543,7 +543,7 @@ audio {
 
 .fallback-message {
         font-family: 'Open Sans', sans-serif;
-        line-height: 1.3;
+        line-height: 1.3em;
 
         width: 780px;
         padding: 10px 10px 0;

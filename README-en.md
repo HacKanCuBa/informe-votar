@@ -50,7 +50,7 @@ In all instances we have come, some of us weeks before the elections, some for y
 * [Cómo votar múltiples veces con el sistema Vot.AR este domingo en Buenos Aires (Argentina)](http://www.elladodelmal.com/2015/07/como-votar-multiples-veces-con-el.html)  
 * [Es posible votar múltiples veces con el sistema Vot.AR este domingo en Buenos Aires (Argentina)](https://www.meneame.net/m/tecnolog%C3%ADa/como-votar-multiples-veces-sistema-vot-ar-este-domingo-buenos)
 * [Argentinian Programmer Rewarded With A Home Raid For Exposing E-Voting Vulnerabilities ](http://www.techworm.net/2015/07/argentinian-programmer-rewarded-with-a-home-raid-for-exposing-e-voting-vulnerabilities.html)  
-
+* [Buenos Aires Censors and Raids the Technologists Fixing Its Flawed E-Voting System](https://www.eff.org/deeplinks/2015/07/buenos-aires-censors-and-raids-technologists-fixing-its-flawed-e-voting-system)  
 
 ## More information on Electronic Voting
 * At [Javier's blog](https://blog.smaldone.com.ar/category/politica/e-voto/)

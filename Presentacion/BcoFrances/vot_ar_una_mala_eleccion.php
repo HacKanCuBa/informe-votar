@@ -947,7 +947,7 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
         </tr>
 		  </table>
     </div>
-    <div class="step" <?php $pos->shiftprint(["y" => 800], 10); ?> data-scale="1">
+    <div class="step" <?php $pos->shiftprint(["y" => 1000], 10); ?> data-scale="1">
 		  <h4>Estructura de datos dentro del Tag</h4>
 		  <code>K1 T2 T1 L1 C4 C3 C2 C1 D1...Dn W1 W2 W3 W4</code>
 		  <table class="white-row">
@@ -1012,7 +1012,7 @@ Usar credencial de Presidente para abrir pantalla de inicio, ingresar n&uacute;m
         </tr>
 		  </tbody>
 		  </table>
-		  <p class="footnote">M&aacute;s info sobre el chip y c&oacute;mo se almacenan datos: ver punto IV. B del informe</p>
+		  <p class="footnote">M&aacute;s info sobre &eacute;sto: ver punto IV. B del informe</p>
     </div>
     <!-- - -->
     <!-- -->

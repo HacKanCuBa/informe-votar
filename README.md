@@ -47,7 +47,7 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * [Cómo votar múltiples veces con el sistema Vot.AR este domingo en Buenos Aires (Argentina)](http://www.elladodelmal.com/2015/07/como-votar-multiples-veces-con-el.html)  
 * [Es posible votar múltiples veces con el sistema Vot.AR este domingo en Buenos Aires (Argentina)](https://www.meneame.net/m/tecnolog%C3%ADa/como-votar-multiples-veces-sistema-vot-ar-este-domingo-buenos)
 * [Argentinian Programmer Rewarded With A Home Raid For Exposing E-Voting Vulnerabilities ](http://www.techworm.net/2015/07/argentinian-programmer-rewarded-with-a-home-raid-for-exposing-e-voting-vulnerabilities.html)  
-
+* [Buenos Aires Censuró y Allanó A Quienes Reportaron Falencias del Voto Electrónico](https://www.eff.org/es/deeplinks/2015/07/buenos-aires-censuro-y-allano-reportaron-falencias-del-voto-electronico)  
 
 ## Más información sobre Voto Electrónico
 * En el [blog de Javier](https://blog.smaldone.com.ar/category/politica/e-voto/)
