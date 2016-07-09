@@ -589,7 +589,7 @@ Como paliativo al ataque mostrado, recomendamos enfáticamente a los presidentes
 
 [20] Claudio Enrique Righetti, FCEyN UBA, Anexo II, OAT Nº 03/15 - Auditoría de sistemas Elecciones 2015 - Ciudad de Buenos Aires. Página 16, Párrafo 4
 
-[21] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A. Disponible en: [http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf](http://defensoria.org.ar/wpnoticias/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf)
+[21] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A. Disponible en: [http://defensoria.org.ar/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf](http://defensoria.org.ar/wp-content/uploads/2015/06/InformeAudotoriaVotoElectronico.pdf)
 
 [22] Departamento de Informática, ITBA, DVT 56-504: Auditoría de Sistema de Votación Electrónica 2015 para la Defensoría del Pueblo de la C.A.B.A. Página 1, Párrafo 3.
 
