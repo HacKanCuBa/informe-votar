@@ -50,8 +50,13 @@ Durante todas las instancias que hemos recorrido, algunos semanas antes de las e
 * [Buenos Aires Censuró y Allanó A Quienes Reportaron Falencias del Voto Electrónico](https://www.eff.org/es/deeplinks/2015/07/buenos-aires-censuro-y-allano-reportaron-falencias-del-voto-electronico)  
 
 ## Más información sobre Voto Electrónico
+* En el sitio [comovotamos.org](http://comovotamos.org)
 * En el [blog de Javier](https://blog.smaldone.com.ar/category/politica/e-voto/)
 * En el [blog de Iván](http://ivan.barreraoro.com.ar/category/voto-electronico/)
+
+Han tomado como ejemplo de Voto Electrónico en Buenos Aires lo sucedido con Joaquín Sorianello y nuestro informe para publicarlo en el libro [Real-world Electronic Voting Design, Analysis and Deployment](https://blogs.ncl.ac.uk/security/2016/02/15/real-world-electronic-voting-design-analysis-and-deployment/), CRC Press, por Feng Hao y Peter Y. A. Ryan, en el [capítulo 7](https://jhalderm.com/pub/papers/ch7-evoting-attacks-2016.pdf), página 157, por [J. Alex Halderman](https://jhalderm.com).
+
+![Chapter 7, page 157](https://pbs.twimg.com/media/CqF7ZLxWYAAj2K9.jpg)
 
 ## Autores
 Los autores aquí mencionados no son responsables ni responden por cualquier opinión o información presentada fuera del informe.  Únicamente por lo escrito en el mismo.  

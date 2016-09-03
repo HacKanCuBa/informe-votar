@@ -53,8 +53,13 @@ In all instances we have come, some of us weeks before the elections, some for y
 * [Buenos Aires Censors and Raids the Technologists Fixing Its Flawed E-Voting System](https://www.eff.org/deeplinks/2015/07/buenos-aires-censors-and-raids-technologists-fixing-its-flawed-e-voting-system)  
 
 ## More information on Electronic Voting
+* At [comovotamos.org](http://comovotamos.org)
 * At [Javier's blog](https://blog.smaldone.com.ar/category/politica/e-voto/)
 * At [Iván's blog](http://ivan.barreraoro.com.ar/category/voto-electronico/)
+
+As an example of E-voting in Buenos Aires, Joaquin Sorianello's and our experiences have been written in the book [Real-world Electronic Voting Design, Analysis and Deployment](https://blogs.ncl.ac.uk/security/2016/02/15/real-world-electronic-voting-design-analysis-and-deployment/), CRC Press, by Feng Hao & Peter Y. A. Ryan, at [chapter 7](https://jhalderm.com/pub/papers/ch7-evoting-attacks-2016.pdf), page 157, by [J. Alex Halderman](https://jhalderm.com).
+
+![Chapter 7, page 157](https://pbs.twimg.com/media/CqF7ZLxWYAAj2K9.jpg)
 
 ## Authors
 The authors mentioned herein are not responsible or respond by any opinion or information presented out of the report. Only for what's written therein.  
