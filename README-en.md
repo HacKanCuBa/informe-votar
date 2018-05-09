@@ -1,4 +1,4 @@
-#Vot.Ar: a bad election
+# Vot.Ar: a bad election
 
 [Leer la versión en español](README.md)  
 
@@ -16,20 +16,19 @@ For the sake of completeness, we recommend reading the following texts:
 * [Sobre el chip RFID de la “boleta única electrónica”](https://blog.smaldone.com.ar/2016/01/08/sobre-el-chip-rfid-de-la-boleta-unica-electronica)  
 
 ## Online version
-[Online version of this report](http://ivan.barreraoro.com.ar/vot-ar-a-bad-election/)  
+[Online version of this report](https://ivan.barreraoro.com.ar/vot-ar-a-bad-election/)  
 
 ## Presentations
 We have presented the report at different conferences. The sources are in the appropriate directory of this repository.  
 
 * [EKOparty #11](https://www.ekoparty.org/charla.php?id=430) Octubre 2015
- * [watch presentation](http://ivan.barreraoro.com.ar/presentation/ekoparty11?lang=en)  
- * [watch video of the presentatation (Spanish)](https://www.youtube.com/watch?v=pjyi2xKupyc)  
+  * [watch presentation](http://ivan.barreraoro.com.ar/presentation/ekoparty11?lang=en)  
+  * [watch video of the presentatation (Spanish)](https://www.youtube.com/watch?v=pjyi2xKupyc)  
 * [SBSeg #15](http://sbseg2015.univali.br/en/workshops/wte) Noviembre 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/sbseg15)  
-* Banco Frances Talks December 2015: [watch presentation](http://ivan.
-barreraoro.com.ar/presentation/bcofrances?lang=en)  
+* Banco Frances Talks December 2015: [watch presentation](http://ivan.barreraoro.com.ar/presentation/bcofrances?lang=en)  
 * [FLISoL #12](http://wiki.cafelug.org.ar/index.php/Flisol/2016) Abril 2016
- * [watch presentation](http://ivan.barreraoro.com.ar/presentation/flisol12?lang=en)
- * [watch video of the presentation (Spanish)](https://www.youtube.com/watch?v=5eENcWZZBB4)
+  * [watch presentation](http://ivan.barreraoro.com.ar/presentation/flisol12?lang=en)
+  * [watch video of the presentation (Spanish)](https://www.youtube.com/watch?v=5eENcWZZBB4)
 
 
 ## National impact
@@ -67,7 +66,7 @@ The authors mentioned herein are not responsible or respond by any opinion or in
   * [@famato](https://twitter.com/famato)  
 * Iván A. Barrera Oro  
   * [@hackancuba](https://twitter.com/hackancuba)  
-  * GPG [0xECF0573B1C9B59E8](https://keybase.io/hackan)  
+  * GPG [0x35710D312FDE468B](https://keybase.io/hackan)  
 * Enrique Chaparro  
 * Sergio Demian Lerner  
   * [@SDLerner](https://twitter.com/SDLerner)  
